@@ -1,0 +1,21 @@
+
+  <h2 md-dialog-title>Change Password</h2>
+  <hr>
+  <md-dialog-content>
+
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" id="login"/>
+          <label class="mdl-textfield__label" for="login">Old Password</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="password" id="password"/>
+          <label class="mdl-textfield__label" for="password">New Password</label>
+        </div>
+  
+    <strong>{{data}}</strong>
+  </md-dialog-content>
+  <hr>
+  <md-dialog-actions>
+    <button md-raised-button (click)="onCloseConfirm()">SUBMIT</button>
+    <button md-raised-button (click)="onCloseCancel()">CANCEL</button>
+  </md-dialog-actions>

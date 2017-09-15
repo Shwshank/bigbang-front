@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog} from '@angular/material';
+import {DialogComponent} from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  
+    dialogResult = "";
+    
+    constructor(public dialog: MdDialog) {}
+      ngOnInit() {
+      }
+  
+      openDialog() {
+        const dialogRef = this.dialog.open(DialogComponent, {
+          height: '350px',
+          width: '350px',
+          data: 'Change your password'
+        });
+        dialogRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+          this.dialogResult = result;
+        })
+    
+    }
   }
-
-}

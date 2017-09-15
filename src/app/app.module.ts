@@ -17,6 +17,9 @@ import { HeaderComponent } from './home/header/header.component';
 import { BodyComponent } from './home/body/body.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { DialogComponent } from './home/dialog/dialog.component';
+import { UniverseComponent } from './home/body/universe/universe.component';
+import { SummaryComponent } from './home/body/summary/summary.component';
+import { ProjectViewComponent } from './home/body/project-view/project-view.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { DialogComponent } from './home/dialog/dialog.component';
     HeaderComponent,
     BodyComponent,
     FooterComponent,
-    DialogComponent
+    DialogComponent,
+    UniverseComponent,
+    SummaryComponent,
+    ProjectViewComponent
   ],
   imports: [
     BrowserModule,

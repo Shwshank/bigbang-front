@@ -2,6 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {MdDialogModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MdButtonModule, MdCheckboxModule} from '@angular/material';
+import { MdCardModule } from '@angular/material';
+import {MdListModule} from '@angular/material';
+import {MdInputModule} from '@angular/material';
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -9,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './home/header/header.component';
 import { BodyComponent } from './home/body/body.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { DialogComponent } from './home/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +25,23 @@ import { FooterComponent } from './home/footer/footer.component';
     HomeComponent,
     HeaderComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    MdDialogModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MdButtonModule,
+    MdInputModule,
+    MdCheckboxModule,
+    MdListModule,
     RouterModule.forRoot(routes)
+  ],
+  entryComponents: [
+   DialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

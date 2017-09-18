@@ -9,6 +9,7 @@ import {MdButtonModule, MdCheckboxModule} from '@angular/material';
 import { MdCardModule } from '@angular/material';
 import {MdListModule} from '@angular/material';
 import {MdInputModule} from '@angular/material';
+
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +21,8 @@ import { DialogComponent } from './home/dialog/dialog.component';
 import { UniverseComponent } from './home/body/universe/universe.component';
 import { SummaryComponent } from './home/body/summary/summary.component';
 import { ProjectViewComponent } from './home/body/project-view/project-view.component';
+
+import { ProjectService } from './service/projectservice';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,7 @@ import { ProjectViewComponent } from './home/body/project-view/project-view.comp
   entryComponents: [
    DialogComponent
   ],
-  providers: [],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

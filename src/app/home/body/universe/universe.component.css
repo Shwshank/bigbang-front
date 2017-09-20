@@ -1,7 +1,9 @@
 .universe{
   max-height:78vh;
-  
+
 }
 #tree-container{
-
+  border: 0px;
+  background-color: white;
+  
 }

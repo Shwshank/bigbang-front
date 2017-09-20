@@ -1,10 +1,9 @@
-import { Router, ActivatedRoute } from '@angular/router';
-import { Http, Response } from '@angular/http';
-import { EventEmitter, Injectable, Output} from '@angular/core';
+import { EventEmitter, Injectable, } from '@angular/core';
 
 @Injectable()
 export class ProjectService {
 
-  emmitProjectSummary : EventEmitter<string> = new EventEmitter<string>();
+  emmitProjectSummary :  EventEmitter<any> = new EventEmitter<any>();
+  emmitInputData :  EventEmitter<any> = new EventEmitter<any>();        // emmits input JSON data from dialog to form component
 
 }

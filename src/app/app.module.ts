@@ -2,13 +2,41 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import {MdDialogModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {MdButtonModule, MdCheckboxModule} from '@angular/material';
-import { MdCardModule } from '@angular/material';
-import {MdListModule} from '@angular/material';
-import {MdInputModule} from '@angular/material';
+import {
+  MdAutocompleteModule,
+  MdButtonModule,
+  MdButtonToggleModule,
+  MdCardModule,
+  MdCheckboxModule,
+  MdChipsModule,
+  MdCoreModule,
+  MdDatepickerModule,
+  MdDialogModule,
+  MdExpansionModule,
+  MdGridListModule,
+  MdIconModule,
+  MdInputModule,
+  MdListModule,
+  MdMenuModule,
+  MdNativeDateModule,
+  MdPaginatorModule,
+  MdProgressBarModule,
+  MdProgressSpinnerModule,
+  MdRadioModule,
+  MdRippleModule,
+  MdSelectModule,
+  MdSidenavModule,
+  MdSliderModule,
+  MdSlideToggleModule,
+  MdSnackBarModule,
+  MdSortModule,
+  MdTableModule,
+  MdTabsModule,
+  MdToolbarModule,
+  MdTooltipModule, } from '@angular/material';
 
 import { routes } from './app.routes';
 import { AppComponent } from './app.component';
@@ -23,6 +51,12 @@ import { SummaryComponent } from './home/body/summary/summary.component';
 import { ProjectViewComponent } from './home/body/project-view/project-view.component';
 
 import { ProjectService } from './service/projectservice';
+import { DescriptionComponent } from './home/body/project-view/description/description.component';
+import { Graph1Component } from './home/body/project-view/description/graph1/graph1.component';
+import { Graph2Component } from './home/body/project-view/description/graph2/graph2.component';
+import { DescriptionContentComponent } from './home/body/project-view/description/description-content/description-content.component';
+import { InputOptionDialogComponent } from './home/body/project-view/description/input-option-dialog/input-option-dialog.component';
+import { DynamicFormComponent } from './home/body/project-view/dynamic-form/dynamic-form.component';
 
 @NgModule({
   declarations: [
@@ -35,22 +69,54 @@ import { ProjectService } from './service/projectservice';
     DialogComponent,
     UniverseComponent,
     SummaryComponent,
-    ProjectViewComponent
+    ProjectViewComponent,
+    DescriptionComponent,
+    Graph1Component,
+    Graph2Component,
+    DescriptionContentComponent,
+    InputOptionDialogComponent,
+    DynamicFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    MdDialogModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MdButtonModule,
-    MdInputModule,
+    MdAutocompleteModule,
+    MdButtonToggleModule,
+    MdCardModule,
     MdCheckboxModule,
+    MdChipsModule,
+    MdCoreModule,
+    MdDatepickerModule,
+    MdDialogModule,
+    MdExpansionModule,
+    MdGridListModule,
+    MdIconModule,
+    MdInputModule,
     MdListModule,
+    MdMenuModule,
+    MdNativeDateModule,
+    MdPaginatorModule,
+    MdProgressBarModule,
+    MdProgressSpinnerModule,
+    MdRadioModule,
+    MdRippleModule,
+    MdSelectModule,
+    MdSidenavModule,
+    MdSliderModule,
+    MdSlideToggleModule,
+    MdSnackBarModule,
+    MdSortModule,
+    MdTableModule,
+    MdTabsModule,
+    MdToolbarModule,
+    MdTooltipModule,
     RouterModule.forRoot(routes)
   ],
   entryComponents: [
-   DialogComponent
+   DialogComponent,
+   InputOptionDialogComponent
   ],
   providers: [ProjectService],
   bootstrap: [AppComponent]

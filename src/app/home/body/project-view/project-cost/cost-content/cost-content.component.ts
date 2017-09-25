@@ -5,28 +5,22 @@ import {InputOptionDialogComponent} from '../../input-option-dialog/input-option
 import { ProjectService } from '../../../../../service/projectservice';
 
 @Component({
-  selector: 'app-description-content',
-  templateUrl: './description-content.component.html',
-  styleUrls: ['./description-content.component.css']
+  selector: 'app-cost-content',
+  templateUrl: './cost-content.component.html',
+  styleUrls: ['./cost-content.component.css']
 })
-
-export class DescriptionContentComponent implements OnInit {
+export class CostContentComponent implements OnInit {
 
   dialogResult = "";
 
-  constructor(private projectService: ProjectService, public dialog: MdDialog) {}
+  constructor(private projectService: ProjectService, public dialog: MdDialog) { }
 
   ngOnInit() {
-
-    // this.projectService.emmitInputData.subscribe( (res)=> {
-    //   console.log(res);
-    // });
-
   }
 
   openDialog(type: any) {
     // console.log('tab = 1');
-    localStorage.setItem("tab", '1');
+    localStorage.setItem("tab", '2');
     const dialogRef = this.dialog.open(InputOptionDialogComponent, {
       height: '350px',
       width: '350px',

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectService } from '../../../../service/projectservice';
+import { ProjectService } from '../../../../../service/projectservice';
 
 @Component({
-  selector: 'app-dynamic-form',
-  templateUrl: './dynamic-form.component.html',
-  styleUrls: ['./dynamic-form.component.css']
+  selector: 'app-cost-dynamic-form',
+  templateUrl: './cost-dynamic-form.component.html',
+  styleUrls: ['./cost-dynamic-form.component.css']
 })
-export class DynamicFormComponent implements OnInit {
+export class CostDynamicFormComponent implements OnInit {
 
   flag1 : boolean= false;
   text : string='';
@@ -16,15 +16,14 @@ export class DynamicFormComponent implements OnInit {
   palceholder: string='123';
   inputArray: any =[];
 
-
-  constructor( private projectService: ProjectService ) {  }
+  constructor( private projectService: ProjectService ) {}
 
   ngOnInit() {
-    this.projectService.emmitInputData.subscribe( (res)=> {
-      // console.log(res);
+    this.projectService.emmitInputDataTab2.subscribe( (res)=> {
+       console.log(res);
       this.text = res.fieldName;
       this.type = res.type;
-      this.inputArray.push({'inputname':this.text, 'type':this.type, 'data':''});
+      this.inputArray.push({'text':this.text, 'type':this.type, 'data':''});
       console.log(this.inputArray);
       this.flag1 = true;
     });
@@ -38,4 +37,5 @@ export class DynamicFormComponent implements OnInit {
     console.log(pos);
     this.inputArray.splice(pos,1);
   }
+
 }

@@ -2,6 +2,7 @@
   margin-top: 0px !important;
   position: absolute;
   width: 99%;
+  overflow:hidden !important;
   /*height:78vh !important;*/
 }
 

@@ -1,0 +1,34 @@
+<h2 md-dialog-title>{{data}} Input</h2>
+<hr>
+<md-dialog-content>
+
+  &nbsp;<br>
+  &nbsp;<br>
+
+  <md-form-field class="example-full-width input-item ">
+    <input mdInput placeholder="Input Feild Name" type="text"  [(ngModel)]="fieldName" required>
+  </md-form-field>
+
+
+  <!-- <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+    Required to be feild everytime:
+    <input type="checkbox" id="switch-1" class="mdl-switch__input" checked>
+    <span class="mdl-switch__label"></span>
+  </label>
+
+  <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+    Visible to other users:
+    <input type="checkbox" id="switch-1" class="mdl-switch__input" >
+    <span class="mdl-switch__label"></span>
+  </label> -->
+  &nbsp;<br>
+  &nbsp;<br>
+  &nbsp;<br>
+  <!-- <strong>{{data}}</strong> -->
+</md-dialog-content>
+<hr>
+<md-dialog-actions>
+  <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="onCloseConfirm()">SUBMIT</button>
+
+  <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="onCloseCancel()">CANCEL</button>
+</md-dialog-actions>

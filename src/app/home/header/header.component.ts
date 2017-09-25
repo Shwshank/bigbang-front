@@ -8,13 +8,13 @@ import {DialogComponent} from '../dialog/dialog.component';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  
+
     dialogResult = "";
-    
+
     constructor(public dialog: MdDialog) {}
       ngOnInit() {
       }
-  
+
       openDialog() {
         const dialogRef = this.dialog.open(DialogComponent, {
           height: '350px',
@@ -25,6 +25,5 @@ export class HeaderComponent implements OnInit {
           console.log(`Dialog result: ${result}`);
           this.dialogResult = result;
         })
-    
     }
   }

@@ -1,0 +1,51 @@
+.formContainer {
+  width: 100%;
+  height:70vh;
+  text-align: center;
+}
+
+.input-item {
+  margin: auto;
+  padding-left:150px;
+  padding-right:150px;
+}
+.border-form{
+  border-bottom: 1px solid #E0DDDD;
+  width: 114%;
+  padding-top: 2%;
+}
+.button-add-field{
+  position: absolute;
+  top:110px;
+  right: 10px;
+  
+}
+@media only screen and (max-width: 1440px) {
+  .input-item {
+    padding-left:50px;
+    padding-right:50px;
+  }
+}
+@media only screen and (max-width: 1366px) {
+.input-item {
+padding-left: 113px;
+padding-right: 50px;
+}
+}
+@media only screen and (max-width: 1024px) {
+  .input-item {
+    padding-left:20px;
+    padding-right:20px;
+  }
+}
+@media only screen and (max-width: 414px) {
+
+.button-add-field {
+  position: absolute;
+  top: 272px;
+  right: 135px;
+}
+.border-form{
+ margin-top: 10%;
+}
+}

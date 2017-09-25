@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import './toggle.js';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',

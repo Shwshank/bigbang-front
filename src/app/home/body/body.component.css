@@ -1,0 +1,7 @@
+.tabView {
+  overflow: auto;
+  position: relative;
+
+  height:90vh !important;
+}
+

@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    localStorage.setItem('flag1','1'); // for universeComponent
+    localStorage.setItem('flag2','1'); // for ProjectTabComponent
   }
 
 }

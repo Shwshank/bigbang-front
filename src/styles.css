@@ -1,2 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/*@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/*universe graph starts here */
+
+	.node {
+    cursor: pointer;
+  }
+
+  .overlay{
+      background-color:#fff;
+  }
+
+  .node circle {
+    fill: #fff;
+    stroke: #5d42ce;
+    stroke-width: .2em;
+  }
+
+  .node text {
+    font-size:1.1em;
+		padding: 430px !important;
+    font-family:sans-serif;
+  }
+
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .additionalParentLink {
+    fill: none;
+    opacity: 0;
+    stroke: blue;
+    stroke-width: 1.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
+  /*universe graph endss here */

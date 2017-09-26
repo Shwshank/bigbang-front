@@ -15,9 +15,8 @@
   padding-top: 2%;
 }
 .button-add-field{
-  position: absolute;
-  top:110px;
-  right:40px;
+  float: right;
+  margin-top: -4%;
   
 }
 .wapper{
@@ -37,12 +36,20 @@
   padding-left: 122px;
   padding-right: 44px;
 }
+.button-add-field{
+  margin-top: -7%;
+  
+}
 
 }
 @media only screen and (max-width: 1024px) {
   .input-item {
-    padding-left: 64px;
-    padding-right: 20px;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  .button-add-field{
+    margin-top: -15%;
+    
   }
   .wapper {
     margin-top: 13%;
@@ -57,10 +64,9 @@
 @media only screen and (max-width: 414px) {
 
 .button-add-field {
-  margin-top: 15%;
+  margin-top: -48%;
 }
 .border-form{
  margin-top: 10%;
 }
 }
-

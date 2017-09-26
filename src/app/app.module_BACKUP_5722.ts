@@ -56,6 +56,7 @@ import { DescriptionComponent } from './home/body/project-view/description/descr
 import { Graph1Component } from './home/body/project-view/description/graph1/graph1.component';
 import { Graph2Component } from './home/body/project-view/description/graph2/graph2.component';
 import { DescriptionContentComponent } from './home/body/project-view/description/description-content/description-content.component';
+<<<<<<< HEAD
 import { InputOptionDialogComponent } from './home/body/project-view/input-option-dialog/input-option-dialog.component';
 import { DynamicFormComponent } from './home/body/project-view/description/dynamic-form/dynamic-form.component';
 import { ProjectCostComponent } from './home/body/project-view/project-cost/project-cost.component';
@@ -63,6 +64,11 @@ import { CostGraph1Component } from './home/body/project-view/project-cost/cost-
 import { CostGraph2Component } from './home/body/project-view/project-cost/cost-graph2/cost-graph2.component';
 import { CostDynamicFormComponent } from './home/body/project-view/project-cost/cost-dynamic-form/cost-dynamic-form.component';
 import { CostContentComponent } from './home/body/project-view/project-cost/cost-content/cost-content.component';
+=======
+import { InputOptionDialogComponent } from './home/body/project-view/description/input-option-dialog/input-option-dialog.component';
+import { DynamicFormComponent } from './home/body/project-view/dynamic-form/dynamic-form.component';
+import { MenuComponent } from './home/body/menu/menu.component';
+>>>>>>> 698a39363759279316ea1a42786487b546cb8589
 
 @NgModule({
   declarations: [
@@ -82,11 +88,15 @@ import { CostContentComponent } from './home/body/project-view/project-cost/cost
     DescriptionContentComponent,
     InputOptionDialogComponent,
     DynamicFormComponent,
+<<<<<<< HEAD
     ProjectCostComponent,
     CostGraph1Component,
     CostGraph2Component,
     CostDynamicFormComponent,
     CostContentComponent
+=======
+    MenuComponent,
+>>>>>>> 698a39363759279316ea1a42786487b546cb8589
   ],
   imports: [
     ChartsModule,

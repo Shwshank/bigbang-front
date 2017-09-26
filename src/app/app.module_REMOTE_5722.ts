@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { ChartsModule } from 'ng2-charts';
-
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdAutocompleteModule,
@@ -14,6 +12,7 @@ import {
   MdCardModule,
   MdCheckboxModule,
   MdChipsModule,
+  MdCoreModule,
   MdDatepickerModule,
   MdDialogModule,
   MdExpansionModule,
@@ -56,13 +55,9 @@ import { DescriptionComponent } from './home/body/project-view/description/descr
 import { Graph1Component } from './home/body/project-view/description/graph1/graph1.component';
 import { Graph2Component } from './home/body/project-view/description/graph2/graph2.component';
 import { DescriptionContentComponent } from './home/body/project-view/description/description-content/description-content.component';
-import { InputOptionDialogComponent } from './home/body/project-view/input-option-dialog/input-option-dialog.component';
-import { DynamicFormComponent } from './home/body/project-view/description/dynamic-form/dynamic-form.component';
-import { ProjectCostComponent } from './home/body/project-view/project-cost/project-cost.component';
-import { CostGraph1Component } from './home/body/project-view/project-cost/cost-graph1/cost-graph1.component';
-import { CostGraph2Component } from './home/body/project-view/project-cost/cost-graph2/cost-graph2.component';
-import { CostDynamicFormComponent } from './home/body/project-view/project-cost/cost-dynamic-form/cost-dynamic-form.component';
-import { CostContentComponent } from './home/body/project-view/project-cost/cost-content/cost-content.component';
+import { InputOptionDialogComponent } from './home/body/project-view/description/input-option-dialog/input-option-dialog.component';
+import { DynamicFormComponent } from './home/body/project-view/dynamic-form/dynamic-form.component';
+import { MenuComponent } from './home/body/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -82,14 +77,9 @@ import { CostContentComponent } from './home/body/project-view/project-cost/cost
     DescriptionContentComponent,
     InputOptionDialogComponent,
     DynamicFormComponent,
-    ProjectCostComponent,
-    CostGraph1Component,
-    CostGraph2Component,
-    CostDynamicFormComponent,
-    CostContentComponent
+    MenuComponent,
   ],
   imports: [
-    ChartsModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
@@ -99,6 +89,7 @@ import { CostContentComponent } from './home/body/project-view/project-cost/cost
     MdCardModule,
     MdCheckboxModule,
     MdChipsModule,
+    MdCoreModule,
     MdDatepickerModule,
     MdDialogModule,
     MdExpansionModule,

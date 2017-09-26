@@ -1,13 +1,17 @@
 <div *ngIf="flag1" >
 
   <div *ngFor="let ia of inputArray;  let index = index">
+  
 
-    <md-form-field class="example-full-width input-item   " >
+    <md-form-field class="example-full-width input-item" >
       <input mdInput placeholder={{ia.text}} type={{ia.type}} [(ngModel)]="ia.data"  >
     </md-form-field>
+    
 
     <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="Cancel(index)">X</button>
-
+     
+  
   </div>
 
 </div>
+<button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect save-button" >Save</button>

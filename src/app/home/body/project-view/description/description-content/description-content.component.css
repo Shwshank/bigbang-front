@@ -6,6 +6,67 @@
 
 .input-item {
   margin: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left:150px;
+  padding-right:150px;
+}
+.border-form{
+  border-bottom: 1px solid #E0DDDD;
+  width: 114%;
+  padding-top: 2%;
+}
+.button-add-field{
+  float: right;
+  margin-top: -4%;
+  
+}
+.wapper{
+  margin-top:6%;
+}
+@media only screen and (max-width: 1440px) {
+  .input-item {
+    padding-left:50px;
+    padding-right:50px;
+  }
+  .wapper {
+    margin-top: 10%;
+}
+}
+@media only screen and (max-width: 1366px) {
+.input-item {
+  padding-left: 122px;
+  padding-right: 44px;
+}
+.button-add-field{
+  margin-top: -7%;
+  
+}
+
+}
+@media only screen and (max-width: 1024px) {
+  .input-item {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+  .button-add-field{
+    margin-top: -15%;
+    
+  }
+  .wapper {
+    margin-top: 13%;
+}
+}
+@media only screen and (max-width: 768px) {
+  .button-add-field {
+     margin-top: 10%;
+     margin-right: 2%;
+  }
+}
+@media only screen and (max-width: 414px) {
+
+.button-add-field {
+  margin-top: -48%;
+}
+.border-form{
+ margin-top: 10%;
+}
 }

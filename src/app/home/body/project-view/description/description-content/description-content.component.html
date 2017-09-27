@@ -1,29 +1,29 @@
 <div class="formContainer">
-
-  <div class="wapper">
-
-    <md-form-field class="example-full-width input-item">
-      <input mdInput placeholder="Favorite food" value="Sushi">
-    </md-form-field>
-
-
-    <md-form-field class="example-full-width input-item">
-      <input mdInput placeholder="Favorite Project" type="text" value="1">
-    </md-form-field>
-
-  <button md-button [mdMenuTriggerFor]="menu" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-    <i class="material-icons">add</i> Add  Field
-  </button>
-
-  <md-menu #menu="mdMenu">
-    <button md-menu-item (click)="openDialog('text')">Add Text </button>
-    <button md-menu-item (click)="openDialog('number')">Add Number</button>
-    <button md-menu-item (click)="openDialog('date')"> Date Input</button>
-    <button md-menu-item (click)="openDialog('email')">Email Input</button>
-  </md-menu>
-
-  <hr>
-
-  <app-dynamic-form></app-dynamic-form>
-
-</div>
+  
+    <div class="wapper">
+  
+      <md-form-field class="example-full-width input-item">
+        <input mdInput placeholder="Favorite food" value="Sushi">
+      </md-form-field>
+  
+  
+      <md-form-field class="example-full-width input-item">
+        <input mdInput placeholder="Favorite Project" type="text" value="1">
+      </md-form-field>
+  
+    <button md-button [mdMenuTriggerFor]="menu" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect button-add-field">
+      <i class="material-icons">add</i> Add  Field
+    </button>
+  
+    <md-menu #menu="mdMenu">
+      <button md-menu-item (click)="openDialog('text')">Add Text </button>
+      <button md-menu-item (click)="openDialog('number')">Add Number</button>
+      <button md-menu-item (click)="openDialog('date')"> Date Input</button>
+      <button md-menu-item (click)="openDialog('email')">Email Input</button>
+    </md-menu>
+  
+    <hr>
+  
+    <app-dynamic-form></app-dynamic-form>
+  
+  </div>

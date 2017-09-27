@@ -13,3 +13,8 @@ min-height:78vh;
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+.menu_container{
+  width: 99%;
+  height: 600px;
+  overflow-y: auto;
+}

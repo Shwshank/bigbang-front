@@ -20,7 +20,7 @@ export class CostContentComponent implements OnInit {
 
   openDialog(type: any) {
     // console.log('tab = 1');
-    localStorage.setItem("tab", '2');
+    // localStorage.setItem("tab", '2');
     const dialogRef = this.dialog.open(InputOptionDialogComponent, {
       height: '350px',
       width: '350px',

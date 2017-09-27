@@ -11,4 +11,10 @@ export class ProjectService {
   emmitInputDataTab4 :  EventEmitter<any> = new EventEmitter<any>();
   emmitInputDataTab5 :  EventEmitter<any> = new EventEmitter<any>();
 
+  emmitTab1Clicked : EventEmitter<any> = new EventEmitter<any>();
+  emmitTab2Clicked : EventEmitter<any> = new EventEmitter<any>();
+  emmitTab3Clicked : EventEmitter<any> = new EventEmitter<any>();
+  emmitTab4Clicked : EventEmitter<any> = new EventEmitter<any>();
+  emmitTab5Clicked : EventEmitter<any> = new EventEmitter<any>();
+
 }

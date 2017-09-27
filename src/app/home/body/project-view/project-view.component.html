@@ -1,13 +1,15 @@
 <div class="tabView ">
 
-  <md-tab-group>
+  <md-tab-group (selectChange)="onLinkClick($event)">
 
-      <md-tab label="Tab 1">
+      <md-tab label="Tab 1" >
         <app-description></app-description>
       </md-tab>
+
       <md-tab label="Tab 2">
         <app-project-cost></app-project-cost>
       </md-tab>
+
       <md-tab label="Tab 3">Content 3</md-tab>
       <md-tab label="Tab 4">Content 4</md-tab>
 

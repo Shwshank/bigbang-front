@@ -26,7 +26,7 @@ export class DescriptionContentComponent implements OnInit {
 
   openDialog(type: any) {
     // console.log('tab = 1');
-    localStorage.setItem("tab", '1');
+    // localStorage.setItem("tab", '1');
     const dialogRef = this.dialog.open(InputOptionDialogComponent, {
       height: '350px',
       width: '350px',

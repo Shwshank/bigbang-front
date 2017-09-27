@@ -63,6 +63,7 @@ import { CostGraph1Component } from './home/body/project-view/project-cost/cost-
 import { CostGraph2Component } from './home/body/project-view/project-cost/cost-graph2/cost-graph2.component';
 import { CostDynamicFormComponent } from './home/body/project-view/project-cost/cost-dynamic-form/cost-dynamic-form.component';
 import { CostContentComponent } from './home/body/project-view/project-cost/cost-content/cost-content.component';
+import { ProjectSummaryComponent } from './home/body/project-summary/project-summary.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { CostContentComponent } from './home/body/project-view/project-cost/cost
     CostGraph1Component,
     CostGraph2Component,
     CostDynamicFormComponent,
-    CostContentComponent
+    CostContentComponent,
+    ProjectSummaryComponent
   ],
   imports: [
     ChartsModule,

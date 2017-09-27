@@ -29,7 +29,7 @@ $( document ).ready(function() {
 
       var elem = document.getElementById('con1');
 
-      var viewerWidth = $( window ).width() * 0.62;
+      var viewerWidth = $( window ).width() ;
       var viewerHeight = $( window ).height()/1.5 ;
 
       var tree = d3.layout.tree()

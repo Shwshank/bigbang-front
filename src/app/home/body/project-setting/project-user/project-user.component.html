@@ -1,0 +1,68 @@
+<div  class="fullContainer" >
+
+
+      <md-card class="fullContainer">
+        <md-card-title>
+          New User
+        </md-card-title>
+
+        <md-card-subtitle>
+            Add new user for a project
+        </md-card-subtitle>
+
+        <md-card-content>
+
+          <md-form-field class="example-full-width">
+            <input mdInput placeholder=" First Name" [(ngModel)]='fname' value="">
+          </md-form-field>
+
+          <md-form-field class="example-full-width">
+            <input mdInput placeholder=" Last Name" [(ngModel)]='lname' value="">
+          </md-form-field>
+
+        </md-card-content>
+
+        <md-card-content>
+
+          <md-form-field class="example-full-width">
+            <input mdInput placeholder=" User email" [(ngModel)]='email' value="">
+          </md-form-field>
+
+        </md-card-content>
+
+        <md-card-subtitle>
+          Permissions
+        </md-card-subtitle>
+
+        <!-- <md-card-content>
+          <md-slide-toggle [(ngModel)]="permission1">Add Project</md-slide-toggle>
+        </md-card-content> -->
+
+        <md-card-content>
+          <md-slide-toggle [(ngModel)]="permission1">Add Sub-project</md-slide-toggle>
+        </md-card-content>
+
+        <md-card-content>
+          <md-slide-toggle  [(ngModel)]="permission2">View Project</md-slide-toggle>
+        </md-card-content>
+
+        <md-card-content>
+          <md-slide-toggle  [(ngModel)]="permission3">Edit Project</md-slide-toggle>
+        </md-card-content>
+
+        <md-card-content>
+          <md-slide-toggle  [(ngModel)]="permission4">Delete Project</md-slide-toggle>
+        </md-card-content>
+
+        <md-card-content>
+          <md-slide-toggle  [(ngModel)]="permission5">Add New User</md-slide-toggle>
+        </md-card-content>
+
+        <button class="mdl-button mdl-js-button   mdl-button--colored mdl-js-ripple-effect" (click)='saveUser()' >
+          Save
+        </button>
+
+      </md-card>
+
+
+</div>

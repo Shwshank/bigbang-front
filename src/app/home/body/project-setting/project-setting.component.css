@@ -1,0 +1,10 @@
+.fullContainer{
+  width: 99%;
+  height: 99%;
+  /*background-color: yellow;*/
+  border: 1px solid white;
+}
+
+md-card-title{
+  /*background-color: rgb(213, 213, 213);*/
+ }

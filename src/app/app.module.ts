@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { ChartsModule } from 'ng2-charts';
@@ -52,6 +53,7 @@ import { SummaryComponent } from './home/body/summary/summary.component';
 import { ProjectViewComponent } from './home/body/project-view/project-view.component';
 
 import { ProjectService } from './service/projectservice';
+import { APIService } from './service/APIservice';
 import { DescriptionComponent } from './home/body/project-view/description/description.component';
 import { Graph1Component } from './home/body/project-view/description/graph1/graph1.component';
 import { Graph2Component } from './home/body/project-view/description/graph2/graph2.component';
@@ -64,6 +66,10 @@ import { CostGraph2Component } from './home/body/project-view/project-cost/cost-
 import { CostDynamicFormComponent } from './home/body/project-view/project-cost/cost-dynamic-form/cost-dynamic-form.component';
 import { CostContentComponent } from './home/body/project-view/project-cost/cost-content/cost-content.component';
 import { ProjectSummaryComponent } from './home/body/project-summary/project-summary.component';
+import { ProjectSettingComponent } from './home/body/project-setting/project-setting.component';
+import { NewProjectComponent } from './home/body/project-setting/new-project/new-project.component';
+import { AllProjectComponent } from './home/body/project-setting/all-project/all-project.component';
+import { ProjectUserComponent } from './home/body/project-setting/project-user/project-user.component';
 
 @NgModule({
   declarations: [
@@ -88,9 +94,14 @@ import { ProjectSummaryComponent } from './home/body/project-summary/project-sum
     CostGraph2Component,
     CostDynamicFormComponent,
     CostContentComponent,
-    ProjectSummaryComponent
+    ProjectSummaryComponent,
+    ProjectSettingComponent,
+    NewProjectComponent,
+    AllProjectComponent,
+    ProjectUserComponent
   ],
   imports: [
+    HttpModule,
     ChartsModule,
     BrowserModule,
     FormsModule,
@@ -131,7 +142,7 @@ import { ProjectSummaryComponent } from './home/body/project-summary/project-sum
    DialogComponent,
    InputOptionDialogComponent
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, APIService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

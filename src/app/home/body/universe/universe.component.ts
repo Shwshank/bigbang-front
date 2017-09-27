@@ -37,6 +37,10 @@ export class UniverseComponent implements OnInit {
 
   }
 
+  ngOnDestroy() {
+    localStorage.setItem('flag1','0');           // 'flag1 = 0' will refresh the uservise component
+  }
+
   emitProjectEvent() {
     if(this.temp != (<any>window).val) {
       this.temp = (<any>window).val;

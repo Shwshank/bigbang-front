@@ -25,10 +25,20 @@ export class SummaryComponent implements OnInit {
   viewProjectDetails(){
     this.router.navigate(['home/projectView'],
          {queryParams: {projectName: this.projectSummary.name}});
+
   }
 
   viewProjectSummary() {
     this.router.navigate(['home/projectSummary'],
+         {queryParams: {projectName: this.projectSummary.name}});
+  }
+
+  viewUniverse() {
+    this.router.navigate(['home/']);
+  }
+
+  projectSetting() {
+    this.router.navigate(['home/projectSetting'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 

@@ -6,6 +6,7 @@ import { ProjectViewComponent } from './home/body/project-view/project-view.comp
 import { SummaryComponent } from './home/body/summary/summary.component';
 import { ProjectSummaryComponent } from './home/body/project-summary/project-summary.component';
 import { UniverseComponent } from './home/body/universe/universe.component';
+import { ProjectSettingComponent } from './home/body/project-setting/project-setting.component';
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -32,6 +33,11 @@ export const routes: Routes = [
         path: 'projectSummary',
         component: ProjectSummaryComponent
       },
+      {
+        path: 'projectSetting',
+        component: ProjectSettingComponent
+      },
+
 
     ]},
   { path: '**', component: LoginComponent }

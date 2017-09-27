@@ -1,5 +1,5 @@
 <div class="summary">
-  
+
   <div class="demo-card-wide">
     <div class="mdl-card__title">
       <h2 class="mdl-card__title-text">{{projectSummary.name}}</h2>
@@ -12,6 +12,13 @@
     </div>
 
     <div class="menu_container" >
+
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewUniverse()" >
+          Universe
+        </a>
+      </div>
+
       <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectDetails()" >
           Project Details
@@ -23,6 +30,38 @@
           Project Summary
         </a>
       </div>
+
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+          Costing
+        </a>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+          Timeline
+        </a>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+          Vendors
+        </a>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+          Files
+        </a>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
+          Project Setting
+        </a>
+      </div>
+
+
     </div>
 
   </div>

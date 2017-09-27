@@ -1,0 +1,35 @@
+<div  class="fullContainer" >
+
+  <main class="mdl-grid ">
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder="New Project Name" value="">
+      </md-form-field>
+    </div>
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder=" Project Description" value="">
+      </md-form-field>
+    </div>
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+      <md-select class="example-full-width" placeholder="Project User">
+        <md-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </md-option>
+      </md-select>
+    </div>
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+      <md-select class="example-full-width" placeholder="View User">
+        <md-option *ngFor="let food of foods" [value]="food.value">
+          {{ food.viewValue }}
+        </md-option>
+      </md-select>
+    </div>
+
+  </main>
+
+</div>

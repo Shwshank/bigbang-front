@@ -15,6 +15,15 @@
   right:10px;
 }
 
+.expansion-btn.active {
+transform: rotate(-45deg);
+transition: all 500ms ease-in-out;
+}
+.expansion-btn.inactive {
+  transform: rotate(45deg);
+  transition: all 500ms ease-in-out;
+  }
+  
 
 @media only screen and (max-width:500px) {
   .expansion-btn{

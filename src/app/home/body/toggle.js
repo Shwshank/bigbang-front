@@ -29,16 +29,19 @@
 */
 
 $(document).ready(function(){
-    $("button.expansion-btn").click(function (){
+    $(".expansion-btn").click(function (){
         classes = this.className;
         var divNumber = classes.slice(-1);
-        var toGetId = "#div-"+divNumber;
+        var toGetId = "#exp-div";
         if ($(toGetId).hasClass("expanded-div")){
-         $(".normal-div").removeClass("compressed-div expanded-div");
+         $(".normal-div").removeClass("compressed-div expanded-div"); 
+         $(".expansion-btn").removeClass("active");
         }
         else{
          $(".normal-div").removeClass("compressed-div expanded-div").addClass("compressed-div");;
-         $(toGetId).removeClass("compressed-div").addClass("expanded-div");    
+         $(toGetId).removeClass("compressed-div expansion-btn").addClass("expanded-div");
+             $(".expansion-btn").addClass("active"); 
+           
         }  
       });
 });

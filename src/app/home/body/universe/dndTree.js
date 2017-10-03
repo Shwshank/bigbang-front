@@ -162,6 +162,10 @@ $( document ).ready(function() {
           .attr("height", viewerHeight)
           .attr("class", "overlay")
           .call(zoomListener);
+       
+       
+       
+         
 
       // Helper functions for collapsing and expanding nodes.
 
@@ -172,6 +176,7 @@ $( document ).ready(function() {
               d.children = null;
           }
       }
+      
 
       function expand(d) {
           if (d._children) {

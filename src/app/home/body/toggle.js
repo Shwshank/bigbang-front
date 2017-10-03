@@ -36,11 +36,15 @@ $(document).ready(function(){
         if ($(toGetId).hasClass("expanded-div")){
          $(".normal-div").removeClass("compressed-div expanded-div"); 
          $(".expansion-btn").removeClass("active");
+         $(".arrow-back").removeClass("active");
+         $(".close").removeClass("active");
         }
         else{
          $(".normal-div").removeClass("compressed-div expanded-div").addClass("compressed-div");;
          $(toGetId).removeClass("compressed-div expansion-btn").addClass("expanded-div");
              $(".expansion-btn").addClass("active"); 
+             $(".arrow-back").addClass("active");
+             $(".close").addClass("active");
            
         }  
       });

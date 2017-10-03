@@ -1,5 +1,6 @@
 .summary{
 min-height:78vh;
+background: url('https://i.ytimg.com/vi/hPCotoawhk0/maxresdefault.jpg') center / cover;
 }
 .demo-card-wide.mdl-card {
   width: 100%;
@@ -13,6 +14,16 @@ min-height:78vh;
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
+.mdl-card__actions.mdl-card--border {
+  border-top: 0px solid rgba(0,0,0,.1);
+}
+.mdl-button.mdl-button--colored {
+  color: #3C4858;
+}
+.mdl-card__supporting-text {
+  color: #3C4858;
+}
+
 .menu_container{
   width: 99%;
   height: 600px;

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../../../../service/APIservice';
+
 
 @Component({
   selector: 'app-new-project',
@@ -7,15 +9,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewProjectComponent implements OnInit {
 
-  foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
+  pname: any = '';
+  pdesc: any = '';
+  uid : any = 'cc558080c0464685a64b7a82f22ea5b2';
+  permission1: any = false;
+  permission2: any = false;
+  permission3: any = false;
+  permission4: any = false;
+  permission5: any = false;
+  pid : any = '4e8a629489544d7bbc6925f8236305a7';
+
+
+  child_users = [
+    {value: '34ec653f7d254114827c283900266984', viewValue: 'User 1'},
+    {value: '34ec653f7d254114827c283900266984', viewValue: 'User 2'},
+    {value: '34ec653f7d254114827c283900266984', viewValue: 'User 3'}
   ];
 
-  constructor() { }
+  constructor(private APIService: APIService) { }
 
   ngOnInit() {
+  }
+
+  saveProject() {
+
+        this.APIService.AddSubProject( this.pname, this.pdesc, this.uid, this.pid, this.permission1, this.permission2, this.permission3, this.permission4, this.permission5)
+        .subscribe((res)=>{
+          console.log(res);
+        }, (err) => {
+          console.log(err);
+        });
   }
 
 }

@@ -70,6 +70,7 @@ import { ProjectSettingComponent } from './home/body/project-setting/project-set
 import { NewProjectComponent } from './home/body/project-setting/new-project/new-project.component';
 import { AllProjectComponent } from './home/body/project-setting/all-project/all-project.component';
 import { ProjectUserComponent } from './home/body/project-setting/project-user/project-user.component';
+import { AssignProjectComponent } from './home/body/project-setting/assign-project/assign-project.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { ProjectUserComponent } from './home/body/project-setting/project-user/p
     ProjectSettingComponent,
     NewProjectComponent,
     AllProjectComponent,
-    ProjectUserComponent
+    ProjectUserComponent,
+    AssignProjectComponent
   ],
   imports: [
     HttpModule,

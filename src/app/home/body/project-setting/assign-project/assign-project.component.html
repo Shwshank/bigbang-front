@@ -1,0 +1,63 @@
+<div  class="fullContainer" >
+
+  <main class="mdl-grid ">
+    <h4> Assign a project to user</h4>
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+
+        <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+          <md-select class="example-full-width" placeholder=" User"  [(ngModel)]="user_id" (change)="userSelected()">
+            <md-option *ngFor="let user of child_users" [value]="user.self" >
+              {{ user.user_name }}
+            </md-option>
+          </md-select>
+        </div>
+
+        <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+          <md-select class="example-full-width" placeholder="Projects" [(ngModel)]="project_id" (change)="projectSelected()">
+            <md-option *ngFor="let project of projects" [value]="project.project_id"  >
+              {{ project.project_name }}
+            </md-option>
+          </md-select>
+        </div>
+
+    </div>
+
+
+
+    <md-card-subtitle  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      Permissions
+    </md-card-subtitle>
+
+    <!-- <md-card-content>
+      <md-slide-toggle [(ngModel)]="permission1">Add Project</md-slide-toggle>
+    </md-card-content> -->
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle [(ngModel)]="permission1" [disabled]="disabled1" >Add Sub-project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission2" [disabled]="disabled2" >View Project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission3" [disabled]="disabled3" >Edit Project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission4" [disabled]="disabled4" >Delete Project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission5"  [disabled]="disabled5" >Add New User</md-slide-toggle>
+    </md-card-content>
+
+    <button class="mdl-button mdl-js-button   mdl-button--colored mdl-js-ripple-effect" (click)='assignProject2User()' >
+      Save
+    </button>
+
+
+  </main>
+
+</div>

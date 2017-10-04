@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SummaryGraph1Component } from './summary-graph1.component';
+import { AssignProjectComponent } from './assign-project.component';
 
-describe('SummaryGraph1Component', () => {
-  let component: SummaryGraph1Component;
-  let fixture: ComponentFixture<SummaryGraph1Component>;
+describe('AssignProjectComponent', () => {
+  let component: AssignProjectComponent;
+  let fixture: ComponentFixture<AssignProjectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SummaryGraph1Component ]
+      declarations: [ AssignProjectComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SummaryGraph1Component);
+    fixture = TestBed.createComponent(AssignProjectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

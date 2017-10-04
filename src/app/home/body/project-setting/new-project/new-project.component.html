@@ -1,34 +1,67 @@
 <div  class="fullContainer" >
 
   <main class="mdl-grid ">
-
-    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+    <h4> Initialize a sub project </h4>
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
       <md-form-field class="example-full-width">
-        <input mdInput placeholder="New Project Name" value="">
+        <input mdInput placeholder="New Project Name" value="" [(ngModel)]="pname">
+      </md-form-field>
+      &nbsp;
+      <md-form-field class="example-full-width">
+        <input mdInput placeholder=" Project Description" value="" [(ngModel)]="pdesc">
       </md-form-field>
     </div>
 
-    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
-      <md-form-field class="example-full-width">
-        <input mdInput placeholder=" Project Description" value="">
-      </md-form-field>
-    </div>
-
-    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+    <!-- <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
       <md-select class="example-full-width" placeholder="Project User">
-        <md-option *ngFor="let food of foods" [value]="food.value">
+        <md-option *ngFor="let food of foods" [value]="child_users.value" [(ngModel)]="child_user">
           {{ food.viewValue }}
         </md-option>
       </md-select>
-    </div>
-
+    </div> -->
+<!--
     <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
       <md-select class="example-full-width" placeholder="View User">
         <md-option *ngFor="let food of foods" [value]="food.value">
           {{ food.viewValue }}
         </md-option>
       </md-select>
-    </div>
+    </div> -->
+
+
+
+    <md-card-subtitle  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      Permissions
+    </md-card-subtitle>
+
+    <!-- <md-card-content>
+      <md-slide-toggle [(ngModel)]="permission1">Add Project</md-slide-toggle>
+    </md-card-content> -->
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle [(ngModel)]="permission1">Add Sub-project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission2">View Project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission3">Edit Project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission4">Delete Project</md-slide-toggle>
+    </md-card-content>
+
+    <md-card-content  class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid">
+      <md-slide-toggle  [(ngModel)]="permission5">Assign User</md-slide-toggle>
+    </md-card-content>
+
+    <button class="mdl-button mdl-js-button   mdl-button--colored mdl-js-ripple-effect" (click)='saveProject()' >
+      Save
+    </button>
+
 
   </main>
 

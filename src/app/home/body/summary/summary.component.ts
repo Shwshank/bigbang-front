@@ -10,15 +10,27 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class SummaryComponent implements OnInit {
 
   projectSummary : any;
+  project_data : any;
+  project_desc : any;
+  project_id : any;
 
   constructor(private projectService: ProjectService, private router: Router) {
-    this.projectSummary = { 'name': 'Initial Project' }
+    this.project_data = localStorage.getItem('project_data');
+    this.project_data = JSON.parse(this.project_data);
+
+    console.log(this.project_data);
+
+    this.projectSummary = { 'name': this.project_data.project_name };
+    this.project_desc = this.project_data.pdesc;
+    this.project_id = this.project_data.project_id;
   }
 
   ngOnInit() {
     this.projectService.emmitProjectSummary.subscribe( (res)=>{
-      console.log(res);
-      this.projectSummary = res;
+       console.log(res);
+       console.log(res.project_id);
+       this.projectSummary = res;
+       this.project_desc = res.pdesc;
     });
   }
 

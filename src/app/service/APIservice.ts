@@ -32,4 +32,14 @@ export class APIService {
 
     return this.http.post(this.projectURL+'/assignuser', '{"upid": "'+upid+'", "ucid": "'+ucid+'","pid": "'+pid+'","addsp": "'+addsp+'","viewp": "'+viewp+'","editp": "'+editp+'","deletep": "'+deletep+'","assignu": "'+assignu+'"}').map(res=>res.json());
   }
+
+  LoginUser(email: any, pwd:any) {
+
+    return this.http.post(this.projectURL+'/login', '{"email": "'+email+'", "pwd": "'+pwd+'"}').map(res=>res.json());
+  }
+
+  GetUniverse(pid: any) {
+
+    return this.http.post(this.projectURL+'/getproject', '{"pid":"'+pid+'"}');
+  }
 }

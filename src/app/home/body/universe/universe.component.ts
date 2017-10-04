@@ -34,7 +34,6 @@ export class UniverseComponent implements OnInit {
   temp : any = (<any>window).val;
 
   ngOnInit() {
-
   }
 
   ngOnDestroy() {

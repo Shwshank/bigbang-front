@@ -41,6 +41,7 @@ import {
   MdTooltipModule, } from '@angular/material';
 
 import { routes } from './app.routes';
+import { AuthGuard } from './service/AuthGuard';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
@@ -71,6 +72,7 @@ import { NewProjectComponent } from './home/body/project-setting/new-project/new
 import { AllProjectComponent } from './home/body/project-setting/all-project/all-project.component';
 import { ProjectUserComponent } from './home/body/project-setting/project-user/project-user.component';
 import { AssignProjectComponent } from './home/body/project-setting/assign-project/assign-project.component';
+import { AllProjectsComponent } from './all-projects/all-projects.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +102,8 @@ import { AssignProjectComponent } from './home/body/project-setting/assign-proje
     NewProjectComponent,
     AllProjectComponent,
     ProjectUserComponent,
-    AssignProjectComponent
+    AssignProjectComponent,
+    AllProjectsComponent
   ],
   imports: [
     HttpModule,
@@ -144,7 +147,7 @@ import { AssignProjectComponent } from './home/body/project-setting/assign-proje
    DialogComponent,
    InputOptionDialogComponent
   ],
-  providers: [ProjectService, APIService],
+  providers: [ProjectService, APIService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

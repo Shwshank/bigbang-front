@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<main class="mdl-grid ">
+
+  <div class="mdl-color--white mdl-shadow--0dp  mdl-cell--12-col  tabView" >
+
+    <div *ngFor="let project of projects" class="mdl-color--white mdl-shadow--2dp  mdl-cell--4-col projectCard" >
+      <h3>  {{project.project_name}} </h3>
+      <button (click)="body(project.project_id)" >Details</button>
+    </div>
+
+  </div>
+
+</main>
+
+
+<app-footer></app-footer>

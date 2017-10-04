@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../../service/projectservice';
 import { Router, ActivatedRoute } from '@angular/router';
+import './active.js';
 
 @Component({
   selector: 'app-summary',

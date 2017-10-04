@@ -1,4 +1,5 @@
-<div class="summary" >
+<div class="bg"></div>
+<div class="summary">
 
   <div class="demo-card-wide">
     <div class="mdl-card__title">
@@ -13,7 +14,7 @@
 
     <div class="menu_container" >
 
-      <div class="mdl-card__actions mdl-card--border">
+      <div class="mdl-card__actions mdl-card--border active">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect " (click)="viewUniverse()" >
           Universe
         </a>
@@ -42,6 +43,13 @@
           Timeline
         </a>
       </div>
+      <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
+            Milestones
+          </a>
+        </div>
+
+
 
       <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
@@ -60,10 +68,9 @@
           Project Setting
         </a>
       </div>
-
-
+     
     </div>
 
   </div>
-
 </div>
+

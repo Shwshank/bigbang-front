@@ -4,30 +4,12 @@
 }
 #tree-container{
   border: 0px;
-  margin-top: 10%;
+  
   background-color: white;
   width:20%;
   
 }
-.expansion-btn{
-  position:absolute;
-  top:10px;
-  right:10px;
-}
-.arrow-back{
-  display: none;
-}
-.arrow-back.active{
-  display:block;
-}
 
-.close.active{
-  display:none;
-}
-.expansion-btn.active {
-/*  transform: rotate(-45deg);*/
-transition: all 500ms ease-in-out;
-}
 .link line {
   stroke: #696969;
 }
@@ -84,8 +66,3 @@ path.link {
 
 
 
-@media only screen and (max-width:500px) {
-  .expansion-btn{
-    display:none;
-  }
-}

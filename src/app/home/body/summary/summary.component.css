@@ -1,15 +1,39 @@
 .summary{
 min-height:78vh;
-background: url('https://i.ytimg.com/vi/hPCotoawhk0/maxresdefault.jpg') center / cover;
+top:0;
+position: absolute;
+overflow: hidden;
+
 }
+.bg{
+  background: url('http://demos.creative-tim.com/material-dashboard/assets/img/sidebar-1.jpg') center / cover;
+  opacity: 0.1;
+  min-height:90vh;
+}
+.mdl-card__actions a {
+  width:82%;
+  margin-left:4%;
+  text-align: left;
+  overflow: hidden;
+  font-size: 15px;
+  text-transform: capitalize;
+}
+
+.mdl-card__actions.active a {
+  background-color: rgb(255,64,129);
+  color: #fff;
+  box-shadow: 0 12px 20px -10px rgba(255,64,129, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255,64,129, 0.2);
+}
+
 .demo-card-wide.mdl-card {
   width: 100%;
+  opacity: 1;
   border: 4px solid pink;
 }
 .demo-card-wide > .mdl-card__title {
   color: #fff;
   height: 176px;
-  background: url('https://getmdl.io/assets/demos/welcome_card.jpg') center / cover;
+  background: url('https://geekydementia.files.wordpress.com/2014/11/os_x_lynx-2560x1600.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
@@ -26,6 +50,16 @@ background: url('https://i.ytimg.com/vi/hPCotoawhk0/maxresdefault.jpg') center /
 
 .menu_container{
   width: 99%;
-  height: 600px;
+  height: 500px;
   overflow-y: auto;
+}
+
+@media only screen and (max-width:500px) {
+.bg{
+  display:none;
+}
+.summary{
+  position: relative;
+  
+  }
 }

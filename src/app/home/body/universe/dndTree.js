@@ -41,8 +41,8 @@ $( document ).ready(function() {
 
       var elem = document.getElementById('con1');
 
-      var viewerWidth = $( window ).width() ;
-      var viewerHeight = $( window ).height()/1.5 ;
+      var viewerWidth = $( window ).width();
+      var viewerHeight = $( window ).height();
 
       var tree = d3.layout.tree()
           .size([viewerHeight, viewerWidth]);
@@ -174,6 +174,10 @@ $( document ).ready(function() {
           .attr("height", viewerHeight)
           .attr("class", "overlay")
           .call(zoomListener);
+       
+       
+       
+         
 
       // Helper functions for collapsing and expanding nodes.
 
@@ -184,6 +188,7 @@ $( document ).ready(function() {
               d.children = null;
           }
       }
+      
 
       function expand(d) {
           if (d._children) {

@@ -1,14 +1,27 @@
 <main class="mdl-grid ">
 
+
+  <!--<div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--4-col mdl-grid">
+    <div id="menu">
+      <app-summary></app-summary>
+    </div>
+  </div>-->
+
   <div class="container">
 
+
     <div class="normal-div" id="exp-div">
-      <div class="mdl-color--white mdl-shadow--2dp  tabView" >
-       <router-outlet></router-outlet>
+      <div class="mdl-color--white mdl-shadow--2dp  tabView">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored expansion-btn ">
+          <i class="material-icons close">close</i>
+          <i class="material-icons arrow-back">arrow_back</i>
+        </button>
+        <br>
+        <br>
+        <router-outlet></router-outlet>
       </div>
     </div>
-
-    <div class="normal-div-1" >
+    <div class="normal-div-1">
       <div class="mdl-color--white mdl-shadow--2dp tabView">
         <app-summary></app-summary>
       </div>

@@ -1,3 +1,4 @@
+<div class="bg"></div>
 <div class="summary">
 
   <div class="demo-card-wide">
@@ -5,33 +6,33 @@
       <h2 class="mdl-card__title-text">{{projectSummary.name}}</h2>
     </div>
     <div class="mdl-card__supporting-text">
-
+      This is the temp. description of the project that is selected on the graph
       {{project_desc}}
 
     </div>
 
     <div class="menu_container" >
 
-      <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewUniverse()" >
+      <div class="mdl-card__actions mdl-card--border active">
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect " (click)="viewUniverse()">
           Universe
         </a>
       </div>
 
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectDetails()" >
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectDetails()">
           Project Details
         </a>
       </div>
 
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()">
           Project Summary
         </a>
       </div>
 
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectCosting()" >
           Costing
         </a>
       </div>
@@ -41,6 +42,13 @@
           Timeline
         </a>
       </div>
+      <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
+            Milestones
+          </a>
+        </div>
+
+
 
       <div class="mdl-card__actions mdl-card--border">
         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
@@ -60,9 +68,7 @@
         </a>
       </div>
 
-
     </div>
 
   </div>
-
 </div>

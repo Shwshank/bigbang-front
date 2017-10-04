@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../../service/projectservice';
 import { Router, ActivatedRoute } from '@angular/router';
+import './active.js';
 
 @Component({
   selector: 'app-summary',
@@ -21,7 +22,7 @@ export class SummaryComponent implements OnInit {
     console.log(this.project_data);
 
     this.projectSummary = { 'name': this.project_data.project_name };
-    this.project_desc = this.project_data.pdesc;
+    this.project_desc = this.project_data.project_description;
     this.project_id = this.project_data.project_id;
   }
 
@@ -51,6 +52,11 @@ export class SummaryComponent implements OnInit {
 
   projectSetting() {
     this.router.navigate(['home/projectSetting'],
+         {queryParams: {projectName: this.projectSummary.name}});
+  }
+
+  viewProjectCosting() {
+    this.router.navigate(['home/projectCosting'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 

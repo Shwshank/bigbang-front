@@ -73,6 +73,7 @@ import { AllProjectComponent } from './home/body/project-setting/all-project/all
 import { ProjectUserComponent } from './home/body/project-setting/project-user/project-user.component';
 import { AssignProjectComponent } from './home/body/project-setting/assign-project/assign-project.component';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
+import { ProjectCostingComponent } from './home/body/project-costing/project-costing.component';
 
 @NgModule({
   declarations: [
@@ -92,18 +93,19 @@ import { AllProjectsComponent } from './all-projects/all-projects.component';
     DescriptionContentComponent,
     InputOptionDialogComponent,
     DynamicFormComponent,
-    ProjectCostComponent,
     CostGraph1Component,
     CostGraph2Component,
     CostDynamicFormComponent,
     CostContentComponent,
     ProjectSummaryComponent,
     ProjectSettingComponent,
+    ProjectCostComponent,
     NewProjectComponent,
     AllProjectComponent,
     ProjectUserComponent,
     AssignProjectComponent,
-    AllProjectsComponent
+    AllProjectsComponent,
+    ProjectCostingComponent
   ],
   imports: [
     HttpModule,

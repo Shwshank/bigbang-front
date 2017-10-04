@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ProjectViewComponent } from './home/body/project-view/project-view.component';
 import { SummaryComponent } from './home/body/summary/summary.component';
 import { ProjectSummaryComponent } from './home/body/project-summary/project-summary.component';
+import { ProjectCostingComponent } from './home/body/project-costing/project-costing.component';
 import { UniverseComponent } from './home/body/universe/universe.component';
 import { ProjectSettingComponent } from './home/body/project-setting/project-setting.component';
 import { BodyComponent } from './home/body/body.component';
@@ -40,6 +41,10 @@ export const routes: Routes = [
       {
         path: 'projectSummary',
         component: ProjectSummaryComponent
+      },
+      {
+        path: 'projectCosting',
+        component: ProjectCostingComponent
       },
       {
         path: 'projectSetting',

@@ -7,13 +7,32 @@
   width:100%;
 }
 .normal-div{
-  width:75%;
+  width:80%;
   height:100%;
   position:relative;
   float:left;
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+}
+.expansion-btn{
+  position: fixed;
+  top: 80px;
+  right: 370px;
+}
+.arrow-back{
+  display: none;
+}
+.arrow-back.active{
+  display:block;
+}
+
+.close.active{
+  display:none;
+}
+.expansion-btn.active {
+/*  transform: rotate(-45deg);*/
+transition: all 500ms ease-in-out;
 }
 
 .expanded-div{
@@ -30,5 +49,7 @@
   .normal-div-1{
     float:left;
   }
-  
+  .expansion-btn{
+    display:none;
+  }
 }

@@ -8,3 +8,6 @@
 md-card-title{
   /*background-color: rgb(213, 213, 213);*/
  }
+ .mat-card {
+  position: static;
+}

@@ -1,12 +1,15 @@
+
 .tabView {
-  overflow: hidden;
+  overflow: auto;
+  overflow-x: hidden;
   position: relative;
   height:90vh !important;
 }
-.container{
+
+.container {
   width:100%;
 }
-.normal-div{
+.normal-div {
   width:80%;
   height:100%;
   position:relative;
@@ -15,7 +18,7 @@
   -moz-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-.expansion-btn{
+.expansion-btn {
   position:absolute;
   top: 10px;
   right:10px;

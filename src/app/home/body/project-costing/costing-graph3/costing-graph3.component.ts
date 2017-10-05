@@ -26,7 +26,7 @@ export class CostingGraph3Component implements OnInit {
     this.donutCtx = this.donut.nativeElement.getContext('2d');
 
      this.myChart = new Chart(this.donutCtx, {
-        type: 'line',
+        type: 'bar',
         data: {
            labels: ["January", "February", "March", "April", "May", "June", "July"],
            datasets: [{
@@ -44,7 +44,7 @@ export class CostingGraph3Component implements OnInit {
              responsive: true,
              title:{
                  display:true,
-                 text:'Point Style: 1'
+                 text:'Sub Project Costing'
              },
              legend: {
                  display: false

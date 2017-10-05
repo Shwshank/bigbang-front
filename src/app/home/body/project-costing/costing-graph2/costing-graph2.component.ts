@@ -84,7 +84,8 @@ export class CostingGraph2Component implements OnInit {
 			},
       options: {
               title:{
-                  text: "Chart.js Time Scale"
+                display:true,
+                text:'Costing Component'
               },
       scales: {
 

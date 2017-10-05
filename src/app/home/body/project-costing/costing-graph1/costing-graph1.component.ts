@@ -28,12 +28,31 @@ export class CostingGraph1Component implements OnInit {
      this.myChart = new Chart(this.donutCtx, {
         type: 'line',
         data: {
-           labels: ["January", "February", "March", "April", "May", "June", "July"],
+           labels: [
+           "label1",
+           "label2",
+           "label3",
+           "label4",],
            datasets: [{
                label: "My First dataset",
                backgroundColor:  '#ff6384',
                borderColor: '#ff6384',
-               data: [10, 23, 15, 40, 67, 43, 0],
+               data: [{
+                 x: 1,
+                 y: 1
+               },
+               {
+                 x: 5,
+                 y: 13
+               },
+               {
+                 x: 6,
+                 y: 55
+               },
+               {
+                 x: 8,
+                 y: 85
+               },],
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,

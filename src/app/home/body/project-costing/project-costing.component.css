@@ -1,0 +1,12 @@
+.heightAndWidth {
+  width: 400px;
+  height: 400px;
+}
+
+.onlyHeight {
+  height: 400px;
+}
+
+.onlyWidth {
+  width: 400px;
+}

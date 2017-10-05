@@ -19,7 +19,7 @@ export class SummaryComponent implements OnInit {
     this.project_data = localStorage.getItem('project_data');
     this.project_data = JSON.parse(this.project_data);
 
-    console.log(this.project_data);
+    // console.log(this.project_data);
 
     this.projectSummary = { 'name': this.project_data.project_name };
     this.project_desc = this.project_data.project_description;
@@ -28,8 +28,8 @@ export class SummaryComponent implements OnInit {
 
   ngOnInit() {
     this.projectService.emmitProjectSummary.subscribe( (res)=>{
-       console.log(res);
-       console.log(res.project_id);
+       // console.log(res);
+       // console.log(res.project_id);
        this.projectSummary = res;
        this.project_desc = res.pdesc;
     });

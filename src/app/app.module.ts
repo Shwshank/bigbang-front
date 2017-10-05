@@ -74,6 +74,11 @@ import { ProjectUserComponent } from './home/body/project-setting/project-user/p
 import { AssignProjectComponent } from './home/body/project-setting/assign-project/assign-project.component';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { ProjectCostingComponent } from './home/body/project-costing/project-costing.component';
+import { CostingGraph1Component } from './home/body/project-costing/costing-graph1/costing-graph1.component';
+import { CostingGraph2Component } from './home/body/project-costing/costing-graph2/costing-graph2.component';
+import { CostingContentComponent } from './home/body/project-costing/costing-content/costing-content.component';
+import { CostingGraph3Component } from './home/body/project-costing/costing-graph3/costing-graph3.component';
+import { CostingGraph4Component } from './home/body/project-costing/costing-graph4/costing-graph4.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +110,12 @@ import { ProjectCostingComponent } from './home/body/project-costing/project-cos
     ProjectUserComponent,
     AssignProjectComponent,
     AllProjectsComponent,
-    ProjectCostingComponent
+    ProjectCostingComponent,
+    CostingGraph1Component,
+    CostingGraph2Component,
+    CostingContentComponent,
+    CostingGraph3Component,
+    CostingGraph4Component
   ],
   imports: [
     HttpModule,

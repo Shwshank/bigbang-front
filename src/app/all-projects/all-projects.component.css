@@ -1,40 +1,23 @@
-.tabView {
-  overflow: auto;
-  position: relative;
-  height:90vh !important;
-}
-.container{
-  width:100%;
-}
-.normal-div{
-  width:75%;
-  height:100%;
-  position:relative;
-  float:left;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.expanded-div{
-    width:100%;
-}
-.compressed-div{
-  width:0%;
-}
-@media only screen and (max-width:500px) {
-  .normal-div{
-   width:100%;
-   height:auto;
-  }
-  .normal-div-1{
-    float:left;
-  }
-
+.project-main{
+ height:90vh;
+ overflow: auto;
 }
 
 .projectCard{
-  padding: 30px;
-  float: left;
   height: 300px;
+  margin-left: 2%;
+}
+.projects{
+  padding: 30px;
+}
+.head-text{
+  font-weight:400;
+  font-size:1.8em;
+  padding-top: 12%;
+}
+.center-items {
+  justify-content: center;
+}
+.center-align{
+  text-align: center;
 }

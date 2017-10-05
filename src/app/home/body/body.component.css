@@ -1,5 +1,5 @@
 .tabView {
-  overflow: auto;
+  overflow: hidden;
   position: relative;
   height:90vh !important;
 }
@@ -11,15 +11,17 @@
   height:100%;
   position:relative;
   float:left;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 .expansion-btn{
-  position: fixed;
-  top: 80px;
-  right: 370px;
+  position:absolute;
+  top: 10px;
+  right:10px;
+  z-index:9;
 }
+
 .arrow-back{
   display: none;
 }
@@ -42,14 +44,11 @@ transition: all 500ms ease-in-out;
   width:0%;
 }
 @media only screen and (max-width:500px) {
-  .normal-div{
-   width:100%;
-   height:auto;
+  .compressed-div{
+    width:100%;
   }
-  .normal-div-1{
-    float:left;
-  }
-  .expansion-btn{
-    display:none;
-  }
+  .expanded-div{
+    width:20%;
+}
+
 }

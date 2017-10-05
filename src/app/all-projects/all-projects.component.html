@@ -1,17 +1,29 @@
 <app-header></app-header>
-
-<main class="mdl-grid ">
-
-  <div class="mdl-color--white mdl-shadow--0dp  mdl-cell--12-col  tabView" >
-
-    <div *ngFor="let project of projects" class="mdl-color--white mdl-shadow--2dp  mdl-cell--4-col projectCard" >
-      <h3>  {{project.project_name}} </h3>
-      <button (click)="body(project.project_id)" >Details</button>
+<div class="project-main">
+    <main class="mdl-grid center-items">
+        <div *ngFor="let project of projects" class="mdl-shadow--2dp  mdl-cell mdl-cell--3-col projectCard" >
+          <div class="projects">
+              <div class="center-align">
+          <h3 class="head-text">  {{project.project_name}} </h3>
+    
+         
+          <!-- Accent-colored raised button with ripple -->
+    <button (click)="body(project.project_id)" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Details
+      </button>
+          </div>
+        
+        </div>
+        </div>
+    
+          
+      
+     
+    
+    </main>
+    
     </div>
-
-  </div>
-
-</main>
+    
 
 
 <app-footer></app-footer>

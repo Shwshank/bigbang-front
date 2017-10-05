@@ -32,7 +32,8 @@ overflow: hidden;
 }
 .demo-card-wide > .mdl-card__title {
   color: #fff;
-  height: 176px;
+  height: 162px;
+  width: 330px;
   background: url('https://geekydementia.files.wordpress.com/2014/11/os_x_lynx-2560x1600.jpg') center / cover;
 }
 .demo-card-wide > .mdl-card__menu {

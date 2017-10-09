@@ -18,6 +18,7 @@
     background: transparent;
     animation: animStar 100s linear infinite;
   }
+
   .stars:after {
     content: " ";
     top: -600px;
@@ -237,4 +238,18 @@ input, select, textarea{
   
   textarea:focus, input:focus {
   color:#000;
+  }
+  .mdl-textfield--floating-label input[type]:-webkit-autofill ~ label {
+    transform: translate3d(0, -20px, 0);
+    visibility: hidden;
+  }
+  
+  .mdl-textfield--floating-label input[type]:-webkit-autofill ~ label:after {
+    content: 'Password';
+    visibility: visible;
+    font-size: 12px;
+    left: 0;
+    transform: translate3d(0, -20px, 0);
+    background: transparent;
+    color: inherit;
   }

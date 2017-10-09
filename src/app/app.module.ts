@@ -80,6 +80,7 @@ import { CostingContentComponent } from './home/body/project-costing/costing-con
 import { CostingGraph3Component } from './home/body/project-costing/costing-graph3/costing-graph3.component';
 import { CostingGraph4Component } from './home/body/project-costing/costing-graph4/costing-graph4.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -115,7 +116,8 @@ import { CostingGraph4Component } from './home/body/project-costing/costing-grap
     CostingGraph2Component,
     CostingContentComponent,
     CostingGraph3Component,
-    CostingGraph4Component
+    CostingGraph4Component,
+    
   ],
   imports: [
     HttpModule,

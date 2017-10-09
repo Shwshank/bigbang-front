@@ -4,20 +4,32 @@
 }
 
 .projectCard{
-  height: 300px;
+  height:auto;
   margin-left: 2%;
 }
 .projects{
   padding: 30px;
 }
 .head-text{
-  font-weight:400;
-  font-size:1.8em;
-  padding-top: 12%;
+  font-weight: 400;
+  font-size: 1.8em;
+  line-height: 28px;
+  height: 100px;
 }
 .center-items {
   justify-content: center;
 }
 .center-align{
   text-align: center;
+}
+.dec-text {
+  font-weight: 400;
+  font-size: 1.5em;
+  padding-top: 5%;
+}
+.creator-text{
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 5px;
+  text-align: right;
 }

@@ -4,20 +4,20 @@
 
   <div class="mdl-color--white mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-grid" >
 
-    <p>Component name, description</p>
+    <p>{{ccname}} , {{ccdesc}}, {{estcost}}</p>
     <br>
     <div *ngFor = 'let inp of inputArray; let i=index' >
       {{i+1}}.
       <md-form-field class="example-full-width input-item ">
-        <input mdInput placeholder={{inp.label}} type="text"  [(ngModel)]="inp.labelData" required>
+        <input mdInput placeholder='Label' type="text"  [(ngModel)]="inp.labelData" required>
       </md-form-field>
 
       <md-form-field class="example-full-width input-item ">
-        <input mdInput placeholder={{inp.cost}} type="number"  [(ngModel)]="inp.costData" required>
+        <input mdInput placeholder='Cost' type="number"  [(ngModel)]="inp.costData" required>
       </md-form-field>
 
       <md-form-field class="example-full-width input-item ">
-        <input mdInput placeholder={{inp.date}} type="date"  [(ngModel)]="inp.dateData" required>
+        <input mdInput placeholder='Date' type="date"  [(ngModel)]="inp.dateData" required>
       </md-form-field>
 
       <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='removeCosting(i)' >-</button>
@@ -26,7 +26,8 @@
     &nbsp;
     <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='addCosting()' >+</button>
     <hr>
-    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='save()' >Save</button>
+    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='saveCostingComponentData()' >Save</button>
+    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='discard()' >Discard</button>
 
 
 

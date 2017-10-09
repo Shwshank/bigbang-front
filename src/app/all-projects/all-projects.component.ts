@@ -23,6 +23,7 @@ export class AllProjectsComponent implements OnInit {
 
   body(pid:string) {
     localStorage.setItem('flag1','0');  // flag1 = 0 will refresh universeComponent
+    localStorage.setItem('currentPID',pid);
 
     this.APIService.GetUniverse(pid).subscribe((res)=>{
 

@@ -1,8 +1,14 @@
 <div style="width: 600px;  ">
-  <h4>Costing components </h4>
 
   <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='addCosting()' >Add a component</button>
 
-  <app-new-cost-componet-box></app-new-cost-componet-box>
+  <div *ngIf='newComponent' >
+    <app-new-cost-componet-box></app-new-cost-componet-box>
+  </div>
+
+
+  <h5>Added Costing components </h5>
+
+    <app-all-costing-component></app-all-costing-component>
 
 </div>

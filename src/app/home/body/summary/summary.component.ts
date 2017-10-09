@@ -27,11 +27,12 @@ export class SummaryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.projectService.emmitProjectSummary.subscribe( (res)=>{
+      this.projectService.emmitProjectSummary.subscribe( (res)=>{
        // console.log(res);
        // console.log(res.project_id);
-       this.projectSummary = res;
-       this.project_desc = res.pdesc;
+      localStorage.setItem('currentPID',res.project_id);
+      this.projectSummary = res;
+      this.project_desc = res.pdesc;
     });
   }
 
@@ -57,6 +58,11 @@ export class SummaryComponent implements OnInit {
 
   viewProjectCosting() {
     this.router.navigate(['home/projectCosting'],
+         {queryParams: {projectName: this.projectSummary.name}});
+  }
+
+  viewFiles() {
+    this.router.navigate(['home/projectFiles'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 

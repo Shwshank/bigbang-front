@@ -1,0 +1,26 @@
+<div style="width:100% ;" >
+
+  <main class="mdl-grid " style="margin: auto; " >
+
+    <div *ngFor=' let com of costComponents' class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid ">
+      <p>{{com.name}}</p>
+      <p>{{com.desc}}</p>
+
+      <div *ngFor = 'let ccdata of com.data' >
+
+        <md-form-field class="example-full-width input-item ">
+          <input mdInput placeholder={{ccdata.labelData}} type="text"  value={{ccdata.costData}} required>
+        </md-form-field>
+
+        <md-form-field class="example-full-width input-item ">
+          <input mdInput placeholder="Date" type="text"  value={{ccdata.dateData}} required>
+        </md-form-field>
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>

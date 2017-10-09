@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MdDialog} from '@angular/material';
 import { AddCostingDialogComponent } from './add-costing-dialog/add-costing-dialog.component';
+import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
   selector: 'app-costing-content',
@@ -11,10 +12,20 @@ export class CostingContentComponent implements OnInit {
 
   dialogResult = "";
   dataForDialog :any;
+  newComponent: boolean = false;
 
-  constructor( public dialog: MdDialog ) { }
+
+  constructor( public dialog: MdDialog, private ProjectService: ProjectService ) { }
 
   ngOnInit() {
+    this.ProjectService.emitNewCostComponent.subscribe((res)=>{
+      console.log(res);
+      this.newComponent = res.status;
+      localStorage.setItem('ccname',res.ccname);
+      localStorage.setItem('ccdesc',res.ccdesc);
+      localStorage.setItem('estcost',res.estcost);
+
+    });
   }
 
   addCosting() {

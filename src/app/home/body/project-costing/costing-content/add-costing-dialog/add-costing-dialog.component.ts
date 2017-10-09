@@ -9,6 +9,10 @@ import { ProjectService } from '../../../../../service/projectservice';
 })
 export class AddCostingDialogComponent implements OnInit {
 
+  ccname: any;
+  ccdesc: any;
+  estcost: any;
+
   constructor(private projectService: ProjectService, public thisDialogRef: MdDialogRef<AddCostingDialogComponent>) { }
 
   ngOnInit() {
@@ -17,6 +21,7 @@ export class AddCostingDialogComponent implements OnInit {
   onCloseConfirm() {
 
     this.thisDialogRef.close('Confirm');
+    this.projectService.newCostComponent({status: true, ccname: this.ccname, ccdesc: this.ccdesc, estcost: this.estcost});
   }
 
   onCloseCancel() {

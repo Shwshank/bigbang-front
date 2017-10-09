@@ -11,8 +11,11 @@ import 'rxjs/add/operator/distinctUntilChanged';
 import 'rxjs/add/observable/fromEvent';
 
 /**
+ *
  * @title Table with filtering
- */
+ *
+ **/
+
 @Component({
   selector: 'app-all-project',
   styleUrls: ['all-project.component.css'],

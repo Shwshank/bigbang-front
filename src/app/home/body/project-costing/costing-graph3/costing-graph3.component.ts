@@ -30,7 +30,7 @@ export class CostingGraph3Component implements OnInit {
         data: {
            labels: ["January", "February", "March", "April", "May", "June", "July"],
            datasets: [{
-               label: "My First dataset",
+
                backgroundColor:  '#3f51b5',
                borderColor: '#3f51b5',
                data: [34, 33, 175, 130, 27, 55, 60],

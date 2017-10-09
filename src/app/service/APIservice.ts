@@ -42,4 +42,13 @@ export class APIService {
 
     return this.http.post(this.projectURL+'/getproject', '{"pid":"'+pid+'"}');
   }
+
+  AddNewCostingComponent(estcosting: any, name:any, desc: any, data:any) {
+
+    data = JSON.stringify(data);
+    let estcost = +estcosting;
+    let uid = localStorage.getItem('uid');
+    let currentPID = localStorage.getItem('currentPID');
+    return this.http.post(this.projectURL+'/addcostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "estcost":'+estcost+', "name":"'+name+'", "desc":"'+desc+'", "data":'+data+'  }');
+  }
 }

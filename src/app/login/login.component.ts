@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
     this.loginButton = 'Validating...'
     this.APIService.LoginUser(this.email, this.password).subscribe((res)=>{
       console.log(res);
+      localStorage.setItem('uid', res.uid);
       this.loginMessage = '';
 
       if(res.success) {

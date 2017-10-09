@@ -81,6 +81,11 @@ import { CostingGraph3Component } from './home/body/project-costing/costing-grap
 import { CostingGraph4Component } from './home/body/project-costing/costing-graph4/costing-graph4.component';
 import { AddCostingDialogComponent } from './home/body/project-costing/costing-content/add-costing-dialog/add-costing-dialog.component';
 import { NewCostComponetBoxComponent } from './home/body/project-costing/costing-content/new-cost-componet-box/new-cost-componet-box.component';
+import { AllCostingComponentComponent } from './home/body/project-costing/costing-content/all-costing-component/all-costing-component.component';
+import { FilesComponent } from './home/body/files/files.component';
+import { FileTableComponent } from './home/body/files/file-table/file-table.component';
+import { FileGraphComponent } from './home/body/files/file-graph/file-graph.component';
+import { FilecontentComponent } from './home/body/files/filecontent/filecontent.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +124,12 @@ import { NewCostComponetBoxComponent } from './home/body/project-costing/costing
     CostingGraph3Component,
     CostingGraph4Component,
     AddCostingDialogComponent,
-    NewCostComponetBoxComponent
+    NewCostComponetBoxComponent,
+    AllCostingComponentComponent,
+    FilesComponent,
+    FileTableComponent,
+    FileGraphComponent,
+    FilecontentComponent
   ],
   imports: [
     HttpModule,

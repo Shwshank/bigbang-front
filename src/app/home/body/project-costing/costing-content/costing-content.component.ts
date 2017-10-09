@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog} from '@angular/material';
+import { AddCostingDialogComponent } from './add-costing-dialog/add-costing-dialog.component';
 
 @Component({
   selector: 'app-costing-content',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CostingContentComponent implements OnInit {
 
-  constructor() { }
+  dialogResult = "";
+  dataForDialog :any;
+
+  constructor( public dialog: MdDialog ) { }
 
   ngOnInit() {
+  }
+
+  addCosting() {
+    console.log('add component');
+    const dialogRef = this.dialog.open(AddCostingDialogComponent, {
+      height: '350px',
+      width: '350px',
+      data: this.dataForDialog
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log(`Dialog result: ${result}`);
+      this.dialogResult = result;
+    })
   }
 
 }

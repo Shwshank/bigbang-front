@@ -79,6 +79,8 @@ import { CostingGraph2Component } from './home/body/project-costing/costing-grap
 import { CostingContentComponent } from './home/body/project-costing/costing-content/costing-content.component';
 import { CostingGraph3Component } from './home/body/project-costing/costing-graph3/costing-graph3.component';
 import { CostingGraph4Component } from './home/body/project-costing/costing-graph4/costing-graph4.component';
+import { AddCostingDialogComponent } from './home/body/project-costing/costing-content/add-costing-dialog/add-costing-dialog.component';
+import { NewCostComponetBoxComponent } from './home/body/project-costing/costing-content/new-cost-componet-box/new-cost-componet-box.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +117,9 @@ import { CostingGraph4Component } from './home/body/project-costing/costing-grap
     CostingGraph2Component,
     CostingContentComponent,
     CostingGraph3Component,
-    CostingGraph4Component
+    CostingGraph4Component,
+    AddCostingDialogComponent,
+    NewCostComponetBoxComponent
   ],
   imports: [
     HttpModule,
@@ -157,7 +161,8 @@ import { CostingGraph4Component } from './home/body/project-costing/costing-grap
   ],
   entryComponents: [
    DialogComponent,
-   InputOptionDialogComponent
+   InputOptionDialogComponent,
+   AddCostingDialogComponent
   ],
   providers: [ProjectService, APIService, AuthGuard],
   bootstrap: [AppComponent]

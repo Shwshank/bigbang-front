@@ -1,0 +1,38 @@
+
+<div style="" >
+<main class="mdl-grid " style="width: 200%; min-height:400px">
+
+  <div class="mdl-color--white mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-grid" >
+
+    <p>Component name, description</p>
+    <br>
+    <div *ngFor = 'let inp of inputArray; let i=index' >
+      {{i+1}}.
+      <md-form-field class="example-full-width input-item ">
+        <input mdInput placeholder={{inp.label}} type="text"  [(ngModel)]="inp.labelData" required>
+      </md-form-field>
+
+      <md-form-field class="example-full-width input-item ">
+        <input mdInput placeholder={{inp.cost}} type="number"  [(ngModel)]="inp.costData" required>
+      </md-form-field>
+
+      <md-form-field class="example-full-width input-item ">
+        <input mdInput placeholder={{inp.date}} type="date"  [(ngModel)]="inp.dateData" required>
+      </md-form-field>
+
+      <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='removeCosting(i)' >-</button>
+
+    </div>
+    &nbsp;
+    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='addCosting()' >+</button>
+    <hr>
+    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='save()' >Save</button>
+
+
+
+
+
+  </div>
+
+</main>
+</div>

@@ -87,6 +87,7 @@ import { FileTableComponent } from './home/body/files/file-table/file-table.comp
 import { FileGraphComponent } from './home/body/files/file-graph/file-graph.component';
 import { FilecontentComponent } from './home/body/files/filecontent/filecontent.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -130,6 +131,7 @@ import { FilecontentComponent } from './home/body/files/filecontent/filecontent.
     FileTableComponent,
     FileGraphComponent,
     FilecontentComponent
+
   ],
   imports: [
     HttpModule,

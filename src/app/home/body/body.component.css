@@ -1,15 +1,25 @@
-
 .tabView {
-  overflow: auto;
   overflow-x: hidden;
   position: relative;
   height:90vh !important;
 }
+::-webkit-scrollbar {
+  width: 6px;
+}
+ 
+::-webkit-scrollbar-track {
+  background: #ddd;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(255,64,129);
+  border-radius: 20px;
+}
 
-.container {
+.container{
   width:100%;
 }
-.normal-div {
+.normal-div{
   width:80%;
   height:100%;
   position:relative;
@@ -18,13 +28,12 @@
   -moz-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
-.expansion-btn {
+.expansion-btn{
   position:absolute;
   top: 10px;
   right:10px;
   z-index:9;
 }
-
 .arrow-back{
   display: none;
 }
@@ -47,11 +56,12 @@ transition: all 500ms ease-in-out;
   width:0%;
 }
 @media only screen and (max-width:500px) {
-  .compressed-div{
-    width:100%;
-  }
-  .expanded-div{
-    width:20%;
+  
+.normal-div{
+  width:22%;
+}
+.expanded-div{
+  width:100%;
 }
 
 }

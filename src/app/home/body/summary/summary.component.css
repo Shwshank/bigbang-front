@@ -25,17 +25,82 @@ overflow: hidden;
   box-shadow: 0 12px 20px -10px rgba(255,64,129, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(255,64,129, 0.2);
 }
 
-.demo-card-wide.mdl-card {
-  width: 100%;
-  opacity: 1;
-  border: 4px solid pink;
+figure.snip1321 {
+  position: relative;
+  overflow: hidden;
+  margin: 0px 0%;
+  max-width: 360px;
+  min-width: 100%;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
 }
-.demo-card-wide > .mdl-card__title {
+figure.snip1321 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+figure.snip1321 img {
+  max-width: 360px;
+  vertical-align: top;
+  filter: blur(3px);
+    min-width: 100%;
+  
+}
+figure.snip1321 figcaption {
+  top: 50%;
+  left: 40px;
+  right: 40px;
+  position: absolute;
+  opacity: 0;
+  font-weight:500;
+  z-index: 1;
+}
+.project-name{
   color: #fff;
-  height: 162px;
-  width: 330px;
-  background: url('https://geekydementia.files.wordpress.com/2014/11/os_x_lynx-2560x1600.jpg') center / cover;
+  font-weight:500;
+  font-size:22px;
+  padding: 10px;
 }
+
+figure.snip1321:after {
+  background:url("https://geekydementia.files.wordpress.com/2014/11/os_x_lynx-2560x1600.jpg") center/cover;
+  position: absolute;
+  content: "";
+  display: block;
+  width: auto;
+  margin:0 auto;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 1;
+}
+
+figure.snip1321 figcaption,
+figure.snip1321 figcaption {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+figure.snip1321:after,
+figure.snip1321:after {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity:1;
+}
+
+
 .demo-card-wide > .mdl-card__menu {
   color: #fff;
 }
@@ -55,6 +120,18 @@ overflow: hidden;
   overflow-y: auto;
 }
 
+@media only screen and (max-width:1650px) {
+figure.snip1321 img {
+  max-width: 300px;
+  
+}
+}
+@media only screen and (max-width:1440px) {
+  figure.snip1321 img {
+    max-width: 270px;
+    
+  }
+  }
 @media only screen and (max-width:500px) {
 .bg{
   display:none;

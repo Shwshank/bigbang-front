@@ -13,6 +13,8 @@ import { ProjectSettingComponent } from './home/body/project-setting/project-set
 import { BodyComponent } from './home/body/body.component';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { FilesComponent } from './home/body/files/files.component';
+import { VendorComponent } from './home/body/vendor/vendor.component';
+
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoginComponent },
@@ -54,6 +56,10 @@ export const routes: Routes = [
       {
         path: 'projectFiles',
         component: FilesComponent
+      },
+      {
+        path: 'vendor',
+        component: VendorComponent
       },
       {
         path: '**',

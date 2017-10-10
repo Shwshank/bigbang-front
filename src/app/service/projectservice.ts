@@ -69,6 +69,24 @@ export class ProjectService {
     });
   }
 
+  addFile(data : any) {
+    console.log(data);
+    this.APIService.AddFile(data).subscribe((res)=>{
+      console.log(res);
+    },(err)=>{
+      console.log(err);
+    });
+  }
+
+  addFolder( data: any ) {
+    console.log(data);
+    this.APIService.AddFolder(data).subscribe((res)=>{
+      console.log(res);
+    },(err)=>{
+      console.log(err);
+    });
+  }
+
 
 
 }

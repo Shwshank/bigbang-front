@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ProjectService } from '../../../../../service/projectservice';
 
 @Component({
   selector: 'app-new-file',
@@ -15,10 +16,9 @@ export class NewFileComponent implements OnInit {
   files: any;
   formData: any;
 
-  constructor() {
-    this.folders = [{'folder_id':'1234', 'folder_name': 'Employees'},  {'folder_id':'1234', 'folder_name': 'Project'}, {'folder_id':'1234', 'folder_name': 'Infra'},{'folder_id':'1234', 'folder_name': 'Tech'},]
+  constructor(private ProjectService: ProjectService) {
+    this.folders = [{'folder_id':'default','folder_name':'Default'}]
   }
-
 
   ngOnInit() {
   }
@@ -32,10 +32,11 @@ export class NewFileComponent implements OnInit {
   }
 
   save() {
-    this.formData.append('file_name', this.file_name);
-    this.formData.append('file_desc', this.file_desc);
-    this.formData.append('folder_id', this.folder_id);
-    console.log(this.formData);
+    this.formData.append('fname', this.file_name);
+    this.formData.append('fdesc', this.file_desc);
+    this.formData.append('fid',   this.folder_id);
+
+    this.ProjectService.addFile(this.formData);
 
   }
 

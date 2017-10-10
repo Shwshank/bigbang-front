@@ -22,6 +22,9 @@ export class AllCostingComponentComponent implements OnInit {
     this.ProjectService.CostComponet();
   }
 
+  deleteComponent(id: any) {
+    this.ProjectService.deleteCostComponent(id);
+  }
 
 
 }

@@ -15,36 +15,27 @@ export class CostingGraph2Component implements OnInit {
   myChart: any;
   label1 :any =  [];
   i  = 0;
-  data : any=[];
+  est_cost : any=[];
+  act_cost : any=[];
+  labels : any=[];
+  y_max_val : any;
+  y_min_val : any;
 
   constructor(private ProjectService: ProjectService) {
-    this.ProjectService.CostComponet();
+
+    this.ProjectService.emitCostGraph1Data.subscribe((res)=>{
+       console.log(res);
+       this.act_cost = res.actual_cost;
+       this.est_cost = res.target_cost;
+       this.labels = res.labels;
+       this.y_max_val = res.maxcost;
+       this.y_min_val = res.mincost;
+
+       this.getGraph();
+    });
   }
 
   ngOnInit() {
-
-    this.ProjectService.emitAllCostComponents.subscribe((res)=>{
-       //console.log(res);
-
-      for (let set of res) {
-         // console.log(set);
-        //  console.log(this.i++);
-
-          for(let lot of set.data) {
-            //console.log(lot.costData);
-            this.data.push(lot.costData);
-
-          }
-
-      }
-      // console.log(this.data);
-
-
-    });
-
-    this.getGraph();
-
-
   }
 
   getGraph() {
@@ -54,43 +45,21 @@ export class CostingGraph2Component implements OnInit {
      this.myChart = new Chart(this.donutCtx, {
         type: 'line',
         data: {
-				labels: [ // Date Objects
-          "label1",
-          "label2",
-          "label3",
-          "label4",
-          "label5"
-
-				],
+				labels: this.labels,
 				datasets: [{
-					label: "My First dataset",
-					backgroundColor: '#ff6384',
-					borderColor: '#ff6384',
-					fill: false,
-					data: [1, 10, 55, 88 ,111, ],
-				}, {
-					label: "My Second dataset",
-					backgroundColor:'#3f51b5',
+					label: "Actual Cost",
+					backgroundColor: '#3f51b5',
 					borderColor: '#3f51b5',
 					fill: false,
-					data: [
-            {
-              x: 1,
-              y: 5
-            },
-            {
-              x: 5,
-              y: 25
-            },
-            {
-              x: 6,
-              y: 35
-            },
-            {
-              x: 8,
-              y: 115
-            },
-          ],
+					data: this.act_cost,
+
+				}, {
+					label: "Estimated Cost",
+					backgroundColor:'#ff6384',
+					borderColor: '#ff6384',
+					fill: false,
+					data: this.est_cost,
+
 				},]
 			},
       options: {
@@ -99,7 +68,27 @@ export class CostingGraph2Component implements OnInit {
                 text:'Costing Component'
               },
       scales: {
+        xAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true,
 
+          },
+          ticks: {
+            autoSkip: false,
+            maxRotation: 75,
+            minRotation: 0
+          }
+          }],
+          yAxes: [{
+          display: true,
+          ticks: {
+
+            max: this.y_max_val,
+
+
+          }
+          }]
       },
     }
     });

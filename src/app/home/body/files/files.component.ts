@@ -13,6 +13,7 @@ export class FilesComponent implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.setItem('flag1','0');
   }
 
 }

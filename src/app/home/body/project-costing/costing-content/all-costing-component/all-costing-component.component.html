@@ -3,8 +3,10 @@
   <main class="mdl-grid " style="margin: auto; " >
 
     <div *ngFor=' let com of costComponents' class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid ">
-      <p>{{com.name}}</p>
-      <p>{{com.desc}}</p>
+      <p>{{com.name}}</p>,
+      <p>{{com.desc}}</p>,
+      <p>{{com.estcost}}</p>,
+      <button type="button" (click)='deleteComponent(com.chart_id)'>Delete</button>
 
       <div *ngFor = 'let ccdata of com.data' >
 

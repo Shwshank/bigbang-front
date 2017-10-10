@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewFolderComponent implements OnInit {
 
+  folder_name: any;
+  folder_desc: any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  saveFolder() {
+    console.log(this.folder_name+ "  " +  this.folder_desc);
   }
 
 }

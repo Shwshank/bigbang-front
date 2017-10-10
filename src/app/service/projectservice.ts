@@ -23,6 +23,7 @@ export class ProjectService {
   emitNewCostComponent : EventEmitter<any> = new EventEmitter<any>();
 
   emitAllCostComponents : EventEmitter<any> = new EventEmitter<any>();
+  emitCostGraph1Data : EventEmitter<any> = new EventEmitter<any>();
 
   data1 : any = [
     {name: 'cc1', desc:'complete desc1', data : [{labelData : 'label 1', costData: '12', dateData: '10/10/2017'},{labelData : 'label 2', costData: '22', dateData: '11/10/2017'},
@@ -31,23 +32,41 @@ export class ProjectService {
     {labelData : 'labeel 3', costData: '72', dateData: '12/10/2017'},{labelData : 'labeel 4', costData: '82', dateData: '13/10/2017'}]},
   ];
 
+  temp: any;
+
     CostComponet() {
-      this.emitAllCostComponents.emit(this.data1);
+        this.APIService.GetAllCostingComponent().subscribe((res)=>{
+          // console.log(res);
+          this.emitAllCostComponents.emit(res.charts); // dynamic data
+          this.emitCostGraph1Data.emit(res);
+      });
+      // this.emitAllCostComponents.emit(this.data1); // local data
+
     }
 
   newCostComponent(data: any) {
       this.emitNewCostComponent.emit(data);
+
   }
 
   pushNewCostComponent(estcost:any, name:any, desc: any, data:any) {
     //console.log(data);
     this.APIService.AddNewCostingComponent(estcost, name, desc, data).subscribe((res)=>{
         console.log(res);
+        this.CostComponet();
         this.newCostComponent({status: false}); // to hide the add costing box
 
     });
     this.data1.push({name:name, desc: desc, data:data});
     //console.log(this.data1);
+  }
+
+  deleteCostComponent(id: any) {
+    console.log(id);
+    this.APIService.DeleteCostingComponent(id).subscribe((res)=>{
+      console.log(res);
+      this.CostComponet();
+    });
   }
 
 

@@ -28,7 +28,7 @@ export class CostingGraph3Component implements OnInit {
      this.myChart = new Chart(this.donutCtx, {
         type: 'bar',
         data: {
-           labels: ["January", "February", "March", "April", "May", "June", "July"],
+           labels: ["January ", "February", "March", "April", "May", "June", "July"],
            datasets: [{
 
                backgroundColor:  '#3f51b5',

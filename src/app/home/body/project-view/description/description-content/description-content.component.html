@@ -2,14 +2,47 @@
   
     <div class="wapper">
   
-      <md-form-field class="example-full-width input-item">
+      <md-form-field class="example-full-width input-item tooltip">
         <input mdInput placeholder="Favorite food" value="Sushi">
-      
+        <span class="tooltiptext">q</span>
       </md-form-field>
   
-      <md-form-field class="example-full-width input-item">
-        <input mdInput placeholder="Favorite Project" type="text" value="1">
+      <md-form-field class="example-full-width input-item tooltip " >
+        <input mdInput placeholder="Favorite Project " type="text" value="1">
+     
+        
+            
+            <section class="FAB">
+              <div class="FAB__mini-action-button">
+                <div class="mini-action-button--hide mini-action-button">
+                  <i class="mini-action-button__icon material-icons">assistant_photo</i>
+                  <p class="mini-action-button__text--hide">Add Flag</p>
+                </div>
+                <div class="mini-action-button--hide mini-action-button">
+                  <i class="mini-action-button__icon material-icons">audiotrack</i>
+                  <p class="mini-action-button__text--hide">Add Song</p>
+                </div>
+          
+                <div class="mini-action-button--hide mini-action-button">
+                  <i class="mini-action-button__icon material-icons">palette</i>
+                  <p class="mini-action-button__text--hide">Add Art</p>
+                </div>
+                <div class="mini-action-button--hide mini-action-button">
+                    <i class="mini-action-button__icon material-icons">add</i>
+                    <p class="action-button__text--hide">Add Customer</p>
+                  </div>
+              </div>
+              <div class="FAB__action-button">
+                <i class=" material-icons button-info">info</i>
+                <p class="action-button__text--hide">Add edit del fields</p>
+              </div>
+            </section>
+            
+      
+        
       </md-form-field>
+   
+   
   
     <button md-button [mdMenuTriggerFor]="menu" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect button-add-field">
       <i class="material-icons">add</i> Add  Field

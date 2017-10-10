@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('userDetails', JSON.stringify(res));
         this.router.navigate(['/allprojects']);
         localStorage.setItem('flag1','0');  // flag1 = 0 will refresh universeComponent
+        localStorage.setItem('fileflag','0');           // 'flag1 = 0' will refresh the folderview component
       }
 
     }, (err)=> {

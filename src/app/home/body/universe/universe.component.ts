@@ -16,7 +16,6 @@ export class UniverseComponent implements OnInit {
   constructor(private projectService: ProjectService, private router: Router ) {
 
     // set flag for view refresh
-    localStorage.setItem('flag2','0');
     this.flag1 = localStorage.getItem('flag1');
 
     // flag 0 will cause to reload the universe

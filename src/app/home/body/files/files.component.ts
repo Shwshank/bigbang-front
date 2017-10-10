@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FilesComponent implements OnInit {
 
-  constructor() { }
+  fileflag : any;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

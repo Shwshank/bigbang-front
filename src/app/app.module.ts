@@ -86,6 +86,8 @@ import { FilesComponent } from './home/body/files/files.component';
 import { FileTableComponent } from './home/body/files/file-table/file-table.component';
 import { FileGraphComponent } from './home/body/files/file-graph/file-graph.component';
 import { FilecontentComponent } from './home/body/files/filecontent/filecontent.component';
+import { NewFileComponent } from './home/body/files/filecontent/new-file/new-file.component';
+import { NewFolderComponent } from './home/body/files/filecontent/new-folder/new-folder.component';
 
 
 @NgModule({
@@ -130,7 +132,9 @@ import { FilecontentComponent } from './home/body/files/filecontent/filecontent.
     FilesComponent,
     FileTableComponent,
     FileGraphComponent,
-    FilecontentComponent
+    FilecontentComponent,
+    NewFileComponent,
+    NewFolderComponent
 
   ],
   imports: [

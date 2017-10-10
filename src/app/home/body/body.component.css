@@ -3,9 +3,11 @@
   position: relative;
   height:90vh !important;
 }
+
 ::-webkit-scrollbar {
   width: 6px;
 }
+
  
 ::-webkit-scrollbar-track {
   background: #ddd;

@@ -1,5 +1,6 @@
 import {  ViewChild, Component, ElementRef, OnInit } from '@angular/core';
 import Chart from 'chart.js';
+import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
   selector: 'app-vendor-graph1',
@@ -12,9 +13,12 @@ export class VendorGraph1Component implements OnInit {
   donutCtx: any;
   myChart: any;
 
-  constructor() { }
+  constructor(private ProjectService: ProjectService) {
+
+  }
 
   ngOnInit() {
+    this.ProjectService.allTendors();
     this.getGraph();
   }
 

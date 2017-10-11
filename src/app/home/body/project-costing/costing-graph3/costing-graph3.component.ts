@@ -30,7 +30,9 @@ export class CostingGraph3Component implements OnInit {
 
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //this.getGraph();
+  }
 
   getGraph() {
 
@@ -41,8 +43,7 @@ export class CostingGraph3Component implements OnInit {
         data: {
            labels: this.labels,
            datasets: [{
-
-               label: "Actual cost",
+               label: "Actual Cost",
                backgroundColor:  '#3f51b5',
                borderColor: '#3f51b5',
                data: this.act_cost,
@@ -52,7 +53,7 @@ export class CostingGraph3Component implements OnInit {
                showLine: false // no line shown
            },
            {
-               label: "Estimated cost",
+               label: "Estimate Cost",
                backgroundColor:  '#ff6384',
                borderColor: '#ff6384',
                data: this.est_cost,
@@ -60,9 +61,11 @@ export class CostingGraph3Component implements OnInit {
                pointRadius: 10,
                pointHoverRadius: 15,
                showLine: false // no line shown
-           }]
+           }
+         ]
         },
         options: {
+
              responsive: true,
              title:{
                  display:true,
@@ -71,10 +74,25 @@ export class CostingGraph3Component implements OnInit {
              legend: {
                  display: true
              },
-             elements: {
-                 point: {
-                     pointStyle: 'circle'
+             scales: {
+               xAxes: [{
+                 display: true,
+                 scaleLabel: {
+                   display: true,
+
+                 },
+                 ticks: {
+                   autoSkip: false,
+                   maxRotation: 75,
+                   minRotation: 0
                  }
+                 }],
+                 yAxes: [{
+                 display: true,
+                 ticks: {
+                   min: 0
+                 }
+                 }]
              },
 
          }

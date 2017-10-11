@@ -94,6 +94,10 @@ import { VendorGraph1Component } from './home/body/vendor/vendor-graph1/vendor-g
 import { VendorContentComponent } from './home/body/vendor/vendor-content/vendor-content.component';
 import { VendorDetailsComponent } from './home/body/vendor/vendor-details/vendor-details.component';
 import { VendorDetailsGraph1Component } from './home/body/vendor/vendor-details/vendor-details-graph1/vendor-details-graph1.component';
+import { NewTendorComponent } from './home/body/vendor/new-tendor/new-tendor.component';
+import { AllTendorsComponent } from './home/body/vendor/all-tendors/all-tendors.component';
+import { SunBrustComponent } from './all-projects/sun-brust/sun-brust.component';
+import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.component';
 
 
 @NgModule({
@@ -145,7 +149,11 @@ import { VendorDetailsGraph1Component } from './home/body/vendor/vendor-details/
     VendorGraph1Component,
     VendorContentComponent,
     VendorDetailsComponent,
-    VendorDetailsGraph1Component
+    VendorDetailsGraph1Component,
+    NewTendorComponent,
+    AllTendorsComponent,
+    SunBrustComponent,
+    NewVendorComponent
 
   ],
   imports: [

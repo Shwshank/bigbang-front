@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
   selector: 'app-vendor-content',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VendorContentComponent implements OnInit {
 
-  constructor() { }
+  newTendorFlag = false;
+
+  constructor(private ProjectService: ProjectService) {}
 
   ngOnInit() {
+    this.ProjectService.callNewTendor.subscribe((res)=>{
+        this.newTendorFlag = res;
+      });
   }
+
+  newTendor() {
+    this.ProjectService.callNewTendorComponent(true);
+  }
+
 
 }

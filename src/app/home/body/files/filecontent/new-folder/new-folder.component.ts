@@ -25,6 +25,7 @@ export class NewFolderComponent implements OnInit {
     this.formData.append('folder_name',this.folder_name);
     this.formData.append('folder_desc',this.folder_desc);
     this.ProjectService.addFolder(this.formData);
+
   }
 
 }

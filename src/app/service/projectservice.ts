@@ -1,5 +1,6 @@
 import { EventEmitter, Injectable, } from '@angular/core';
 import { APIService } from './APIservice';
+import { NgForm } from '@angular/forms';
 
 @Injectable()
 export class ProjectService {
@@ -24,6 +25,9 @@ export class ProjectService {
 
   emitAllCostComponents : EventEmitter<any> = new EventEmitter<any>();
   emitCostGraph1Data : EventEmitter<any> = new EventEmitter<any>();
+  callNewTendor: EventEmitter<any> = new EventEmitter<any>();
+  emitvendor: EventEmitter<any> = new EventEmitter<any>();
+  emittendor: EventEmitter<any> = new EventEmitter<any>();
 
   data1 : any = [
     {name: 'cc1', desc:'complete desc1', data : [{labelData : 'label 1', costData: '12', dateData: '10/10/2017'},{labelData : 'label 2', costData: '22', dateData: '11/10/2017'},
@@ -41,8 +45,15 @@ export class ProjectService {
           this.emitCostGraph1Data.emit(res);
       });
       // this.emitAllCostComponents.emit(this.data1); // local data
-
     }
+
+  vendor : any = [{'vendor_name':'vendor 1', 'vendor_id':'123'},
+                  {'vendor_name':'vendor 2', 'vendor_id':'124'},
+                  {'vendor_name':'vendor 3', 'vendor_id':'125'}];
+
+  tendor : any = [{'tendor_name': 'tendor 1', 'tendor_desc': 'desc of tendor1', 'vendor_id':'123', 't_est_cost':100000, 't_act_cost':80000},
+                  {'tendor_name': 'tendor 2', 'tendor_desc': 'desc of tendor2', 'vendor_id':'123', 't_est_cost':90000, 't_act_cost':80000},
+                  {'tendor_name': 'tendor 3', 'tendor_desc': 'desc of tendor3', 'vendor_id':'123', 't_est_cost':110000, 't_act_cost':120000}];
 
   newCostComponent(data: any) {
       this.emitNewCostComponent.emit(data);
@@ -87,6 +98,63 @@ export class ProjectService {
     });
   }
 
+  callNewTendorComponent(res) {
+    this.callNewTendor.emit(res);
+  }
+
+  allVendors() {
+    this.emitvendor.emit(this.vendor);
+  }
+
+  allTendors() {
+    this.emittendor.emit(this.tendor);
+  }
+
+  updateTendor(t_data) {
+    this.tendor.push(t_data);
+    this.allTendors();
+  }
+
+  newVendor(v_name, v_desc) {
+    let formData = new FormData();
+    formData.append('vendor_name',v_name);
+    formData.append('vendor_desc',v_desc);
+    this.APIService.AddVendor(formData).subscribe((res)=>{
+      console.log(res);
+    });
+  }
+
+  getAllVendor() {
+
+    this.APIService.GetVendor().subscribe((res)=>{
+      this.vendor = res;
+      this.allVendors();
+    },(err) => {
+      console.log(err);
+    });
+  }
+
+  AddTendor(data) {
+
+    this.APIService.AddTendor(data).subscribe((res)=>{
+      console.log(res);
+      this.tendor  = res.tendors;
+      this.allTendors();
+    });
+
+  }
+
+  getAllTendor() {
+    let formData = new FormData();
+    this.APIService.GetTendor(formData).subscribe((res)=>{
+      console.log(res);
+      this.tendor  = res.tendors;
+      this.allTendors();
+
+    },(err) => {
+      console.log(err);
+    });
+  }
 
 
 }

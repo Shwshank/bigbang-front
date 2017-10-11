@@ -61,14 +61,11 @@ export class APIService {
   DeleteCostingComponent(cid) {
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
-    console.log(cid);
-    console.log(this.projectURL+'/addcostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "cid":"'+cid+'"}');
     return this.http.post(this.projectURL+'/deletecostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "cid":"'+cid+'"}');
 
   }
 
   AddFile(data: any) {
-    console.log(data);
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     data.append('uid',uid);
@@ -78,13 +75,41 @@ export class APIService {
   }
 
   AddFolder( data: any) {
-    console.log(data);
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     data.append('uid',uid);
     data.append('pid',currentPID);
     return this.http.post(this.projectURL+'/addfolder',data);
 
+  }
+
+  AddVendor( data: any) {
+    let uid = localStorage.getItem('uid');
+    let currentPID = localStorage.getItem('currentPID');
+    data.append('uid',uid);
+    data.append('pid',currentPID);
+    return this.http.post(this.projectURL+'/addvendor',data);
+  }
+
+  GetVendor() {
+
+    return this.http.get(this.projectURL+'/getallvendors ').map(res=>res.json());
+  }
+
+  AddTendor( data: any) {
+    let uid = localStorage.getItem('uid');
+    let currentPID = localStorage.getItem('currentPID');
+    data.append('uid',uid);
+    data.append('pid',currentPID);
+    console.log(data);
+    return this.http.post(this.projectURL+'/addtendor',data).map(res=>res.json());
+  }
+
+  GetTendor(data) {
+
+    let currentPID = localStorage.getItem('currentPID');
+    data.append('pid',currentPID);
+    return this.http.post(this.projectURL+'/getalltendors',data).map(res=>res.json());
   }
 
 }

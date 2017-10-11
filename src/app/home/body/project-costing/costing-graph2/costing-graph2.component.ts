@@ -63,6 +63,10 @@ export class CostingGraph2Component implements OnInit {
 				},]
 			},
       options: {
+              legend: {
+                display: true,
+              },
+
               title:{
                 display:true,
                 text:'Costing Component'
@@ -77,7 +81,8 @@ export class CostingGraph2Component implements OnInit {
           ticks: {
             autoSkip: false,
             maxRotation: 75,
-            minRotation: 0
+            minRotation: 0,
+            min: 0,
           }
           }],
           yAxes: [{
@@ -85,6 +90,7 @@ export class CostingGraph2Component implements OnInit {
           ticks: {
 
             max: this.y_max_val,
+
 
 
           }

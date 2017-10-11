@@ -1,0 +1,9 @@
+<md-form-field class="example-full-width input-item ">
+  <input mdInput placeholder='Vendor Name ' type="text"  [(ngModel)]="v_name" required>
+</md-form-field>
+
+<md-form-field class="example-full-width input-item ">
+  <input mdInput placeholder='Vendor Description ' type="text"  [(ngModel)]="v_desc" required>
+</md-form-field>
+
+<button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='newVendor()' >Create Vendor</button>

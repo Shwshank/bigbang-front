@@ -1,3 +1,11 @@
-<p>
-  vendor-content works!
-</p>
+<div style="width:100%" >
+
+  <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='newTendor()' >New tendor</button>
+
+  <div *ngIf="newTendorFlag" style="width:100%">
+    <app-new-tendor></app-new-tendor>
+  </div>
+
+  <app-all-tendors></app-all-tendors>
+
+</div>

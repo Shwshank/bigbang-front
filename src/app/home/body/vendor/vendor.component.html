@@ -1,0 +1,50 @@
+<div style="width:100% !important">
+  <main class="mdl-grid " style="margin: auto; " >
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
+      <app-vendor-graph1></app-vendor-graph1>
+
+
+    </div>
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid" style="overflow-x:auto ; width:100%; " >
+
+      <md-tab-group >
+
+          <md-tab label="Vendor details" >
+
+            <div style="min-height:500px">
+              <md-select placeholder="Vendors "  [(ngModel)]="vendor_id">
+                <md-option *ngFor="let vendor of vendors" [value]="vendor.id" >
+                  {{vendor.name}}
+                </md-option>
+              </md-select>
+              <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='vendorDetails()' >Get Deatils</button>
+                <router-outlet></router-outlet>
+            </div>
+
+          </md-tab>
+
+          <md-tab label="Tendor">
+            <div style="height:500px">
+              
+            </div>
+          </md-tab>
+
+          <md-tab label="Add Vendor">
+            <div style="height:500px">2</div>
+          </md-tab>
+
+
+      </md-tab-group>
+
+    </div>
+
+
+
+
+  </main>
+
+
+
+</div>

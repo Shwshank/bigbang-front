@@ -1,36 +1,22 @@
 import {  ViewChild, Component, ElementRef, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
-  selector: 'app-costing-graph3',
-  templateUrl: './costing-graph3.component.html',
-  styleUrls: ['./costing-graph3.component.css']
+  selector: 'app-vendor-graph1',
+  templateUrl: './vendor-graph1.component.html',
+  styleUrls: ['./vendor-graph1.component.css']
 })
-
-export class CostingGraph3Component implements OnInit {
+export class VendorGraph1Component implements OnInit {
 
   @ViewChild('donut') donut: ElementRef;
   donutCtx: any;
   myChart: any;
-  act_cost: any;
-  est_cost: any;
-  labels: any;
 
-  constructor(private ProjectService: ProjectService) {
+  constructor() { }
 
-    this.ProjectService.emitCostGraph1Data.subscribe((res)=>{
-
-       this.act_cost = res.child_costs.actual_cost;
-       this.est_cost = res.child_costs.target_cost;
-       this.labels = res.child_costs.labels;
-
-       this.getGraph();
-    });
-
+  ngOnInit() {
+    this.getGraph();
   }
-
-  ngOnInit() {}
 
   getGraph() {
 
@@ -39,49 +25,45 @@ export class CostingGraph3Component implements OnInit {
      this.myChart = new Chart(this.donutCtx, {
         type: 'bar',
         data: {
-           labels: this.labels,
+           labels: ["January", "February", "March", "April", "May", "June", "July"],
            datasets: [{
-
-               label: "Actual cost",
+               label: "My First dataset",
                backgroundColor:  '#3f51b5',
                borderColor: '#3f51b5',
-               data: this.act_cost,
+               data: [34, 33, 175, 130, 27, 55, 60],
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,
                showLine: false // no line shown
            },
            {
-               label: "Estimated cost",
+               label: "My First dataset",
                backgroundColor:  '#ff6384',
                borderColor: '#ff6384',
-               data: this.est_cost,
+               data: [314, 332, 15, 13, 37, 55, 160],
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,
                showLine: false // no line shown
-           }]
+           }
+         ]
         },
         options: {
              responsive: true,
              title:{
                  display:true,
-                 text:'Sub Project Costing'
+                 text:'Point Style: 1'
              },
              legend: {
-                 display: true
+                 display: false
              },
              elements: {
                  point: {
                      pointStyle: 'circle'
                  }
-             },
-
+             }
          }
     });
   }
 
-  fun() {
-    console.log('fun');
-  }
 }

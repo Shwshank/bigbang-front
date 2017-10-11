@@ -90,6 +90,10 @@ import { FilecontentComponent } from './home/body/files/filecontent/filecontent.
 import { NewFileComponent } from './home/body/files/filecontent/new-file/new-file.component';
 import { NewFolderComponent } from './home/body/files/filecontent/new-folder/new-folder.component';
 import { VendorComponent } from './home/body/vendor/vendor.component';
+import { VendorGraph1Component } from './home/body/vendor/vendor-graph1/vendor-graph1.component';
+import { VendorContentComponent } from './home/body/vendor/vendor-content/vendor-content.component';
+import { VendorDetailsComponent } from './home/body/vendor/vendor-details/vendor-details.component';
+import { VendorDetailsGraph1Component } from './home/body/vendor/vendor-details/vendor-details-graph1/vendor-details-graph1.component';
 
 
 @NgModule({
@@ -137,7 +141,11 @@ import { VendorComponent } from './home/body/vendor/vendor.component';
     FilecontentComponent,
     NewFileComponent,
     NewFolderComponent,
-    VendorComponent
+    VendorComponent,
+    VendorGraph1Component,
+    VendorContentComponent,
+    VendorDetailsComponent,
+    VendorDetailsGraph1Component
 
   ],
   imports: [

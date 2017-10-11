@@ -14,6 +14,7 @@ import { BodyComponent } from './home/body/body.component';
 import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { FilesComponent } from './home/body/files/files.component';
 import { VendorComponent } from './home/body/vendor/vendor.component';
+import { VendorDetailsComponent } from './home/body/vendor/vendor-details/vendor-details.component';
 
 
 export const routes: Routes = [
@@ -59,7 +60,12 @@ export const routes: Routes = [
       },
       {
         path: 'vendor',
-        component: VendorComponent
+        component: VendorComponent,
+        children: [
+      	  {
+        		path: 'vendorDetails',
+        		component: VendorDetailsComponent,
+          }]
       },
       {
         path: '**',

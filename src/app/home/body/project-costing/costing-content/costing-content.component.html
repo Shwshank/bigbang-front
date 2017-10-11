@@ -1,14 +1,19 @@
-<div style="width: 600px;  ">
 
-  <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='addCosting()' >Add a component</button>
 
+
+
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--6-col mdl-grid">
+
+ <div class="mdl-cell--12-col"> <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect add-comoponet-button" (click)='addCosting()' >Add a component</button>
+ </div>
   <div *ngIf='newComponent' >
     <app-new-cost-componet-box></app-new-cost-componet-box>
   </div>
 
 
-  <h5>Added Costing components </h5>
+  <h5 class="add-comonent">Added Costing components </h5>
 
     <app-all-costing-component></app-all-costing-component>
 
 </div>
+

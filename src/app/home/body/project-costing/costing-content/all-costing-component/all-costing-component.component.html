@@ -1,31 +1,70 @@
+
+  
+
 <div style="width:100% ;" >
 
-  <main class="mdl-grid center-items" style="margin: auto; " >
-
-    <div *ngFor=' let com of costComponents' class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid ">
-      <p>{{com.name}}</p>,
-      <p>{{com.desc}}</p>,
-      <p>{{com.estcost}}</p>,
-   
-      <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored " (click)='deleteComponent(com.chart_id)'>
-          <i  class=" material-icons">delete</i>
+  <main class="mdl-grid" style="margin: auto; " >
+      <div *ngFor=' let com of costComponents' >
+      <div class="wrapper">
+       
+          
+          <div class="half">
+            <div class="tab blue">
+              <input class="input" id="tab-four" type="radio" name="tabs2">
+              <label class="label" for="tab-four">  {{com.name}}</label>
+              
+              <div class="tab-content">
+                  <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid ">
+                    
+                      <p class="text-dec">{{com.desc}}</p>
+                  
+                   
+                      <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored del-cus" (click)='deleteComponent(com.chart_id)'>
+                          <i  class=" material-icons">delete</i>
+                         
+                        </button>
+                
+                      <div *ngFor = 'let ccdata of com.data' >
+                    
+                        <md-form-field class="example-full-width input-item ">
+                          <input mdInput placeholder={{ccdata.labelData}} type="text"  value={{ccdata.costData}} required>
+                        </md-form-field>
+                
+                        <md-form-field class="example-full-width input-item">
+                          <input mdInput placeholder="Date" type="text"  value={{ccdata.dateData}} required>
+                        </md-form-field>
+                      
+                
+                   
+                      </div>
+                      <div class=" mdl-cell--6-col">     
+                      <p class="actual-cost">Actual Cost:  {{com.estcost}}</p> 
+                      <p class="total-cost">Total Cost:    {{com.estcost}}</p>
+                      </div>
+                   <div class="buttons-right mdl-cell--6-col" >
+                    <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian" >
+                        <i  class=" material-icons">edit</i>
+                       
+                      </button>
+                      <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian " >
+                        <i  class=" material-icons">save</i>
+                       
+                      </button>
+                   </div>
+                     
+                  </div>
+                 
+                    </div>
+           
+              </div>
+            </div>
+           
+              </div>
+            </div>
          
-        </button>
 
-      <div *ngFor = 'let ccdata of com.data' >
-
-        <md-form-field class="example-full-width input-item ">
-          <input mdInput placeholder={{ccdata.labelData}} type="text"  value={{ccdata.costData}} required>
-        </md-form-field>
-
-        <md-form-field class="example-full-width input-item ">
-          <input mdInput placeholder="Date" type="text"  value={{ccdata.dateData}} required>
-        </md-form-field>
-
-
-      </div>
-
-    </div>
+      
+   
 
   </main>
 

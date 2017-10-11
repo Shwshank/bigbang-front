@@ -44,27 +44,46 @@ export class APIService {
   }
 
   AddNewCostingComponent(estcosting: any, name:any, desc: any, data:any) {
-
     data = JSON.stringify(data);
     let estcost = +estcosting;
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     return this.http.post(this.projectURL+'/addcostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "estcost":'+estcost+', "name":"'+name+'", "desc":"'+desc+'", "data":'+data+'  }');
+
   }
 
   GetAllCostingComponent() {
-
     let currentPID = localStorage.getItem('currentPID');
     return this.http.post(this.projectURL+'/getallcostcharts','{"pid":"'+currentPID+'"}').map(res=>res.json());
+
   }
 
   DeleteCostingComponent(cid) {
-
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     console.log(cid);
     console.log(this.projectURL+'/addcostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "cid":"'+cid+'"}');
     return this.http.post(this.projectURL+'/deletecostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "cid":"'+cid+'"}');
+
+  }
+
+  AddFile(data: any) {
+    console.log(data);
+    let uid = localStorage.getItem('uid');
+    let currentPID = localStorage.getItem('currentPID');
+    data.append('uid',uid);
+    data.append('pid',currentPID);
+    return this.http.post(this.projectURL+'/addfile',data);
+
+  }
+
+  AddFolder( data: any) {
+    console.log(data);
+    let uid = localStorage.getItem('uid');
+    let currentPID = localStorage.getItem('currentPID');
+    data.append('uid',uid);
+    data.append('pid',currentPID);
+    return this.http.post(this.projectURL+'/addfolder',data);
 
   }
 

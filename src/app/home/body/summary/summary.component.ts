@@ -66,4 +66,9 @@ export class SummaryComponent implements OnInit {
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
+  vendor() {
+    this.router.navigate(['home/vendor'],
+         {queryParams: {projectName: this.projectSummary.name}});
+  }
+
 }

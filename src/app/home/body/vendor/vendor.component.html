@@ -5,9 +5,9 @@
       <app-vendor-graph1></app-vendor-graph1>
 
     </div> -->
-    <material-datepicker [(ngModel)]='date'></material-datepicker>
+  <!--  <material-datepicker [(ngModel)]='date'></material-datepicker>-->
 
-    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid" style="overflow-x:auto ; width:100%; " >
+    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid"  >
 
       <md-tab-group (selectChange)="onLinkClick($event)">
 
@@ -20,21 +20,22 @@
 
           <md-tab label="Vendor details" >
 
-            <div style="min-height:500px; width:100%;">
+       
 
-              <md-select placeholder="Vendor "  [(ngModel)]="vendor_id">
+              <md-select placeholder="Vendor "  [(ngModel)]="vendor_id" class="example-full-width input-item">
                 <md-option *ngFor="let vendor of vendors" [value]="vendor.vendor_id">
                   {{vendor.vendor_name}}
                 </md-option>
               </md-select>
+              <div class="button-right but-cus">
+                  <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='vendorDetails()' >Get Deatils</button>
+    
+                  <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='reset()' >reset</button>
+                  </div>
 
-
-              <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='vendorDetails()' >Get Deatils</button>
-
-              <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='reset()' >reset</button>
-
+            
                 <router-outlet></router-outlet>
-            </div>
+            
 
 
 

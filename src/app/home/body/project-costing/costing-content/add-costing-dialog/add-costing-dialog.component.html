@@ -9,11 +9,11 @@
   </md-form-field>
 
   <md-form-field class="example-full-width input-item ">
-    <input mdInput placeholder="Description" type="text"  [(ngModel)]="ccdesc" required>
+    <textarea mdInput placeholder="Description" type="text"  [(ngModel)]="ccdesc" required></textarea>
   </md-form-field>
 
   <md-form-field class="example-full-width input-item ">
-    <input mdInput placeholder="Estimated Cost" type="text"  [(ngModel)]="estcost" required>
+    <input mdInput placeholder="Estimated Cost" type="number"  [(ngModel)]="estcost" required>
   </md-form-field>
 
 
@@ -22,7 +22,9 @@
 </md-dialog-content>
 
 <md-dialog-actions>
+  <div class="button-cus">
   <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="onCloseConfirm()">SUBMIT</button>
 
   <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="onCloseCancel()">CANCEL</button>
+  </div>
 </md-dialog-actions>

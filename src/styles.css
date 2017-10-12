@@ -250,3 +250,15 @@ path {
   .center-items {
     justify-content: center;
 }
+
+.mat-dialog-container{
+  height: auto !important;
+}
+
+@media only screen and (max-width:500px) {
+  
+   .graph{
+    height: 350px !important;
+    width: 350px !important;
+  }
+  }

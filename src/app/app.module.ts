@@ -7,6 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { ChartsModule } from 'ng2-charts';
 
+import { DatepickerModule } from 'angular-mat-datepicker'
+
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MdAutocompleteModule,
@@ -39,6 +41,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
+
  } from '@angular/material';
 
 import { routes } from './app.routes';
@@ -157,6 +160,7 @@ import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.com
 
   ],
   imports: [
+    DatepickerModule,
     HttpModule,
     ChartsModule,
     BrowserModule,

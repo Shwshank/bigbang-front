@@ -7,7 +7,14 @@
 
   <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
     {{vendor_id}}
+    <!-- {{tendor.vendor_name}}
+    {{tendor.vendor_desc}} -->
 
   </div>
 
+
+  <div *ngFor="let tendor of allTendors" class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
+    {{tendor.tendor_desc}}
+
+  </div>
 </main>

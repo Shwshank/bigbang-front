@@ -1,15 +1,22 @@
 <div style="width:100% !important">
   <main class="mdl-grid " style="margin: auto; " >
 
-    <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
+    <!-- <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
       <app-vendor-graph1></app-vendor-graph1>
 
-
-    </div>
+    </div> -->
+    <material-datepicker [(ngModel)]='date'></material-datepicker>
 
     <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid" style="overflow-x:auto ; width:100%; " >
 
-      <md-tab-group >
+      <md-tab-group (selectChange)="onLinkClick($event)">
+
+
+        <md-tab label="All vendors ">
+
+              <router-outlet></router-outlet>
+
+        </md-tab>
 
           <md-tab label="Vendor details" >
 
@@ -23,8 +30,13 @@
 
 
               <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='vendorDetails()' >Get Deatils</button>
+
+              <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='reset()' >reset</button>
+
                 <router-outlet></router-outlet>
             </div>
+
+
 
           </md-tab>
 

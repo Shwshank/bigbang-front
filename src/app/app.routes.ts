@@ -15,7 +15,7 @@ import { AllProjectsComponent } from './all-projects/all-projects.component';
 import { FilesComponent } from './home/body/files/files.component';
 import { VendorComponent } from './home/body/vendor/vendor.component';
 import { VendorDetailsComponent } from './home/body/vendor/vendor-details/vendor-details.component';
-
+import { VendorGraph1Component } from './home/body/vendor/vendor-graph1/vendor-graph1.component';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoginComponent },
@@ -62,6 +62,10 @@ export const routes: Routes = [
         path: 'vendor',
         component: VendorComponent,
         children: [
+          {
+        		path: 'allVendorGraph',
+        		component: VendorGraph1Component,
+          },
       	  {
         		path: 'vendorDetails',
         		component: VendorDetailsComponent,

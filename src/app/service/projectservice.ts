@@ -30,6 +30,11 @@ export class ProjectService {
   emittendor: EventEmitter<any> = new EventEmitter<any>();
   emitAllTendor: EventEmitter<any> = new EventEmitter<any>();
 
+  emitact_cost01 : EventEmitter<any> = new EventEmitter<any>();
+  emitest_cost01 : EventEmitter<any> = new EventEmitter<any>();
+  emitlabels01 : EventEmitter<any> = new EventEmitter<any>();
+  emitvendorData : EventEmitter<any> = new EventEmitter<any>();
+
   data1 : any = [
     {name: 'cc1', desc:'complete desc1', data : [{labelData : 'label 1', costData: '12', dateData: '10/10/2017'},{labelData : 'label 2', costData: '22', dateData: '11/10/2017'},
     {labelData : 'label 3', costData: '62', dateData: '12/10/2017'},{labelData : 'label 4', costData: '122', dateData: '13/10/2017'}]},
@@ -38,6 +43,10 @@ export class ProjectService {
   ];
 
   temp: any;
+  act_cost01 : any;
+  est_cost01 : any;
+  labels01 : any;
+  vendorData : any;
 
     CostComponet() {
         this.APIService.GetAllCostingComponent().subscribe((res)=>{
@@ -49,10 +58,28 @@ export class ProjectService {
     }
 
   vendor : any = [];
-
   tendor : any = [];
 
-  allTendorsByVendorID: any = [{'vendor_name':'vendor1'}];
+  emitact_cost01fun() {
+    this.emitact_cost01.emit(this.act_cost01);
+  }
+
+  emitest_cost01fun() {
+    this.emitest_cost01.emit(this.est_cost01);
+  }
+
+  emitlabels01fun() {
+    this.emitlabels01.emit(this.labels01);
+  }
+
+  emitvendorDatafun() {
+    this.emitvendor.emit(this.vendorData);
+  }
+
+
+  allTendorsByVendorID: any = [];
+
+
 
   newCostComponent(data: any) {
       this.emitNewCostComponent.emit(data);
@@ -162,13 +189,25 @@ export class ProjectService {
   getAllTendorWithVendorId(data) {
 
     this.APIService.GetAllTendorsWithVendorId(data).subscribe( (res)=>{
-      console.log(res);
-      // this.allTendorsByVendorID = res;
+      // console.log(res);
+
+      this.act_cost01 = res;
+      this.est_cost01 = res.target_cost;
+      this.labels01 = res.labels;
+      this.vendorData = res.vendor;
+      this.allTendorsByVendorID = res.vendor.tendors;
+
       this.emitAllTendorFun();
+      this.emitact_cost01fun();
+      this.emitest_cost01fun();
+      this.emitlabels01fun();
+      this.emitvendorDatafun();
 
     });
 
   }
+
+
 
 
 }

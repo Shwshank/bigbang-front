@@ -6,12 +6,13 @@
   <main class="mdl-grid" style="margin: auto; " >
       <div *ngFor=' let com of costComponents' >
       <div class="wrapper">
-       
+   
           
-          <div class="half">
-            <div class="tab blue">
-              <input class="input" id="tab-four" type="radio" name="tabs2">
-              <label class="label" for="tab-four">  {{com.name}}</label>
+        <ul>
+          <li>
+            <input type="checkbox" checked>
+            <i class="icon-dropdown"></i>
+            <h2>{{com.name}}</h2>
               
               <div class="tab-content">
                   <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid ">
@@ -53,14 +54,14 @@
                    </div>
                      
                   </div>
-                 
-                    </div>
-           
               </div>
+          </li>
+        </ul>
+          
             </div>
            
               </div>
-            </div>
+          
          
 
       

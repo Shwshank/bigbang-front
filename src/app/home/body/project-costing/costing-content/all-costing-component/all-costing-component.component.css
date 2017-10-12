@@ -1,71 +1,149 @@
 
+.transition, .tab-content, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
+
+.flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
+
+@media (max-width: 550px) {
+  body {
+    box-sizing: border-box;
+    transform: translate(0, 0);
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    left: 0;
+  }
+}
+
+
+
+h2 {
+  font-size:1.5em;
+  line-height: 34px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+  padding:5px;
+  padding-left: 10px;
+  color: #fff;
+  margin: 0;
+  cursor: pointer;
+}
+
+.tab-content {
+  color: rgba(48, 69, 92, 0.8);
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  max-height: 800px;
+  opacity: 1;
+  transform: translate(0, 0);
+  margin-top: 14px;
+  z-index: 2;
+}
+
+ul {
+  list-style: none;
+  perspective: 900;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  position: relative;
+  padding: 0;
+  background: rgb(89, 108, 212);
+  margin: 0;
+  padding-bottom: 4px;
+  padding-top: 0px;
+ 
+}
+ul li:nth-of-type(1) {
+  animation-delay: 0.5s;
+}
+ul li:nth-of-type(2) {
+  animation-delay: 0.75s;
+}
+ul li:nth-of-type(3) {
+  animation-delay: 1s;
+}
+ul li:last-of-type {
+  padding-bottom: 0;
+}
+ul li .icon-dropdown {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 17px;
+  right:20px;
+}
+ul li .icon-dropdown:before, ul li .icon-dropdown:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 3px;
+  height: 9px;
+}
+ul li .icon-dropdown:before {
+  transform: translate(-2px, 0) rotate(45deg);
+}
+ul li .icon-dropdown:after {
+  transform: translate(2px, 0) rotate(-45deg);
+}
+ul li input[type=checkbox] {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+ul li input[type=checkbox]:checked ~ .tab-content {
+  margin-top: 0;
+  max-height: 0;
+  opacity: 0;
+  transform: translate(0, 50%);
+}
+ul li input[type=checkbox]:checked ~ .icon-dropdown:before {
+  transform: translate(2px, 0) rotate(45deg);
+}
+ul li input[type=checkbox]:checked ~ .icon-dropdown:after {
+  transform: translate(-2px, 0) rotate(-45deg);
+}
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
 
   /* Acordeon styles */
-  .tab {
-    position: relative;
-    margin-bottom: 1px;
-    width: 100%;
-    color: #fff;
-    overflow: hidden;
-  }
-  .input {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-  }
-  .label {
-    position: relative;
-    display: block;
-    padding: 0 0 0 1em;
-    font-weight: bold;
-    line-height: 3;
-    cursor: pointer;
-  }
-  .blue .label {
-    background: rgb(89, 108, 212);
-  }
-  .tab-content {
-    max-height: 0;
-    overflow: hidden;
-    color: #000;
-    -webkit-transition: max-height .35s;
-    -o-transition: max-height .35s;
-    transition: max-height .35s;
-  }
+  
   .mat-form-field {
     width: 295px;
     padding-left: 20px;
 }
-  
-  .tab-content p {
-    margin: 1em;
-  }
-  /* :checked */
-  .input:checked ~ .tab-content {
-    max-height: 100em;
-  }
-  /* Icon */
-  .label::after {
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: block;
-    width: 3em;
-    height: 3em;
-    line-height: 3;
-    text-align: center;
-    -webkit-transition: all .35s;
-    -o-transition: all .35s;
-    transition: all .35s;
-  }
- 
-  .input[type=radio] + .label::after {
-    content: "\25BC";
-  }
- 
-  .input[type=radio]:checked + label::after {
-    transform: rotateX(180deg);
-  }
   .del-cus{
       right:6%;
       position: absolute;

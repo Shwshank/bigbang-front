@@ -1,0 +1,9 @@
+
+
+@media only screen and (max-width:500px) {
+    
+     .graph{
+      height: 350px !important;
+      width: 350px !important;
+    }
+    }

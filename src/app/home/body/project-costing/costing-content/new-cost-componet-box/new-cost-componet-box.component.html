@@ -1,6 +1,6 @@
 
 <div style="" >
-<main class="mdl-grid " style="width: 200%; min-height:400px">
+<main class="mdl-grid " >
 
   <div class="mdl-color--white mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-grid" >
 
@@ -20,15 +20,20 @@
         <input mdInput placeholder='Date' type="date"  [(ngModel)]="inp.dateData" required>
       </md-form-field>
 
-      <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='removeCosting(i)' >-</button>
+      <button md-button class="fab-button-add-del  mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab" (click)='removeCosting(i)' >
+          <i  class=" material-icons">remove</i>
+      </button>
 
     </div>
     &nbsp;
-    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='addCosting()' >+</button>
+    <button md-button class=" fab-button-add-del  mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab" (click)='addCosting()' >
+        <i  class=" material-icons">add</i>
+    </button>
     <hr>
+    <div class="button-right">
     <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='saveCostingComponentData()' >Save</button>
     <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='discard()' >Discard</button>
-
+    </div>
 
 
 

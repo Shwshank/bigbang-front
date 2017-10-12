@@ -119,33 +119,39 @@ path {
 
   /*floating ends here */
 
-
-
+  
+  
   .FAB {
     position: absolute;
     bottom: 20px;
-    left:80px;
+    left: 60px;
     width: 56px;
   }
   .FAB__action-button, .FAB__mini-action-button {
     cursor: pointer;
     position: absolute;
-
   }
   .FAB__action-button {
     bottom: 0;
     right: 0;
   }
+  .button-info{
+    color: #ff4081;
+  }
   .FAB__action-button:hover .action-button__icon {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.14), 0 8px 16px rgba(0, 0, 0, 0.28);
   }
   .FAB__mini-action-button {
-    bottom: 30px;
-    right: 60px;
+    bottom: 0;
+    right: 30px;
   }
-
-  .button-info {
-    color: #ff4081;
+  
+  .action-button__icon {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+    background-color: #ff4081;
+    border-radius: 50%;
+    color: #fff;
+    padding: 16px;
   }
   .action-button__text--hide {
     display: none;
@@ -163,10 +169,10 @@ path {
     top: 2px;
     white-space: nowrap;
   }
-
+  
   .mini-action-button__icon {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
-    background-color: #ff4282;
+    background-color:#ff4081;
     border-radius: 50%;
     color: #fff;
     padding: 8px;
@@ -187,8 +193,9 @@ path {
     font-family: "Helvetica Neue";
     opacity: .8;
     padding: 5px 9px;
+    z-index: 9999;
     position: absolute;
-    top: 0px;
+    top: -6px;
     white-space: nowrap;
   }
   .mini-action-button--show {
@@ -199,43 +206,47 @@ path {
     display: none;
     opacity: 0;
   }
-
+  
   .mini-action-button--show:nth-child(1) {
-   left: 80px;
+    bottom: 80px;
   }
-
+  
   .mini-action-button--show:nth-child(2) {
-   left: 140px;
+    bottom: 140px;
   }
-
+  
   .mini-action-button--show:nth-child(3) {
-    left: 200px;
+    bottom: 200px;
   }
-
+  
   .mini-action-button--show:nth-child(4) {
-   left: 260px;
+    bottom: 260px;
   }
-
+  
   .mini-action-button--show:nth-child(5) {
-    left: 320px;
+    bottom: 320px;
   }
-
+  
   .mini-action-button--show:nth-child(6) {
-    left: 380px;
+    bottom: 380px;
   }
-
+  
   .mini-action-button--show:nth-child(7) {
-    left: 440px;
+    bottom: 440px;
   }
-
+  
   .mini-action-button--show:nth-child(8) {
-    left: 500px;
+    bottom: 500px;
   }
-
+  
   .mini-action-button--show:nth-child(9) {
-    left: 560px;
+    bottom: 560px;
   }
-
+  
   .mini-action-button--show:nth-child(10) {
-    left: 620px;
+    bottom: 620px;
   }
+  /*center items*/
+  .center-items {
+    justify-content: center;
+}

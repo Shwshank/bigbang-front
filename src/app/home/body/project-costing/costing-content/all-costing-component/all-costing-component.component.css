@@ -1,0 +1,135 @@
+
+
+  /* Acordeon styles */
+  .tab {
+    position: relative;
+    margin-bottom: 1px;
+    width: 100%;
+    color: #fff;
+    overflow: hidden;
+  }
+  .input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+  .label {
+    position: relative;
+    display: block;
+    padding: 0 0 0 1em;
+    font-weight: bold;
+    line-height: 3;
+    cursor: pointer;
+  }
+  .blue .label {
+    background: rgb(89, 108, 212);
+  }
+  .tab-content {
+    max-height: 0;
+    overflow: hidden;
+    color: #000;
+    -webkit-transition: max-height .35s;
+    -o-transition: max-height .35s;
+    transition: max-height .35s;
+  }
+  .mat-form-field {
+    width: 295px;
+    padding-left: 20px;
+}
+  
+  .tab-content p {
+    margin: 1em;
+  }
+  /* :checked */
+  .input:checked ~ .tab-content {
+    max-height: 100em;
+  }
+  /* Icon */
+  .label::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    line-height: 3;
+    text-align: center;
+    -webkit-transition: all .35s;
+    -o-transition: all .35s;
+    transition: all .35s;
+  }
+ 
+  .input[type=radio] + .label::after {
+    content: "\25BC";
+  }
+ 
+  .input[type=radio]:checked + label::after {
+    transform: rotateX(180deg);
+  }
+  .del-cus{
+      right:6%;
+      position: absolute;
+  }
+  .text-dec{
+      color: #696464;
+  }
+  .actual-cost{
+    font-weight: 400;
+    font-size: 1em;
+    text-align: left;
+    line-height: 1;
+  }
+  .total-cost{
+    font-weight: 400;
+    font-size: 1em;
+    text-align:left;
+    line-height: 1;
+  
+}
+.buttons-right{
+  text-align: right;
+}
+.but-accordian{
+  margin-left: 10%;
+  
+}
+@media only screen and (max-width:1620px) {    
+
+.mat-form-field {
+  width: 250px;
+ 
+}
+}
+@media only screen and (max-width:1520px) {    
+  
+  .mat-form-field {
+    width: 210px;
+   
+  }
+  }
+  @media only screen and (max-width:1440px) {    
+    
+    .mat-form-field {
+      width:210px;
+     
+    }
+    }
+  
+        @media only screen and (max-width:1024px) {    
+          
+          .mat-form-field {
+            width:136px;
+           
+          }
+          }
+          @media only screen and (max-width:768px) {    
+          .mat-form-field{
+            width: 159px;
+        }
+      }
+      @media only screen and (max-width:500px) {    
+        .mat-form-field{
+          width: 159px;
+      }
+    }
+      

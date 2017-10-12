@@ -49,6 +49,16 @@ export class VendorGraph1Component implements OnInit {
                pointRadius: 10,
                pointHoverRadius: 15,
                showLine: false // no line shown
+           },
+           {
+               label: "My First dataset",
+               backgroundColor:  '#ff6384',
+               borderColor: '#ff6384',
+               data: [314, 332, 15, 13, 37, 55, 160],
+               fill: false,
+               pointRadius: 10,
+               pointHoverRadius: 15,
+               showLine: false // no line shown
            }
          ]
         },

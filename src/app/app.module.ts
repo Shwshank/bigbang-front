@@ -102,6 +102,8 @@ import { NewTendorComponent } from './home/body/vendor/new-tendor/new-tendor.com
 import { AllTendorsComponent } from './home/body/vendor/all-tendors/all-tendors.component';
 import { SunBrustComponent } from './all-projects/sun-brust/sun-brust.component';
 import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.component';
+import { NewLocationBoxComponent } from './home/body/project-setting/assign-project/new-location-box/new-location-box.component';
+import { SummaryGraph1Component } from './home/body/project-summary/summary-graph1/summary-graph1.component';
 
 
 @NgModule({
@@ -157,7 +159,9 @@ import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.com
     NewTendorComponent,
     AllTendorsComponent,
     SunBrustComponent,
-    NewVendorComponent
+    NewVendorComponent,
+    NewLocationBoxComponent,
+    SummaryGraph1Component
 
   ],
   imports: [

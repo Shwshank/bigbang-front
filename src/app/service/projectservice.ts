@@ -204,10 +204,13 @@ export class ProjectService {
       this.emitvendorDatafun();
 
     });
-
   }
 
+  getMapData() {
 
-
+    this.APIService.GetMapData().subscribe((res)=>{
+      console.log(res);
+    });
+  }
 
 }

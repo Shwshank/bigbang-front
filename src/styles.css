@@ -4,11 +4,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
-path {
-  stroke: #fff;
-}
-
-
 /*universe graph starts here */
 
 	.node {
@@ -119,8 +114,8 @@ path {
 
   /*floating ends here */
 
-  
-  
+
+
   .FAB {
     position: absolute;
     bottom: 20px;
@@ -145,7 +140,7 @@ path {
     bottom: 0;
     right: 30px;
   }
-  
+
   .action-button__icon {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
     background-color: #ff4081;
@@ -169,7 +164,7 @@ path {
     top: 2px;
     white-space: nowrap;
   }
-  
+
   .mini-action-button__icon {
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
     background-color:#ff4081;
@@ -206,43 +201,43 @@ path {
     display: none;
     opacity: 0;
   }
-  
+
   .mini-action-button--show:nth-child(1) {
     bottom: 80px;
   }
-  
+
   .mini-action-button--show:nth-child(2) {
     bottom: 140px;
   }
-  
+
   .mini-action-button--show:nth-child(3) {
     bottom: 200px;
   }
-  
+
   .mini-action-button--show:nth-child(4) {
     bottom: 260px;
   }
-  
+
   .mini-action-button--show:nth-child(5) {
     bottom: 320px;
   }
-  
+
   .mini-action-button--show:nth-child(6) {
     bottom: 380px;
   }
-  
+
   .mini-action-button--show:nth-child(7) {
     bottom: 440px;
   }
-  
+
   .mini-action-button--show:nth-child(8) {
     bottom: 500px;
   }
-  
+
   .mini-action-button--show:nth-child(9) {
     bottom: 560px;
   }
-  
+
   .mini-action-button--show:nth-child(10) {
     bottom: 620px;
   }
@@ -256,7 +251,7 @@ path {
 }
 
 @media only screen and (max-width:500px) {
-  
+
    .graph{
     height: 350px !important;
     width: 350px !important;

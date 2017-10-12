@@ -15,7 +15,7 @@ export class VendorDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router, private ProjectService: ProjectService) {
     this.ProjectService.emitAllTendor.subscribe((res)=>{
       this.allTendors = res;
-      console.log(this.allTendors);
+      // console.log(this.allTendors);
     });
   }
 

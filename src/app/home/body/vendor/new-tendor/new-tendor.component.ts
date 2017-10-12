@@ -23,7 +23,7 @@ export class NewTendorComponent implements OnInit {
     this.ProjectService.emitvendor.subscribe((res)=>{
        this.vendors = res.vendors ;
     });
-    
+
   }
 
   ngOnInit() {

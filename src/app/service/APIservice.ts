@@ -112,4 +112,11 @@ export class APIService {
     return this.http.post(this.projectURL+'/getalltendors',data).map(res=>res.json());
   }
 
+  GetAllTendorsWithVendorId(data) {
+
+    let currentPID = localStorage.getItem('currentPID');
+    data.append('pid',currentPID);
+    return this.http.post(this.projectURL+'/getalltendors',data).map(res=>res.json());
+  }
+
 }

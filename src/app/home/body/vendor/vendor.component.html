@@ -14,11 +14,14 @@
           <md-tab label="Vendor details" >
 
             <div style="min-height:500px; width:100%;">
-              <md-select placeholder="Vendors "  [(ngModel)]="vendor_id">
-                <md-option *ngFor="let vendor of vendors" [value]="vendor.id" >
-                  {{vendor.name}}
+
+              <md-select placeholder="Vendor "  [(ngModel)]="vendor_id">
+                <md-option *ngFor="let vendor of vendors" [value]="vendor.vendor_id">
+                  {{vendor.vendor_name}}
                 </md-option>
               </md-select>
+
+
               <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='vendorDetails()' >Get Deatils</button>
                 <router-outlet></router-outlet>
             </div>

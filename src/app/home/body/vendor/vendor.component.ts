@@ -10,11 +10,16 @@ import { ProjectService } from '../../../service/projectservice';
 export class VendorComponent implements OnInit {
 
   vendor_id: any;
-  vendors: any = [{'name':'7 Techi','id':'1'},{'name':'Ryogi','id':'2'}];
+  vendors: any ;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private ProjectService: ProjectService) {
+    this.ProjectService.emitvendor.subscribe((res)=>{
+       this.vendors = res.vendors ;
+    });
+  }
 
   ngOnInit() {
+    this.ProjectService.getAllVendor();
   }
 
   vendorDetails() {

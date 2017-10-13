@@ -1,0 +1,32 @@
+.tender-name{
+    width: 100%;
+}
+.tender-dec{
+    width: 100%;
+}
+.est-cost{
+    width: 100%;
+}
+.act-cost{
+    width: 100%;
+}
+.tender{
+    min-width: 675px;
+    max-width: 100%;
+}
+.graph{
+    width:40%;
+    height: 200px;
+    background: gray;
+}
+.tander-content{
+    width:50%;
+    height: 200px;
+}
+.but-accordian {
+    margin-left:5%;
+}
+.del-cus{
+    margin-bottom: 2%;
+    margin-top: -2%;
+}

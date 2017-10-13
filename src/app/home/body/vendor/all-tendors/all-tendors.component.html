@@ -1,12 +1,59 @@
-<main class="mdl-grid " style="margin: auto;  " >
+<main class="mdl-grid "  >
 
-  <div *ngFor='let tendor of tendors' class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
+    <div *ngFor='let tendor of tendors' class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid ">
+     
+        <ul >
+          <li>
+            <input type="checkbox" checked>
+            <i class="icon-dropdown"></i>
+            <h2 class="tender">Tender</h2>
+            
+             <div class="tab-content ">
+                <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid ">
+                    <div class="button-right">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored del-cus">
+                            <i class=" material-icons">delete</i>
+                           
+                          </button>
+                        </div>
+                   <div class="tander-content">
 
-    {{tendor.tendor_name}} <br>
-    {{tendor.tendor_desc}} <br>
-    {{tendor.tendor_est_cost}} <br>
-    {{tendor.tendor_act_cost}} <br>
 
-  </div>
+                  <div class="tender-name" >   {{tendor.tendor_name}}</div>
+                  <div class="tender-dec" >   {{tendor.tendor_desc}} </div>
+                  <div class="est-cost" >    {{tendor.tendor_est_cost}} </div>
+                  <div class="act-cost" >    {{tendor.tendor_act_cost}} </div>
+                   </div>
+             
+              
+                      <div class="graph"></div>
+                 
+
+                      <div  class="button-right">
+                          <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian">
+                              <i  class=" material-icons">edit</i>
+                             
+                            </button>
+                            <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian ">
+                              <i  class=" material-icons">save</i>
+                             
+                            </button>
+                         </div>
+                   </div>
+            </div>
+                 
+               
+
+                 
+           
+
+
+                </li>
+              </ul>
+      
+   
+              </div>
+         
 
 </main>
+  

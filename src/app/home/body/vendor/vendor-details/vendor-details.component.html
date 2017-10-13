@@ -13,8 +13,36 @@
   </div>
 
 
-  <div *ngFor="let tendor of allTendors" class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
-    {{tendor.tendor_desc}}
+  <div *ngFor="let tendor of allTendors" class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid " >
 
-  </div>
+      <ul>
+          <li>
+            <input type="checkbox" checked>
+            <i class="icon-dropdown"></i>
+          
+                
+            <h2 class="tender">{{tendor.tendor_desc}}</h2>
+         
+             <div class="tab-content ">
+             
+                <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid  vendor-deatils">
+                    
+                      <div  class="button-right">
+                          <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian">
+                              <i  class=" material-icons">edit</i>
+                             
+                            </button>
+                            <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian ">
+                              <i  class=" material-icons">save</i>
+                             
+                            </button>
+                         </div>
+                   </div>
+             </div>
+
+                </li>
+              </ul>
+      
+            </div>
+                 
 </main>

@@ -1,4 +1,7 @@
+
 <div style="width:100%; height:100%;" >
+    <br>
+    
 
   <md-form-field class="example-full-width input-item" >
     <input mdInput placeholder="File Name" type="text" [(ngModel)]='file_name'>
@@ -10,17 +13,24 @@
   </md-form-field>
   <br>
 
-  <md-select class="example-full-width" placeholder="Folder"   [(ngModel)]="folder_id" >
+  <md-select class="example-full-width " placeholder="Folder"   [(ngModel)]="folder_id" >
     <md-option *ngFor="let folder of folders" [value]="folder.folder_id"  >
       {{ folder.folder_name }}
     </md-option>
   </md-select>
   <br>
   <br>
+
+  <Label class="input-custom-file mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+    Select File
   <input  name="Select File" type="file"  (change)="updated($event);" >
+  </Label>
   <br>
+  
   <br>
   <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)="save()">Add file</button>
 
-
+  <br>
+  
+  <br>
 </div>

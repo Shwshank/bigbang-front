@@ -3,7 +3,6 @@ import { MdDialogRef } from '@angular/material';
 import { MD_DIALOG_DATA } from '@angular/material';
 import { Router, CanActivate } from '@angular/router';
 
-import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +15,7 @@ export class HomeComponent implements OnInit {
   singleProject: any;
   notSingleProject: any;
 
-  constructor(private router: Router, private snackBar: MdSnackBar) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     localStorage.setItem('flag1','1'); // for universeComponent

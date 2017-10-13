@@ -41,7 +41,6 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
-  MatSnackBarModule
 
  } from '@angular/material';
 
@@ -202,7 +201,6 @@ import { NewLocationBoxComponent } from './home/body/project-setting/assign-proj
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    MatSnackBarModule,
     RouterModule.forRoot(routes)
   ],
   entryComponents: [

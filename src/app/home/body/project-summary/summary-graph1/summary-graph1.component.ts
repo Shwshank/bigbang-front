@@ -16,7 +16,7 @@ export class SummaryGraph1Component implements OnInit {
   ngOnInit() {
     // this.$ = (<any>window).map;
     // this.$.getScript('./allscript.js');
-    // this.ProjectService.getMapData();
+    this.ProjectService.getMapData();
   }
   ngAfterViewInit() {
 

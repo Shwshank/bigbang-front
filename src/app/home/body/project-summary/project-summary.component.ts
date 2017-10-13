@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import './summary-graph1/allscript.js';
+// import './summary-graph1/sunBrust.js';
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-project-summary',
@@ -10,7 +12,7 @@ export class ProjectSummaryComponent implements OnInit {
 
   flag0 : any;
 
-  constructor() {
+  constructor(private snackBar: MdSnackBar) {
     console.log('flag check');
     this.flag0 = localStorage.getItem('flag0');
     if(this.flag0==='0') {
@@ -20,7 +22,9 @@ export class ProjectSummaryComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    // this.snackBar.open('message', 'action', {
+    //   duration: 4000,
+    // });
   }
 
   ngOnDestroy() {

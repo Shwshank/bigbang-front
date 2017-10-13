@@ -100,42 +100,43 @@ export class SummaryComponent implements OnInit {
 
 
   viewUniverse() {
-    this.menuClicked();
     localStorage.setItem('menu','universe');
+    this.menuClicked();
     this.router.navigate(['home/']);
+    this.menuClicked();
   }
 
   viewProjectSummary() {
-    this.menuClicked();
     localStorage.setItem('menu','summary');
+    this.menuClicked();
     this.router.navigate(['home/projectSummary'],
     {queryParams: {projectName: this.projectSummary.name}});
   }
 
   viewProjectCosting() {
-    this.menuClicked();
     localStorage.setItem('menu','costing');
+    this.menuClicked();
     this.router.navigate(['home/projectCosting'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
   viewFiles() {
-    this.menuClicked();
     localStorage.setItem('menu','file');
+    this.menuClicked();
     this.router.navigate(['home/projectFiles'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
   vendor() {
-    this.menuClicked();
     localStorage.setItem('menu','vendors');
+    this.menuClicked();
     this.router.navigate(['home/vendor'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
   projectSetting() {
-    this.menuClicked();
     localStorage.setItem('menu','setting');
+    this.menuClicked();
     this.router.navigate(['home/projectSetting'],
     {queryParams: {projectName: this.projectSummary.name}});
   }

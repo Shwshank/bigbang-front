@@ -1,11 +1,13 @@
 import { EventEmitter, Injectable, } from '@angular/core';
-import { APIService } from './APIservice';
 import { NgForm } from '@angular/forms';
+import {MdSnackBar} from '@angular/material';
+
+import { APIService } from './APIservice';
 
 @Injectable()
 export class ProjectService {
 
-  constructor(private APIService: APIService) {}
+  constructor(private APIService: APIService, private snackBar: MdSnackBar) {}
 
   emmitProjectSummary :  EventEmitter<any> = new EventEmitter<any>();
   emmitInputData :  EventEmitter<any> = new EventEmitter<any>();        // emmits input JSON data from dialog to form component
@@ -207,9 +209,10 @@ export class ProjectService {
   }
 
   getMapData() {
-
+    
     this.APIService.GetMapData().subscribe((res)=>{
       console.log(res);
+
     });
   }
 

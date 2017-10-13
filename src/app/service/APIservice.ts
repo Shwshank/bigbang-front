@@ -9,28 +9,38 @@ export class APIService {
   constructor( private http: Http ) {}
 
   AddNewUser(pid: any, fname: any, lname: any, email: any, addp: any,  addsp: any,  viewp: any, editp: any, deletep: any, createnu: any , assignu: any) {
+
     return this.http.post(this.projectURL+'/adduser', '{"pid": "'+pid+'", "fname" : "'+fname+'", "lname" : "'+lname+'", "email": "'+email+'" , "addp": '+addp+', "addsp": '+addsp+', "viewp": '+viewp+', "editp":'+editp+', "deletep": '+deletep+', "createnu": '+createnu+', "assignu": '+assignu+'}');
   }
 
   AddSubProject(pname: any, pdesc:any, uid: any, pid: any, addsp: any,  viewp: any, editp: any, deletep: any, assignu: any ) {
-    return this.http.post(this.projectURL+'/addsubproject', '{"pid": "'+pid+'", "pname" : "'+pname+'", "pdesc" : "'+pdesc+'", "uid": "'+uid+'", "addsp": '+addsp+', "viewp": '+viewp+', "editp":'+editp+', "deletep": '+deletep+', "assignu": '+assignu+'}');
+
+    let location = localStorage.getItem('location');
+    pid = localStorage.getItem('currentPID');
+    uid = localStorage.getItem('uid');
+    console.log(this.projectURL+'/addsubproject', '{"pid": "'+pid+'", "pname" : "'+pname+'", "pdesc" : "'+pdesc+'", "uid": "'+uid+'", "addsp": '+addsp+', "viewp": '+viewp+', "editp":'+editp+', "deletep": '+deletep+', "assignu": '+assignu+', "location": '+location+'}');
+    return this.http.post(this.projectURL+'/addsubproject', '{"pid": "'+pid+'", "pname" : "'+pname+'", "pdesc" : "'+pdesc+'", "uid": "'+uid+'", "addsp": '+addsp+', "viewp": '+viewp+', "editp":'+editp+', "deletep": '+deletep+', "assignu": '+assignu+', "location": '+location+'}');
   }
 
   GetUserPerms(uid: any) {
+
     return this.http.post(this.projectURL+'/getuserpermissionswhole', '{"uid": "'+uid+'"}').map(res=>res.json());
   }
 
   GetProjectPerms(pid: any) {
+
     return this.http.post(this.projectURL+'/getprojectpermissions', '{"pid": "'+pid+'"}').map(res=>res.json());
   }
 
-  GetAllUsers(uid: any) {
+  GetAllUsers(uid1: any) {
+
+    let uid = localStorage.getItem('uid');
     return this.http.post(this.projectURL+'/getuserchildrenprojects', '{"uid": "'+uid+'"}').map(res=>res.json());
   }
 
   AssignProject2User(upid: any, ucid: any, pid: any, addsp: any, viewp: any, editp: any, deletep: any, assignu: any) {
 
-    return this.http.post(this.projectURL+'/assignuser', '{"upid": "'+upid+'", "ucid": "'+ucid+'","pid": "'+pid+'","addsp": "'+addsp+'","viewp": "'+viewp+'","editp": "'+editp+'","deletep": "'+deletep+'","assignu": "'+assignu+'"}').map(res=>res.json());
+    return this.http.post(this.projectURL+'/assignuser', '{"upid": "'+upid+'", "ucid": "'+ucid+'","pid": "'+pid+'","addsp": "'+addsp+'","viewp": "'+viewp+'","editp": "'+editp+'","deletep": "'+deletep+'","assignu": "'+assignu+'" }').map(res=>res.json());
   }
 
   LoginUser(email: any, pwd:any) {
@@ -113,10 +123,15 @@ export class APIService {
   }
 
   GetAllTendorsWithVendorId(data) {
-    
+
     let currentPID = localStorage.getItem('currentPID');
     // data.append('pid',currentPID);
     return this.http.post(this.projectURL+'/getvendor',data).map(res=>res.json());
+  }
+
+  GetMapData() {
+    let pid = localStorage.getItem('currentPID');
+    return this.http.post(this.projectURL+'/getprojectsummary','{ "pid":"'+pid+'" }').map(res=>res.json());
   }
 
 }

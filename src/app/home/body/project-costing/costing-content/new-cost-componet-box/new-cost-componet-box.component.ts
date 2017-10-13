@@ -40,8 +40,8 @@ export class NewCostComponetBoxComponent implements OnInit {
   }
 
   discard() {
-
     this.ProjectService.newCostComponent({status:false});
+    
   }
 
 }

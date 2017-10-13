@@ -29,8 +29,8 @@ export class VendorDetailsGraph1Component implements OnInit {
             this.est_cost = res0.actual_cost;
             this.act_cost = res0.target_cost;
             this.labels = res2;
-            console.log(this.est_cost);
-            console.log(this.act_cost);
+            // console.log(this.est_cost);
+            // console.log(this.act_cost);
             this.getGraph();
           })
 

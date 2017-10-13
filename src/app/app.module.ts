@@ -43,7 +43,7 @@ import {
   MdTooltipModule,
 
  } from '@angular/material';
- 
+
 
 import { routes } from './app.routes';
 import { AuthGuard } from './service/AuthGuard';
@@ -71,7 +71,7 @@ import { CostGraph1Component } from './home/body/project-view/project-cost/cost-
 import { CostGraph2Component } from './home/body/project-view/project-cost/cost-graph2/cost-graph2.component';
 import { CostDynamicFormComponent } from './home/body/project-view/project-cost/cost-dynamic-form/cost-dynamic-form.component';
 import { CostContentComponent } from './home/body/project-view/project-cost/cost-content/cost-content.component';
-import { ProjectSummaryComponent } from './home/body/project-summary/project-summary.component';
+// import { ProjectSummaryComponent } from './home/body/project-summary/project-summary.component';
 import { ProjectSettingComponent } from './home/body/project-setting/project-setting.component';
 import { NewProjectComponent } from './home/body/project-setting/new-project/new-project.component';
 import { AllProjectComponent } from './home/body/project-setting/all-project/all-project.component';
@@ -103,7 +103,7 @@ import { AllTendorsComponent } from './home/body/vendor/all-tendors/all-tendors.
 import { SunBrustComponent } from './all-projects/sun-brust/sun-brust.component';
 import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.component';
 import { NewLocationBoxComponent } from './home/body/project-setting/assign-project/new-location-box/new-location-box.component';
-import { SummaryGraph1Component } from './home/body/project-summary/summary-graph1/summary-graph1.component';
+// import { SummaryGraph1Component } from './home/body/project-summary/summary-graph1/summary-graph1.component';
 
 
 @NgModule({
@@ -128,7 +128,7 @@ import { SummaryGraph1Component } from './home/body/project-summary/summary-grap
     CostGraph2Component,
     CostDynamicFormComponent,
     CostContentComponent,
-    ProjectSummaryComponent,
+    // ProjectSummaryComponent,
     ProjectSettingComponent,
     ProjectCostComponent,
     NewProjectComponent,
@@ -161,7 +161,7 @@ import { SummaryGraph1Component } from './home/body/project-summary/summary-grap
     SunBrustComponent,
     NewVendorComponent,
     NewLocationBoxComponent,
-    SummaryGraph1Component
+    // SummaryGraph1Component
 
   ],
   imports: [

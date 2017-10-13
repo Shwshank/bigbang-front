@@ -44,7 +44,7 @@ figure.snip1321 img {
   max-width: 360px;
   vertical-align: top;
   filter: blur(3px);
-    min-width: 100%;
+  min-width: 100%;
   
 }
 figure.snip1321 figcaption {
@@ -54,11 +54,17 @@ figure.snip1321 figcaption {
   font-weight:500;
   z-index: 1;
 }
+.project-name-display{
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+
+}
 .project-name{
   color: #fff;
   font-weight:500;
-  font-size:22px;
-  padding: 10px;
+  font-size:1.6em;
+  padding:0 10px 0 10px;
 }
 
 figure.snip1321:after {

@@ -1,8 +1,8 @@
-<main class="mdl-grid " style="margin: auto; " >
+<main class="mdl-grid " >
 
-  <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
+  <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid " >
 
-      <div style="width:100%">
+      <div >
           <h4>New Tendor</h4>
         <br>
 
@@ -10,34 +10,35 @@
             <input mdInput placeholder='Tendor ' type="text"  [(ngModel)]="t_name" required>
           </md-form-field>
 
-        <br>
+      
           <md-form-field class="example-full-width input-item ">
             <input mdInput placeholder='Description ' type="text"  [(ngModel)]="t_desc" required>
           </md-form-field>
 
-        <br>
-          <md-select placeholder="Vendor "  [(ngModel)]="vendor_id">
+       
+          <md-select placeholder="Vendor "  [(ngModel)]="vendor_id" class="example-full-width input-item ">
             <md-option *ngFor="let vendor of vendors" [value]="vendor.vendor_id">
               {{vendor.vendor_name}}
             </md-option>
           </md-select>
 
-        <br>
+       
           <md-form-field class="example-full-width input-item ">
             <input mdInput placeholder='Actual cost' type="number"  [(ngModel)]="t_act_cost" required>
           </md-form-field>
 
-        <br>
+       
           <md-form-field class="example-full-width input-item ">
             <input mdInput placeholder='Est. cost ' type="number"  [(ngModel)]="t_est_cost" required>
           </md-form-field>
 
-        <br>
+      <br>
+      <div  class="button-right">
          <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='saveNewTendor()' >New tendor</button>
 
-       <br>
+      
         <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='Cancel()' >Cancel</button>
-
+      </div>
 
       </div>
 

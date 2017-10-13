@@ -4,6 +4,26 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 
+<<<<<<< HEAD
+=======
+path {
+  stroke: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+ 
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 20px;
+}
+>>>>>>> 257bdfb75637faef7a26f0824690389adc697fb4
 /*universe graph starts here */
 
 	.node {
@@ -54,6 +74,11 @@
   }
 
   /*universe graph endss here */
+  .button-right{
+    width: 100%;
+    text-align: right;
+    padding-top: 2%;
+}
 
 	/* folder styling starts here */
 

@@ -26,6 +26,7 @@ export const routes: Routes = [
     		path: '',
     		component: UniverseComponent,
       },
+      // { path: '', loadChildren: './home/body/universe/universe.module#UniverseModule' },
       {
     		path: 'body',
     		component: BodyComponent,
@@ -34,6 +35,7 @@ export const routes: Routes = [
         path: 'projectView',
         component: ProjectViewComponent
       },
+      // { path: 'universeComponent', loadChildren: './home/body/universe/universe.module#UniverseModule' },
       {
         path: 'universeComponent',
         component: UniverseComponent
@@ -42,10 +44,11 @@ export const routes: Routes = [
         path: 'summaryComponent',
         component: SummaryComponent
       },
-      {
-        path: 'projectSummary',
-        component: ProjectSummaryComponent
-      },
+      { path: 'projectSummary', loadChildren: './home/body/project-summary/summary.module#SummaryModule' },
+      // {
+      //   path: 'projectSummary',
+      //   component: ProjectSummaryComponent
+      // },
       {
         path: 'projectCosting',
         component: ProjectCostingComponent

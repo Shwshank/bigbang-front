@@ -34,10 +34,9 @@ h2 {
 }
 
 .tab-content {
-  color: rgba(48, 69, 92, 0.8);
-  font-size: 17px;
+  color: #100F0F;
+  font-size: 15px;
   line-height: 26px;
-  letter-spacing: 1px;
   position: relative;
   overflow: hidden;
   max-height: 800px;

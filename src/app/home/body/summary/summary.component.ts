@@ -10,6 +10,14 @@ import './active.js';
 })
 export class SummaryComponent implements OnInit {
 
+  universe : any;
+  summary: any;
+  costing: any;
+  vendors: any;
+  file: any;
+  setting: any;
+  menu: any;
+
   projectSummary : any;
   project_data : any;
   project_desc : any;
@@ -27,6 +35,7 @@ export class SummaryComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.menuClicked();
       this.projectService.emmitProjectSummary.subscribe( (res)=>{
        // console.log(res);
        // console.log(res.project_id);
@@ -36,39 +45,104 @@ export class SummaryComponent implements OnInit {
     });
   }
 
-  viewProjectDetails(){
-    this.router.navigate(['home/projectView'],
-         {queryParams: {projectName: this.projectSummary.name}});
-
+  menuClicked() {
+    this.menu = localStorage.getItem('menu');
+    console.log(this.menu);
+    if(this.menu === 'universe') {
+      this.universe = true;
+      this.summary = false;
+      this.costing = false;
+      this.vendors = false;
+      this.file = false;
+      this.setting = false;
+    }
+    else if(this.menu === 'summary') {
+      this.universe = false;
+      this.summary = true;
+      this.costing = false;
+      this.vendors = false;
+      this.file = false;
+      this.setting = false;
+    }
+    else if(this.menu === 'costing') {
+      this.universe = false;
+      this.summary = false;
+      this.costing = true;
+      this.vendors = false;
+      this.file = false;
+      this.setting = false;
+    }
+    else if(this.menu === 'vendors') {
+      this.universe = false;
+      this.summary = false;
+      this.costing = false;
+      this.vendors = true;
+      this.file = false;
+      this.setting = false;
+    }
+    else if(this.menu === 'file') {
+      this.universe = false;
+      this.summary = false;
+      this.costing = false;
+      this.vendors = false;
+      this.file = true;
+      this.setting = false;
+    }
+    else if(this.menu === 'setting') {
+      this.universe = false;
+      this.summary = false;
+      this.costing = false;
+      this.vendors = false;
+      this.file = false;
+      this.setting = true;
+    }
   }
 
-  viewProjectSummary() {
-    this.router.navigate(['home/projectSummary'],
-         {queryParams: {projectName: this.projectSummary.name}});
-  }
 
   viewUniverse() {
+    this.menuClicked();
+    localStorage.setItem('menu','universe');
     this.router.navigate(['home/']);
   }
 
-  projectSetting() {
-    this.router.navigate(['home/projectSetting'],
-         {queryParams: {projectName: this.projectSummary.name}});
+  viewProjectSummary() {
+    this.menuClicked();
+    localStorage.setItem('menu','summary');
+    this.router.navigate(['home/projectSummary'],
+    {queryParams: {projectName: this.projectSummary.name}});
   }
 
   viewProjectCosting() {
+    this.menuClicked();
+    localStorage.setItem('menu','costing');
     this.router.navigate(['home/projectCosting'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
   viewFiles() {
+    this.menuClicked();
+    localStorage.setItem('menu','file');
     this.router.navigate(['home/projectFiles'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
   vendor() {
+    this.menuClicked();
+    localStorage.setItem('menu','vendors');
     this.router.navigate(['home/vendor'],
          {queryParams: {projectName: this.projectSummary.name}});
   }
 
+  projectSetting() {
+    this.menuClicked();
+    localStorage.setItem('menu','setting');
+    this.router.navigate(['home/projectSetting'],
+    {queryParams: {projectName: this.projectSummary.name}});
+  }
+
+  // viewProjectDetails(){
+  //   this.router.navigate(['home/projectView'],
+  //        {queryParams: {projectName: this.projectSummary.name}});
+  //
+  // }
 }

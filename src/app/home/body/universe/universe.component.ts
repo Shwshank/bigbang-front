@@ -17,7 +17,7 @@ export class UniverseComponent implements OnInit {
 
     // set flag for view refresh
     this.flag1 = localStorage.getItem('flag1');
-
+    localStorage.setItem('flag0','1');           // 'flag1 = 0' will refresh the Summary component
     // flag 0 will cause to reload the universe
     if(this.flag1==='0') {
       localStorage.setItem('flag1','1');

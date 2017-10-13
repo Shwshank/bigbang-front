@@ -16,4 +16,7 @@ export class FilesComponent implements OnInit {
     localStorage.setItem('flag1','0');
   }
 
+  ngOnDestroy() {
+    localStorage.setItem('flag1','0');           // 'flag1 = 0' will refresh the uservise component
+  }
 }

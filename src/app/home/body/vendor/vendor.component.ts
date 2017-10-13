@@ -14,7 +14,7 @@ export class VendorComponent implements OnInit {
   vendor_id: any;
   vendors: any ;
   data: any;
-  
+
   constructor(private router: Router, private ProjectService: ProjectService) {
 
       this.allVendorGraph();
@@ -60,6 +60,10 @@ export class VendorComponent implements OnInit {
   GetVendors(){
     // console.log('121');
 
+  }
+
+  ngOnDestroy() {
+    localStorage.setItem('flag1','0');           // 'flag1 = 0' will refresh the uservise component
   }
 
 }

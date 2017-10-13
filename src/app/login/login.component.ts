@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/allprojects']);
         localStorage.setItem('flag1','0');  // flag1 = 0 will refresh universeComponent
         localStorage.setItem('fileflag','0');           // 'flag1 = 0' will refresh the folderview component
+        localStorage.setItem('menu','universe'); // for universe menu to be active
       }
 
     }, (err)=> {

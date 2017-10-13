@@ -11,4 +11,7 @@ export class ProjectCostingComponent implements OnInit {
 
   ngOnInit() {}
 
+  ngOnDestroy() {
+    localStorage.setItem('flag1','0');           // 'flag1 = 0' will refresh the uservise component
+  }
 }

@@ -126,7 +126,7 @@
 
 
         // define the zoomListener which calls the zoom function on the "zoom" event constrained within the scaleExtents
-        var zoomListener = d3.behavior.zoom().scaleExtent([0.1, 3]).on("zoom", zoom);
+        var zoomListener = d3.behavior.zoom().scaleExtent([0.8, 2]).on("zoom", zoom);
 
         function initiateDrag(d, domNode) {
             draggingNode = d;
@@ -310,7 +310,7 @@
 
             // Set widths between levels based on maxLabelLength.
             nodes.forEach(function(d) {
-                d.y = (d.depth * (maxLabelLength * 8)); //maxLabelLength * 10px
+                d.y = (d.depth * (maxLabelLength * 4)); //maxLabelLength * 10px
                 // alternatively to keep a fixed scale one can set a fixed depth per level
                 // Normalize for fixed-depth by commenting out below line
                 // d.y = (d.depth * 500); //500px per level.

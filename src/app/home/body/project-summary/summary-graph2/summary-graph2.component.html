@@ -1,1 +1,55 @@
-<div id="con1" ></div>
+
+      <main class="mdl-grid " >
+
+   <ul>
+
+    <li>
+      <input type="checkbox" checked>
+      <i class="icon-dropdown"></i>
+
+      <h2>Add location</h2>
+
+        <div class="tab-content">
+            <div class="mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-grid ">
+              <div class="tab-new">
+            <div *ngFor='let imp of inputArray; let i = index'>
+
+                        {{i+1}}.
+
+                      <md-form-field class="example-full-width input-item ">
+                        <input mdInput placeholder='Location' type="text"  [(ngModel)]="imp.location" required>
+                      </md-form-field>
+
+                      <md-form-field class="example-full-width input-item ">
+                        <input mdInput placeholder='Size' type="number"  [(ngModel)]="imp.size" required>
+                      </md-form-field>
+
+                      <md-form-field class="example-full-width input-item ">
+                        <input mdInput placeholder='Cost' type="number"  [(ngModel)]="imp.cost" required>
+                      </md-form-field>
+
+                      <button  class="fab-button-add-del  mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab"   (click)='removeLocation()'>
+                        <i class=" material-icons">remove</i>
+                    </button>
+
+                    </div>
+                    <div class="button-right">
+                    <button  class="fab-button-add-del  mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect mdl-button--fab mdl-button--mini-fab"   (click)='addLocation()'>
+                      <i class=" material-icons">add</i>
+                  </button>
+                    </div>
+                   <div class="button-right">
+                    <button md-button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect" (click)='saveLocation()' >save</button>
+                   </div>
+
+        </div>
+            </div>
+
+      </div>
+    </li>
+
+  </ul>
+
+
+
+</main>

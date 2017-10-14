@@ -24,8 +24,11 @@ export class SummaryComponent implements OnInit {
   project_data : any;
   project_desc : any;
   project_id : any;
+  pname: any;
+  pdesc: any;
 
   constructor(private projectService: ProjectService, private router: Router) {
+
     this.project_data = localStorage.getItem('project_data');
     this.project_data = JSON.parse(this.project_data);
 
@@ -37,11 +40,18 @@ export class SummaryComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.pname = localStorage.getItem('currentPname');
+      this.pdesc = localStorage.getItem('currentPdesc');
+
       this.menuClicked();
       this.projectService.emmitProjectSummary.subscribe( (res)=>{
-       // console.log(res);
-       // console.log(res.project_id);
+      // console.log(res);
+
       localStorage.setItem('currentPID',res.project_id);
+      localStorage.setItem('currentPname',res.name);
+      localStorage.setItem('currentPdesc',res.pdesc);
+      this.pname = localStorage.getItem('currentPname');
+      this.pdesc = localStorage.getItem('currentPdesc');
       this.projectSummary = res;
       this.project_desc = res.pdesc;
       this.projectService.getMapData();

@@ -10,8 +10,15 @@ import { ProjectService } from '../../../../service/projectservice';
 export class SummaryGraph1Component implements OnInit {
 
   mapData: any;
-  constructor(private ProjectService: ProjectService) {
+  pdetails: any;
+  display: any = false;
 
+  constructor(private ProjectService: ProjectService) {
+    this.ProjectService.projectDetails.subscribe((res)=>{
+      this.pdetails = res;
+      console.log(this.pdetails);
+      this.display = true;
+    });
   }
 
   ngOnInit() {

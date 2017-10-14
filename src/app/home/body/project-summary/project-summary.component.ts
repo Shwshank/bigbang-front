@@ -12,7 +12,8 @@ export class ProjectSummaryComponent implements OnInit {
 
   flag0 : any;
   mapData: any;
-
+  noMapData : any;
+  
   constructor(private snackBar: MdSnackBar, private ProjectService: ProjectService) {
     // console.log('flag check');
     this.flag0 = localStorage.getItem('flag0');
@@ -20,13 +21,16 @@ export class ProjectSummaryComponent implements OnInit {
       localStorage.setItem('flag0','1');
       window.location.reload();
     }
+    if(this.mapData == 'undefined') {
+      this.noMapData = true;
+    }
 
   }
 
   ngOnInit() {
     this.ProjectService.getMapData();
     this.mapData = localStorage.getItem('mapData');
-    // console.log(this.mapData);
+    console.log(this.mapData);
 
   }
 

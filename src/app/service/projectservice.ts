@@ -38,6 +38,8 @@ export class ProjectService {
   emitvendorData : EventEmitter<any> = new EventEmitter<any>();
   snackBarData : EventEmitter<any> = new EventEmitter<any>();
 
+  projectDetails : EventEmitter<any> = new EventEmitter<any>();
+
   data1 : any = [
     {name: 'cc1', desc:'complete desc1', data : [{labelData : 'label 1', costData: '12', dateData: '10/10/2017'},{labelData : 'label 2', costData: '22', dateData: '11/10/2017'},
     {labelData : 'label 3', costData: '62', dateData: '12/10/2017'},{labelData : 'label 4', costData: '122', dateData: '13/10/2017'}]},
@@ -50,6 +52,16 @@ export class ProjectService {
   est_cost01 : any;
   labels01 : any;
   vendorData : any;
+  online : any;
+
+  internetConnection() {
+    // window.addEventListener('online', () => {this.online = true});
+
+    window.addEventListener('offline', () => {
+      this.online = false;
+      this.snackBar('Internet Connection not available. Some components might not work properly!');
+      });
+  }
 
   snackBar(msg) {
     this.snackBarData.emit(msg);
@@ -213,14 +225,31 @@ export class ProjectService {
     });
   }
 
-  getMapData() {
-    this.snackBar('msg asd asd');
-    this.APIService.GetMapData().subscribe((res)=>{
-      // console.log(res);
-      let mapData = res.location;
-      localStorage.setItem('mapData',JSON.stringify(mapData));
+  pdetailsfun(details: any) {
+    this.projectDetails.emit(details);
+  }
 
+  getMapData() {
+    this.internetConnection();
+    this.APIService.GetMapData().subscribe((res)=>{
+      console.log(res);
+      let mapData = res.location;
+      let pdetails = res.project;
+      this.pdetailsfun(pdetails);
+      localStorage.setItem('mapData',JSON.stringify(mapData));
+    }, (err)=> {
+      // console.log(err);
+      this.snackBar(err);
     });
+  }
+
+  addMapData(data: any) {
+    this.APIService.AddMapData(data).subscribe((res)=>{
+        console.log(res);
+        window.location.reload();
+    });
+
+
   }
 
 

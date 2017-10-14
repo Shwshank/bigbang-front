@@ -18,7 +18,7 @@
 
     var mapData = localStorage.getItem('mapData');
 
-    if(mapData == 'undefined') {
+    if(mapData == 'undefined' || mapData == 0 ) {
       // console.log('undefined');
       mapData = [['City', 'Population'],];
     } else {

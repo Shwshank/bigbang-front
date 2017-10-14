@@ -4,4 +4,16 @@ API key
  AIzaSyBL2D5laIxAftWiYLVH9HWjqSoRBvXudIw
 
  -->
-<div id="regions_div" style="width:100% !important">123</div>
+<div *ngIf='display' >
+
+  <h4> {{pdetails.project_name}}</h4>
+  <span style="color: #c7c7c7" >"{{pdetails.project_description}}"</span>
+  <p> <b> {{pdetails.project_name}} </b> was created by <b> {{pdetails.creator}} </b> with root project {{pdetails.parent_project_name}} </p>
+
+</div>
+
+<!-- project_permissions
+
+{{pdetails.created-on}}  {{pdeatils.project_description}} {{pdetails.parent}} {{pdetails.parent_project_name}}
+
+-->

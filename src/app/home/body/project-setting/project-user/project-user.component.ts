@@ -24,6 +24,7 @@ export class ProjectUserComponent implements OnInit {
   parentID: any = 'cc558080c0464685a64b7a82f22ea5b2';
 
   ngOnInit() {
+    localStorage.setItem('location','');
   }
 
   saveUser(){

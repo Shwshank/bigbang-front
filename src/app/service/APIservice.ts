@@ -6,7 +6,7 @@ export class APIService {
 
   projectURL: string = 'http://192.168.15.221:8080';
 
-  constructor( private http: Http ) {}
+  constructor( private http: Http, ) {}
 
   AddNewUser(pid: any, fname: any, lname: any, email: any, addp: any,  addsp: any,  viewp: any, editp: any, deletep: any, createnu: any , assignu: any) {
 
@@ -54,6 +54,7 @@ export class APIService {
   }
 
   AddNewCostingComponent(estcosting: any, name:any, desc: any, data:any) {
+
     data = JSON.stringify(data);
     let estcost = +estcosting;
     let uid = localStorage.getItem('uid');
@@ -63,12 +64,14 @@ export class APIService {
   }
 
   GetAllCostingComponent() {
+
     let currentPID = localStorage.getItem('currentPID');
     return this.http.post(this.projectURL+'/getallcostcharts','{"pid":"'+currentPID+'"}').map(res=>res.json());
 
   }
 
   DeleteCostingComponent(cid) {
+
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     return this.http.post(this.projectURL+'/deletecostchart', '{"uid":"'+uid+'", "pid":"'+currentPID+'", "cid":"'+cid+'"}');
@@ -76,6 +79,7 @@ export class APIService {
   }
 
   AddFile(data: any) {
+
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     data.append('uid',uid);
@@ -85,6 +89,7 @@ export class APIService {
   }
 
   AddFolder( data: any) {
+
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     data.append('uid',uid);
@@ -94,6 +99,7 @@ export class APIService {
   }
 
   AddVendor( data: any) {
+
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     data.append('uid',uid);
@@ -107,6 +113,7 @@ export class APIService {
   }
 
   AddTendor( data: any) {
+
     let uid = localStorage.getItem('uid');
     let currentPID = localStorage.getItem('currentPID');
     data.append('uid',uid);
@@ -130,9 +137,16 @@ export class APIService {
   }
 
   GetMapData() {
+
     let pid = localStorage.getItem('currentPID');
     return this.http.post(this.projectURL+'/getprojectsummary','{ "pid":"'+pid+'" }').map(res=>res.json());
   }
 
+  AddMapData(Data: any) {
+      
+    Data = JSON.stringify(Data);
+    let pid = localStorage.getItem('currentPID');
+    return this.http.post(this.projectURL+'/addprojectlocation','{ "pid":"'+pid+'" , "location":'+Data+'}').map(res=>res.json());
+  }
 
 }

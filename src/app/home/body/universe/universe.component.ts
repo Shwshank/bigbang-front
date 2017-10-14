@@ -27,7 +27,6 @@ export class UniverseComponent implements OnInit {
       localStorage.setItem('flag1','1');
     }
     // Initial flag must me 1 in order to load the universe
-
   }
 
   temp : any = (<any>window).val;
@@ -46,13 +45,6 @@ export class UniverseComponent implements OnInit {
       this.projectService.emmitProjectSummary.emit(this.temp);
     }
   }
-
-  // fun() {
-  //   if(this.temp != (<any>window).val) {
-  //     this.temp = (<any>window).val;
-  //     console.log(this.temp);
-  //   }
-  // }
 
 
 }

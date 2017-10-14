@@ -20,22 +20,34 @@ export class CostingGraph2Component implements OnInit {
   labels : any=[];
   y_max_val : any;
   y_min_val : any;
+  emptyGraph: any = false;
 
   constructor(private ProjectService: ProjectService) {
-
-    this.ProjectService.emitCostGraph1Data.subscribe((res)=>{
-       console.log(res);
-       this.act_cost = res.actual_cost;
-       this.est_cost = res.target_cost;
-       this.labels = res.labels;
-       this.y_max_val = res.maxcost;
-       this.y_min_val = res.mincost;
-
-       this.getGraph();
-    });
   }
 
   ngOnInit() {
+    this.ProjectService.emitCostGraph1Data.subscribe((res)=>{
+      // console.log(res);
+      if(res.success == false) {
+        this.emptyGraph = true;
+        this.act_cost = [];
+        this.est_cost = [];
+        this.labels = [];
+        this.y_max_val = 100;
+        this.y_min_val = 0;
+
+      } else {
+        this.emptyGraph = false;
+        this.act_cost = res.actual_cost;
+        this.est_cost = res.target_cost;
+        this.labels = res.labels;
+        this.y_max_val = res.maxcost;
+        this.y_min_val = res.mincost;
+      }
+        this.getGraph();
+
+
+    });
   }
 
   getGraph() {
@@ -69,7 +81,7 @@ export class CostingGraph2Component implements OnInit {
 
               title:{
                 display:true,
-                text:'Costing Component'
+                text:'Costing Component current project'
               },
       scales: {
         xAxes: [{

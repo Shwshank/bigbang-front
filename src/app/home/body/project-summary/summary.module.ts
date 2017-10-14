@@ -39,7 +39,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
-  MatSnackBarModule
+  // MatSnackBarModule
 
  } from '@angular/material';
 
@@ -78,7 +78,8 @@ import {
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    MatSnackBarModule,],
+    // MatSnackBarModule,
+  ],
 
   declarations: [ProjectSummaryComponent, SummaryGraph1Component, SummaryGraph2Component, ]
 })

@@ -37,6 +37,7 @@ export class ProjectService {
   emitlabels01 : EventEmitter<any> = new EventEmitter<any>();
   emitvendorData : EventEmitter<any> = new EventEmitter<any>();
   snackBarData : EventEmitter<any> = new EventEmitter<any>();
+  emitMainVendorGraph1 : EventEmitter<any> = new EventEmitter<any>();
 
   projectDetails : EventEmitter<any> = new EventEmitter<any>();
 
@@ -53,6 +54,10 @@ export class ProjectService {
   labels01 : any;
   vendorData : any;
   online : any;
+
+  mainVendorGraph1( data: any) {
+    this.emitMainVendorGraph1.emit(data);
+  }
 
   internetConnection() {
     // window.addEventListener('online', () => {this.online = true});
@@ -189,6 +194,7 @@ export class ProjectService {
       // console.log(res);
       this.tendor  = res.tendors;
       this.allTendors();
+      this.vendorMainBarChart();
     });
 
   }
@@ -232,7 +238,7 @@ export class ProjectService {
   getMapData() {
     this.internetConnection();
     this.APIService.GetMapData().subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
       let mapData = res.location;
       let pdetails = res.project;
       this.pdetailsfun(pdetails);
@@ -245,12 +251,23 @@ export class ProjectService {
 
   addMapData(data: any) {
     this.APIService.AddMapData(data).subscribe((res)=>{
-        console.log(res);
+        // console.log(res);
         window.location.reload();
+    }, (err)=> {
+      // console.log(err);
+      this.snackBar(err);
     });
-
-
   }
 
+  vendorMainBarChart() {
+    let formData = new FormData();
+    this.APIService.BarChartOfAllVendors(formData).subscribe((res)=>{
+      console.log(res);
+      this.mainVendorGraph1(res);
+    }, (err)=> {
+      // console.log(err);
+      this.snackBar(err);
+    });
+  }
 
 }

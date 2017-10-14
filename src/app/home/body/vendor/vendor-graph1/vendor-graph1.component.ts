@@ -12,14 +12,36 @@ export class VendorGraph1Component implements OnInit {
   @ViewChild('donut') donut: ElementRef;
   donutCtx: any;
   myChart: any;
+  act_cost: any;
+  est_cost: any;
+  labels: any;
+  emptyData: any;
 
   constructor(private ProjectService: ProjectService) {
+    this.ProjectService.emitMainVendorGraph1.subscribe((res)=>{
+      console.log(res);
 
+      if(res.success == false) {
+        this.emptyData = true;
+        this.act_cost = [];
+        this.est_cost = [];
+        this.labels =  [] ;
+
+      } else {
+        this.emptyData = false;
+        this.act_cost = res.actual_cost;
+        this.est_cost = res.target_cost;
+        this.labels =  res.vendor_names ;
+
+      }
+      this.getGraph();
+    });
   }
 
   ngOnInit() {
+    this.ProjectService.vendorMainBarChart();
     this.ProjectService.allTendors();
-    this.getGraph();
+
   }
 
   getGraph() {
@@ -29,32 +51,22 @@ export class VendorGraph1Component implements OnInit {
      this.myChart = new Chart(this.donutCtx, {
         type: 'bar',
         data: {
-           labels: ["January", "February", "March", "April", "May", "June", "July"],
+           labels: this.labels,
            datasets: [{
-               label: "My First dataset",
+               label: "Actual cost",
                backgroundColor:  '#3f51b5',
                borderColor: '#3f51b5',
-               data: [34, 33, 175, 130, 27, 55, 60],
+               data: this.act_cost,
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,
                showLine: false // no line shown
            },
            {
-               label: "My First dataset",
+               label: "Estimated cost",
                backgroundColor:  '#ff6384',
                borderColor: '#ff6384',
-               data: [314, 332, 15, 13, 37, 55, 160],
-               fill: false,
-               pointRadius: 10,
-               pointHoverRadius: 15,
-               showLine: false // no line shown
-           },
-           {
-               label: "My First dataset",
-               backgroundColor:  '#ff6384',
-               borderColor: '#ff6384',
-               data: [314, 332, 15, 13, 37, 55, 160],
+               data: this.est_cost,
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,

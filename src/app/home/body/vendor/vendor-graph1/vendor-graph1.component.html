@@ -1,5 +1,9 @@
+<div class="mdl-color--white mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-grid center-items" >
 
-       <div class="mdl-color--white mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-grid center-items" >
-        <canvas class="graph" #donut style="height: 350px;width: 600px;display: block;" width="600" height="350"></canvas>
+  <div *ngIf='emptyData' >
+  <h4>No data available for this porject or sub projects! </h4>
+  </div>
 
-       </div>
+  <canvas class="graph" #donut style="height: 350px;width: 600px;display: block;" width="600" height="350"></canvas>
+
+</div>

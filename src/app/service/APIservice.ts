@@ -4,7 +4,8 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable()
 export class APIService {
 
-  projectURL: string = 'http://192.168.15.221:8080';
+  // projectURL: string = 'http://192.168.15.221:8080';
+  projectURL: string = 'http://qcitech.org:8081';
 
   constructor( private http: Http, ) {}
 
@@ -143,10 +144,16 @@ export class APIService {
   }
 
   AddMapData(Data: any) {
-      
+
     Data = JSON.stringify(Data);
     let pid = localStorage.getItem('currentPID');
     return this.http.post(this.projectURL+'/addprojectlocation','{ "pid":"'+pid+'" , "location":'+Data+'}').map(res=>res.json());
+  }
+
+  BarChartOfAllVendors(formData : any) {
+    let pid = localStorage.getItem('currentPID');
+    formData.append('pid',pid);
+    return this.http.post(this.projectURL+'/barchartallvendors', formData).map(res=>res.json());
   }
 
 }

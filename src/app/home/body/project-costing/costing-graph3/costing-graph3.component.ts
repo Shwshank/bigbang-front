@@ -21,10 +21,16 @@ export class CostingGraph3Component implements OnInit {
 
     this.ProjectService.emitCostGraph1Data.subscribe((res)=>{
 
+      if(res.success== false) {
+          this.act_cost = [];
+          this.est_cost = [];
+          this.labels = [];
+      } else {
+
        this.act_cost = res.child_costs.actual_cost;
        this.est_cost = res.child_costs.target_cost;
        this.labels = res.child_costs.labels;
-
+     }
        this.getGraph();
     });
 
@@ -69,7 +75,7 @@ export class CostingGraph3Component implements OnInit {
              responsive: true,
              title:{
                  display:true,
-                 text:'Sub Project Costing'
+                 text:'All projects costing (inc. current project)'
              },
              legend: {
                  display: true

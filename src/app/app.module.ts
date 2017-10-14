@@ -41,7 +41,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
-  MatSnackBarModule
+  // MatSnackBarModule
 
  } from '@angular/material';
 
@@ -203,7 +203,7 @@ import {NgPipesModule} from 'ngx-pipes';
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    MatSnackBarModule,
+    // MatSnackBarModule,
     NgPipesModule,
     RouterModule.forRoot(routes)
   ],

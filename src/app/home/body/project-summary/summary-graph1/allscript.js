@@ -6,24 +6,38 @@
   google.charts.setOnLoadCallback(drawMarkersMap);
 
   function drawMarkersMap() {
-  var data = google.visualization.arrayToDataTable([
-    ['City',   'Population', 'Area'],
-    ['delhi',      12,    1285.31],
-    ['goa',      2,    285.31],
 
-  ]);
+
+    var localMapData = [
+      ['City',   'Population', 'Area'],
+      ['delhi',      12,    1285.31],
+      ['goa',      2,    285.31],
+    ];
+
+    // console.log(localMapData);
+
+    var mapData = localStorage.getItem('mapData');
+
+    if(mapData == 'undefined') {
+      // console.log('undefined');
+      mapData = [['City', 'Population'],];
+    } else {
+      mapData = JSON.parse(mapData);
+    }
+
+    // console.log(JSON.parse(mapData));
+
+    var data = google.visualization.arrayToDataTable(mapData);
 
   var options = {
     region: 'IN',
     domain: 'IN',
     displayMode: 'markers',
     colorAxis: {colors: ['#3f51b5', '#919fec']},
-    sizeAxis:  {minValue: 10,  maxSize: 30},
-    backgroundColor: {fill:'yellow', stroke:'red', strokeWidth:4, },
-    datalessRegionColor: '#f8bbd0',
+    sizeAxis:  {minValue: 10,  maxSize: 20},
+    backgroundColor: {fill:'', stroke:'#c7c7c7', strokeWidth:4, },
+    datalessRegionColor: '#eaeeff',
     defaultColor: 'yellow',
-    magnifyingGlass: {enable: true, zoomFactor: 7.5},
-    enableRegionInteractivity: 'true',
     resolution: 'provinces',
 
   };

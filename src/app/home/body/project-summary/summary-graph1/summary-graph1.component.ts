@@ -9,14 +9,14 @@ import { ProjectService } from '../../../../service/projectservice';
 })
 export class SummaryGraph1Component implements OnInit {
 
-  $ : any;
+  mapData: any;
+  constructor(private ProjectService: ProjectService) {
 
-  constructor(private ProjectService: ProjectService) { }
+  }
 
   ngOnInit() {
-    // this.$ = (<any>window).map;
-    // this.$.getScript('./allscript.js');
-    this.ProjectService.getMapData();
+
+
   }
   ngAfterViewInit() {
 

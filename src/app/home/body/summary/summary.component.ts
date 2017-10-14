@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../../service/projectservice';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import {NgPipesModule} from 'ngx-pipes';
 import './active.js';
 
 @Component({
@@ -42,12 +44,13 @@ export class SummaryComponent implements OnInit {
       localStorage.setItem('currentPID',res.project_id);
       this.projectSummary = res;
       this.project_desc = res.pdesc;
+      this.projectService.getMapData();
     });
   }
 
   menuClicked() {
     this.menu = localStorage.getItem('menu');
-    console.log(this.menu);
+    // console.log(this.menu);
     if(this.menu === 'universe') {
       this.universe = true;
       this.summary = false;

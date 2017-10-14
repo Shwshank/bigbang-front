@@ -7,7 +7,7 @@ import { APIService } from './APIservice';
 @Injectable()
 export class ProjectService {
 
-  constructor(private APIService: APIService, private snackBar: MdSnackBar) {}
+  constructor(private APIService: APIService,) {}
 
   emmitProjectSummary :  EventEmitter<any> = new EventEmitter<any>();
   emmitInputData :  EventEmitter<any> = new EventEmitter<any>();        // emmits input JSON data from dialog to form component
@@ -36,6 +36,7 @@ export class ProjectService {
   emitest_cost01 : EventEmitter<any> = new EventEmitter<any>();
   emitlabels01 : EventEmitter<any> = new EventEmitter<any>();
   emitvendorData : EventEmitter<any> = new EventEmitter<any>();
+  snackBarData : EventEmitter<any> = new EventEmitter<any>();
 
   data1 : any = [
     {name: 'cc1', desc:'complete desc1', data : [{labelData : 'label 1', costData: '12', dateData: '10/10/2017'},{labelData : 'label 2', costData: '22', dateData: '11/10/2017'},
@@ -49,6 +50,10 @@ export class ProjectService {
   est_cost01 : any;
   labels01 : any;
   vendorData : any;
+
+  snackBar(msg) {
+    this.snackBarData.emit(msg);
+  }
 
     CostComponet() {
         this.APIService.GetAllCostingComponent().subscribe((res)=>{
@@ -209,11 +214,14 @@ export class ProjectService {
   }
 
   getMapData() {
-    
+    this.snackBar('msg asd asd');
     this.APIService.GetMapData().subscribe((res)=>{
-      console.log(res);
+      // console.log(res);
+      let mapData = res.location;
+      localStorage.setItem('mapData',JSON.stringify(mapData));
 
     });
   }
+
 
 }

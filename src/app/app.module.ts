@@ -41,6 +41,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
+  MatSnackBarModule
 
  } from '@angular/material';
 
@@ -104,6 +105,7 @@ import { SunBrustComponent } from './all-projects/sun-brust/sun-brust.component'
 import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.component';
 import { NewLocationBoxComponent } from './home/body/project-setting/assign-project/new-location-box/new-location-box.component';
 // import { SummaryGraph1Component } from './home/body/project-summary/summary-graph1/summary-graph1.component';
+import {NgPipesModule} from 'ngx-pipes';
 
 
 @NgModule({
@@ -201,6 +203,8 @@ import { NewLocationBoxComponent } from './home/body/project-setting/assign-proj
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
+    MatSnackBarModule,
+    NgPipesModule,
     RouterModule.forRoot(routes)
   ],
   entryComponents: [

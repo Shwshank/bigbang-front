@@ -6,15 +6,19 @@
 <figure class="snip1321"><img src="https://geekydementia.files.wordpress.com/2014/11/os_x_lynx-2560x1600.jpg" alt="sq-sample26"/>
 
     <div class="project-name-display">
-    <h4  class="project-name">{{projectSummary.name}} </h4>
+    <h4  class="project-name ">{{projectSummary.name  | shorten: 50: '...'}}
+
+    </h4>
     </div>
 
 
 </figure>
 
     <div class="mdl-card__supporting-text">
-      This is the temp. description of the project that is selected on the graph
-      {{project_desc}}
+
+      <span style="color: #636363; font-size:13px;" class=""> " {{project_desc | shorten: 100: '...'}} "
+
+      </span>
 
     </div>
 

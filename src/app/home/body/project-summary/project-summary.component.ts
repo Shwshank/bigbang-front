@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import './summary-graph1/allscript.js';
-// import './summary-graph1/sunBrust.js';
+import { ProjectService } from '../../../service/projectservice';
 import {MdSnackBar} from '@angular/material';
 
 @Component({
@@ -11,26 +11,30 @@ import {MdSnackBar} from '@angular/material';
 export class ProjectSummaryComponent implements OnInit {
 
   flag0 : any;
+  mapData: any;
 
-  constructor(private snackBar: MdSnackBar) {
-    console.log('flag check');
+  constructor(private snackBar: MdSnackBar, private ProjectService: ProjectService) {
+    // console.log('flag check');
     this.flag0 = localStorage.getItem('flag0');
     if(this.flag0==='0') {
       localStorage.setItem('flag0','1');
       window.location.reload();
     }
+
   }
 
   ngOnInit() {
-    // this.snackBar.open('message', 'action', {
-    //   duration: 4000,
-    // });
+    this.ProjectService.getMapData();
+    this.mapData = localStorage.getItem('mapData');
+    // console.log(this.mapData);
+
   }
 
   ngOnDestroy() {
-    console.log('flaged');
+    // console.log('flaged');
     localStorage.setItem('flag0','0');           // 'flag1 = 0' will refresh the Summary component
     localStorage.setItem('flag1','0');           // 'flag1 = 0' will refresh the uservise component
+
   }
 
 }

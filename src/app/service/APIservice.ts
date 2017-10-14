@@ -134,4 +134,5 @@ export class APIService {
     return this.http.post(this.projectURL+'/getprojectsummary','{ "pid":"'+pid+'" }').map(res=>res.json());
   }
 
+
 }

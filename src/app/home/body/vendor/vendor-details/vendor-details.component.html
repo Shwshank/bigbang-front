@@ -21,12 +21,20 @@
             <i class="icon-dropdown"></i>
           
                 
-            <h2 class="tender">{{tendor.tendor_desc}}</h2>
+            <h2 class="tender">{{tendor.tendor_name}}</h2>
          
              <div class="tab-content ">
-             
+
                 <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid  vendor-deatils">
-                    
+                  
+                    <div class="tander-content">
+                        <div class="tender-name" >   {{tendor.tendor_name}}</div>
+                        <div class="tender-dec" >   {{tendor.tendor_desc}} </div>
+                        <div class="est-cost" > Estimated Cost:   {{tendor.tendor_est_cost}} </div>
+                        <div class="act-cost" > Actual Cost:   {{tendor.tendor_act_cost}} </div>
+                          </div>
+                                     
+
                       <div  class="button-right">
                           <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian">
                               <i  class=" material-icons">edit</i>

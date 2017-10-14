@@ -69,7 +69,7 @@ export class CostingGraph2Component implements OnInit {
 
               title:{
                 display:true,
-                text:'Costing Component'
+                text:'Costing Components'
               },
       scales: {
         xAxes: [{
@@ -82,7 +82,6 @@ export class CostingGraph2Component implements OnInit {
             autoSkip: false,
             maxRotation: 75,
             minRotation: 0,
-            min: 0,
           }
           }],
           yAxes: [{

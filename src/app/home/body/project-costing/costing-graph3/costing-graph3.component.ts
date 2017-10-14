@@ -69,7 +69,7 @@ export class CostingGraph3Component implements OnInit {
              responsive: true,
              title:{
                  display:true,
-                 text:'Sub Project Costing'
+                 text:'Sub Projects Costing'
              },
              legend: {
                  display: true

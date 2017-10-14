@@ -1,6 +1,7 @@
 
 .add-comoponet-button{
  float: right;
+ text-transform: capitalize
 }
 .add-comonent{
     font-size: 1.2em;
@@ -9,4 +10,5 @@
 }
 .add-component-new{
     width: calc(100%) !important;
+    text-transform: capitalize
 }

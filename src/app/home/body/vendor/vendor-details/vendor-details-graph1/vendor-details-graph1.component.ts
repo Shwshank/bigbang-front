@@ -17,6 +17,7 @@ export class VendorDetailsGraph1Component implements OnInit {
     est_cost: any;
     act_cost: any;
     labels: any;
+    vendordata: any;
 
     constructor(private ProjectService: ProjectService) {
 
@@ -25,10 +26,13 @@ export class VendorDetailsGraph1Component implements OnInit {
         this.ProjectService.emitest_cost01.subscribe((res1)=>{
 
           this.ProjectService.emitlabels01.subscribe((res2)=>{
+            
+            this.ProjectService.emitvendor.subscribe((res3)=>{
 
-            this.est_cost = res0.actual_cost;
-            this.act_cost = res0.target_cost;
+            this.est_cost = res0.target_cost;
+            this.act_cost = res0.actual_cost;
             this.labels = res2;
+            this.vendordata  = res3;
             // console.log(this.est_cost);
             // console.log(this.act_cost);
             this.getGraph();
@@ -37,6 +41,8 @@ export class VendorDetailsGraph1Component implements OnInit {
         });
 
       });
+
+    });
 
     }
 
@@ -52,21 +58,23 @@ export class VendorDetailsGraph1Component implements OnInit {
           type: 'bar',
           data: {
              labels: this.labels,
-             datasets: [{
+             datasets: [
+              {
+                
+                label: "Actual cost",
+                backgroundColor:  '#3f51b5',
+                borderColor: '#3f51b5',
+                data: this.act_cost,
+                fill: false,
+                pointHoverRadius: 8,
+                pointRadius: 5,
+                showLine: false // no line shown
+            }, 
+              {
                  label: "Estimated cost",
                  backgroundColor:  '#ff6384',
                  borderColor: '#ff6384',
                  data: this.est_cost,
-                 fill: false,
-                 pointHoverRadius: 8,
-                 pointRadius: 5,
-                 showLine: false // no line shown
-             },
-             {
-                 label: "Actual cost",
-                 backgroundColor:  '#3f51b5',
-                 borderColor: '#3f51b5',
-                 data: this.act_cost,
                  fill: false,
                  pointHoverRadius: 8,
                  pointRadius: 5,
@@ -79,10 +87,10 @@ export class VendorDetailsGraph1Component implements OnInit {
                responsive: true,
                title:{
                    display:true,
-                   text:'Point Style: 1'
+                   text:this.vendordata["vendor_name"]
                },
                legend: {
-                   display: false
+                   display: true,
                },
                elements: {
 
@@ -109,7 +117,7 @@ export class VendorDetailsGraph1Component implements OnInit {
                    yAxes: [{
                    display: true,
                    ticks: {
-
+                    min: 0
                      //max: this.y_max_va,
 
                    }

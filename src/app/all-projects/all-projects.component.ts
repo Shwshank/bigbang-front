@@ -31,7 +31,8 @@ export class AllProjectsComponent implements OnInit {
       let temp =  res.json();
       localStorage.setItem('currentPname',temp.project_tree.name);
       localStorage.setItem('currentPdesc',temp.project_tree.pdesc);
-
+      // console.log(temp.project_data);
+      localStorage.setItem('pid',temp.project_data.project_id);
       localStorage.setItem('project_data',JSON.stringify(temp.project_data));
       localStorage.setItem('tree',JSON.stringify(temp.project_tree));
 

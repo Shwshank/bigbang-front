@@ -1,4 +1,5 @@
-<main class="mdl-grid " style="margin: auto; " >
+<h4 *ngIf="showError" > {{errMsg}} </h4>
+<main *ngIf="!showError" class="mdl-grid " style="margin: auto; " >
 
   <div class="mdl-color--white mdl-shadow--4dp mdl-cell mdl-cell--12-col mdl-grid center-items" style="overflow-x:auto ; width:100%; ">
     <app-vendor-details-graph1></app-vendor-details-graph1>
@@ -19,22 +20,22 @@
           <li>
             <input type="checkbox" checked>
             <i class="icon-dropdown"></i>
-          
-                
+
+
             <h2 class="tender">{{tendor.tendor_desc}}</h2>
-         
+
              <div class="tab-content ">
-             
+
                 <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid  vendor-deatils">
-                    
+
                       <div  class="button-right">
                           <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian">
                               <i  class=" material-icons">edit</i>
-                             
+
                             </button>
                             <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian ">
                               <i  class=" material-icons">save</i>
-                             
+
                             </button>
                          </div>
                    </div>
@@ -42,7 +43,7 @@
 
                 </li>
               </ul>
-      
+
             </div>
-                 
+
 </main>

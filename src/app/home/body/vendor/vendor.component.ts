@@ -14,6 +14,7 @@ export class VendorComponent implements OnInit {
   vendor_id: any;
   vendors: any ;
   data: any;
+  hideButton: any = false;
 
   constructor(private router: Router, private ProjectService: ProjectService) {
 
@@ -34,6 +35,8 @@ export class VendorComponent implements OnInit {
   }
 
   vendorDetails() {
+
+    this.hideButton = true;
     this.router.navigate(['home/vendor/vendorDetails'],
         {queryParams: {vendor_id: this.vendor_id}});
   }
@@ -52,6 +55,7 @@ export class VendorComponent implements OnInit {
   }
 
   reset() {
+    this.hideButton = false;
     this.ProjectService.getAllVendor();
     this.router.navigate(['home/vendor']);
 

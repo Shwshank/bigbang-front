@@ -38,6 +38,7 @@ export class ProjectService {
   emitvendorData : EventEmitter<any> = new EventEmitter<any>();
   snackBarData : EventEmitter<any> = new EventEmitter<any>();
   emitMainVendorGraph1 : EventEmitter<any> = new EventEmitter<any>();
+  errorData1 : EventEmitter<any> = new EventEmitter<any>();
 
   projectDetails : EventEmitter<any> = new EventEmitter<any>();
 
@@ -211,23 +212,31 @@ export class ProjectService {
     });
   }
 
+  emitError(msg: any) {
+    this.errorData1.emit(msg);
+  }
+
   getAllTendorWithVendorId(data) {
 
     this.APIService.GetAllTendorsWithVendorId(data).subscribe( (res)=>{
-      // console.log(res);
+       console.log(res);
+       if(res.success == false) {
+          this.emitError('Data Unavailable');
 
+       } else {
       this.act_cost01 = res;
       this.est_cost01 = res.target_cost;
       this.labels01 = res.labels;
       this.vendorData = res.vendor;
       this.allTendorsByVendorID = res.vendor.tendors;
 
+
       this.emitAllTendorFun();
       this.emitact_cost01fun();
       this.emitest_cost01fun();
       this.emitlabels01fun();
       this.emitvendorDatafun();
-
+    }
     });
   }
 

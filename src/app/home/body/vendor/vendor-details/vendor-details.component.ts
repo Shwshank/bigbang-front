@@ -11,11 +11,20 @@ import { NgForm } from '@angular/forms';
 export class VendorDetailsComponent implements OnInit {
 
   allTendors :any;
+  errMsg: any;
+  showError: any = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private ProjectService: ProjectService) {
     this.ProjectService.emitAllTendor.subscribe((res)=>{
+      this.showError = false;
+      this.errMsg = '';
       this.allTendors = res;
-      // console.log(this.allTendors);
+       console.log(this.allTendors);
+    });
+
+    this.ProjectService.errorData1.subscribe((res)=>{
+      this.showError = true;
+      this.errMsg = res;
     });
   }
 

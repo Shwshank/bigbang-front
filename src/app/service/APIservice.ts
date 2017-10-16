@@ -4,14 +4,14 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable()
 export class APIService {
 
-  // projectURL: string = 'http://192.168.15.221:8080';
-  projectURL: string = 'http://qcitech.org:8081';
+  projectURL: string = 'http://192.168.15.221:8080';
+  // projectURL: string = 'http://qcitech.org:8081';
 
   constructor( private http: Http, ) {}
 
   AddNewUser(pid: any, fname: any, lname: any, email: any, addp: any,  addsp: any,  viewp: any, editp: any, deletep: any, createnu: any , assignu: any) {
-
-    return this.http.post(this.projectURL+'/adduser', '{"pid": "'+pid+'", "fname" : "'+fname+'", "lname" : "'+lname+'", "email": "'+email+'" , "addp": '+addp+', "addsp": '+addsp+', "viewp": '+viewp+', "editp":'+editp+', "deletep": '+deletep+', "createnu": '+createnu+', "assignu": '+assignu+'}');
+    let uid = localStorage.getItem('uid');
+    return this.http.post(this.projectURL+'/adduser', '{"upid": "'+uid+'", "fname" : "'+fname+'", "lname" : "'+lname+'", "email": "'+email+'" , "addp": '+addp+', "addsp": '+addsp+', "viewp": '+viewp+', "editp":'+editp+', "deletep": '+deletep+', "createnu": '+createnu+', "assignu": '+assignu+'}');
   }
 
   AddSubProject(pname: any, pdesc:any, uid: any, pid: any, addsp: any,  viewp: any, editp: any, deletep: any, assignu: any ) {
@@ -133,7 +133,7 @@ export class APIService {
   GetAllTendorsWithVendorId(data) {
 
     let currentPID = localStorage.getItem('currentPID');
-    // data.append('pid',currentPID);
+    data.append('pid',currentPID);
     return this.http.post(this.projectURL+'/getvendor',data).map(res=>res.json());
   }
 
@@ -154,6 +154,13 @@ export class APIService {
     let pid = localStorage.getItem('currentPID');
     formData.append('pid',pid);
     return this.http.post(this.projectURL+'/barchartallvendors', formData).map(res=>res.json());
+  }
+
+  DeleteTendorByUser(formData: any) {
+
+    let uid = localStorage.getItem('uid');
+    formData.append('uid',uid);
+    return this.http.post(this.projectURL+'/deletetendor', formData).map(res=>res.json());
   }
 
 }

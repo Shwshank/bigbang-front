@@ -18,7 +18,7 @@ export class NewLocationBoxComponent implements OnInit {
   }
 
   ngOnInit() {
-    localStorage.setItem('location','');
+    localStorage.setItem('location',null);
   }
 
   addLocation() {

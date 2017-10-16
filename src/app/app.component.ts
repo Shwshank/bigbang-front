@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   showMsg(msg) {
     // console.log(msg);
     this.snackBar.open( msg, 'close', {
-      duration: 2500,
+      duration: 3500,
     });
   }
 

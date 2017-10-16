@@ -41,7 +41,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
-  // MatSnackBarModule
+  MatSnackBarModule
 
  } from '@angular/material';
 
@@ -106,6 +106,7 @@ import { NewVendorComponent } from './home/body/vendor/new-vendor/new-vendor.com
 import { NewLocationBoxComponent } from './home/body/project-setting/assign-project/new-location-box/new-location-box.component';
 // import { SummaryGraph1Component } from './home/body/project-summary/summary-graph1/summary-graph1.component';
 import {NgPipesModule} from 'ngx-pipes';
+import { VendorDoughnutComponent } from './home/body/vendor/vendor-doughnut/vendor-doughnut.component';
 
 
 @NgModule({
@@ -163,6 +164,7 @@ import {NgPipesModule} from 'ngx-pipes';
     SunBrustComponent,
     NewVendorComponent,
     NewLocationBoxComponent,
+    VendorDoughnutComponent,
     // SummaryGraph1Component
 
   ],
@@ -203,7 +205,7 @@ import {NgPipesModule} from 'ngx-pipes';
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    // MatSnackBarModule,
+    MatSnackBarModule,
     NgPipesModule,
     RouterModule.forRoot(routes)
   ],

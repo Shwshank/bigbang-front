@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectService } from '../../../../service/projectservice';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-all-tendors',
@@ -21,4 +22,9 @@ export class AllTendorsComponent implements OnInit {
     this.ProjectService.getAllTendor();
   }
 
+  deleteTendor(id: any) {
+    let formData = new FormData();
+    formData.append('tid',id);
+    this.ProjectService.deleteVendorByUser(formData);
+  }
 }

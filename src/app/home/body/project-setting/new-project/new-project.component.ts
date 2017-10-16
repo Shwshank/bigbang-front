@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../../../../service/APIservice';
-
+import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
   selector: 'app-new-project',
@@ -26,7 +26,7 @@ export class NewProjectComponent implements OnInit {
     {value: '34ec653f7d254114827c283900266984', viewValue: 'User 3'}
   ];
 
-  constructor(private APIService: APIService) { }
+  constructor(private APIService: APIService, private ProjectService: ProjectService) { }
 
   ngOnInit() {
   }
@@ -35,8 +35,13 @@ export class NewProjectComponent implements OnInit {
 
         this.APIService.AddSubProject( this.pname, this.pdesc, this.uid, this.pid, this.permission1, this.permission2, this.permission3, this.permission4, this.permission5)
         .subscribe((res)=>{
+           {
+            this.ProjectService.snackBar('Project created');
+
+          }
           console.log(res);
         }, (err) => {
+          this.ProjectService.snackBar(err);
           console.log(err);
         });
   }

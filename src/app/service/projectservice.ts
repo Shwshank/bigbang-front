@@ -1,5 +1,4 @@
 import { EventEmitter, Injectable, } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import {MdSnackBar} from '@angular/material';
 
 import { APIService } from './APIservice';
@@ -61,11 +60,15 @@ export class ProjectService {
   }
 
   internetConnection() {
-    // window.addEventListener('online', () => {this.online = true});
+
+    window.addEventListener('online', () => {
+      this.online = true;
+      this.snackBar('Internet connection detected, please refresh!');
+      });
 
     window.addEventListener('offline', () => {
       this.online = false;
-      this.snackBar('Internet Connection not available. Some components might not work properly!');
+      this.snackBar('Internet connection not available. Some components might not work properly!');
       });
   }
 
@@ -273,6 +276,20 @@ export class ProjectService {
     this.APIService.BarChartOfAllVendors(formData).subscribe((res)=>{
       console.log(res);
       this.mainVendorGraph1(res);
+    }, (err)=> {
+      // console.log(err);
+      this.snackBar(err);
+    });
+  }
+
+  deleteVendorByUser(formData: any) {
+
+    this.APIService.DeleteTendorByUser(formData).subscribe((res)=>{
+      console.log(res);
+      if(res.success == true ) {
+        this.getAllTendor();
+
+      }
     }, (err)=> {
       // console.log(err);
       this.snackBar(err);

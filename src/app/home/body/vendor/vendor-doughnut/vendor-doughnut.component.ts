@@ -3,13 +3,13 @@ import Chart from 'chart.js';
 import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
-  selector: 'app-vendor-graph1',
-  templateUrl: './vendor-graph1.component.html',
-  styleUrls: ['./vendor-graph1.component.css']
+    selector: 'app-vendor-doughnut',
+  templateUrl: './vendor-doughnut.component.html',
+  styleUrls: ['./vendor-doughnut.component.css']
 })
-export class VendorGraph1Component implements OnInit {
+export class VendorDoughnutComponent implements OnInit {
 
-  @ViewChild('donut') donut: ElementRef;
+  @ViewChild('donut1') donut: ElementRef;
   donutCtx: any;
   myChart: any;
   act_cost: any;
@@ -17,31 +17,10 @@ export class VendorGraph1Component implements OnInit {
   labels: any;
   emptyData: any;
 
-  constructor(private ProjectService: ProjectService) {
-    this.ProjectService.emitMainVendorGraph1.subscribe((res)=>{
-      // console.log(res);
-
-      if(res.success == false) {
-        this.emptyData = true;
-        this.act_cost = [];
-        this.est_cost = [];
-        this.labels =  [] ;
-
-      } else {
-        this.emptyData = false;
-        this.act_cost = res.actual_cost;
-        this.est_cost = res.target_cost;
-        this.labels =  res.vendor_names ;
-
-      }
-      this.getGraph();
-    });
-  }
+  constructor() {  }
 
   ngOnInit() {
-    this.ProjectService.vendorMainBarChart();
-    this.ProjectService.allTendors();
-
+    this.getGraph();
   }
 
   getGraph() {
@@ -51,12 +30,12 @@ export class VendorGraph1Component implements OnInit {
      this.myChart = new Chart(this.donutCtx, {
         type: 'bar',
         data: {
-           labels: this.labels,
+           labels: ['this.labels','12'],
            datasets: [{
                label: "Actual cost",
                backgroundColor:  '#3f51b5',
                borderColor: '#3f51b5',
-               data: this.act_cost,
+               data: [12,21],
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,
@@ -66,7 +45,7 @@ export class VendorGraph1Component implements OnInit {
                label: "Estimated cost",
                backgroundColor:  '#ff6384',
                borderColor: '#ff6384',
-               data: this.est_cost,
+               data: [21,12],
                fill: false,
                pointRadius: 10,
                pointHoverRadius: 15,
@@ -78,7 +57,7 @@ export class VendorGraph1Component implements OnInit {
              responsive: true,
              title:{
                  display:true,
-                 text:'Cost allocation summary'
+                 text:'Point Style: 1'
              },
              legend: {
                  display: false
@@ -87,25 +66,10 @@ export class VendorGraph1Component implements OnInit {
                  point: {
                      pointStyle: 'circle'
                  }
-             },
-             scales: {
-               yAxes: [{
-                 display: true,
-                 scaleLabel: {
-                   display: true,
-
-                 },
-                 ticks: {
-                   autoSkip: false,
-                   maxRotation: 75,
-                   minRotation: 0,
-                   min: 0,
-                 }
-                 }],
-
-             },
+             }
          }
     });
   }
+
 
 }

@@ -14,11 +14,11 @@ export class SummaryGraph1Component implements OnInit {
   display: any = false;
 
   constructor(private ProjectService: ProjectService) {
-    // this.ProjectService.projectDetails.subscribe((res)=>{
-    //   this.pdetails = res;
-    //   console.log(this.pdetails);
-    //   this.display = true;
-    // });
+    this.ProjectService.projectDetails.subscribe((res)=>{
+      this.pdetails = res;
+      console.log(this.pdetails);
+      this.display = true;
+    });
   }
 
   ngOnInit() {

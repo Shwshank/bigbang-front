@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../../../../service/APIservice';
+import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
   selector: 'app-assign-project',
@@ -30,7 +31,7 @@ export class AssignProjectComponent implements OnInit {
   user_id: any;
   project_id: any;
 
-  constructor(private APIService: APIService) { }
+  constructor(private APIService: APIService, private ProjectService: ProjectService) { }
 
   ngOnInit() {
     this.APIService.GetAllUsers(this.uid).subscribe((res)=>{
@@ -39,6 +40,7 @@ export class AssignProjectComponent implements OnInit {
        this.projects = res.projects;
     }, (err) => {
       console.log(err);
+      this.ProjectService.snackBar(err);
     });
   }
 
@@ -144,9 +146,13 @@ export class AssignProjectComponent implements OnInit {
     this.APIService.AssignProject2User(this.uid, this.user_id, this.project_id, this.permission1, this.permission2, this.permission3, this.permission4, this.permission5).subscribe((res)=>{
 
       console.log(res);
+      {
+          this.ProjectService.snackBar('Project assigned to user');
+      }
 
     },(err)=>{
       console.log(err);
+      this.ProjectService.snackBar(err);
     });
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MdButtonModule} from '@angular/material';
 import { APIService } from '../../../../service/APIservice';
+import { ProjectService } from '../../../../service/projectservice';
 
 @Component({
   selector: 'app-project-user',
@@ -9,7 +10,7 @@ import { APIService } from '../../../../service/APIservice';
 })
 export class ProjectUserComponent implements OnInit {
 
-  constructor(private APIService: APIService) { }
+  constructor(private APIService: APIService, private ProjectService: ProjectService) { }
 
   fname : any ='';
   lname : any ='';
@@ -32,8 +33,24 @@ export class ProjectUserComponent implements OnInit {
 
     this.APIService.AddNewUser(this.parentID, this.fname, this.lname, this.email, this.permission0, this.permission1, this.permission2, this.permission3, this.permission4, this.permission5, this.permission6,).subscribe((res)=>{
       console.log(res);
+      {
+          this.ProjectService.snackBar('User Created!');
+          this.fname = '';
+          this.lname = '';
+          this.email = '';
+          this.permission0 = false;
+          this.permission2 = false;
+          this.permission3 = false;
+          this.permission1 = false;
+          this.permission4 = false;
+          this.permission5 = false;
+          this.permission6 = false;
+
+      }
+
     }, (err) => {
       console.log(err);
+      this.ProjectService.snackBar(err)
     });
 
   }

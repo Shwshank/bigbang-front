@@ -1,4 +1,10 @@
 .vendor-deatils{
-  min-width:500px;
+  min-width:700px;
  max-width: 100%;
+}
+.graph{
+    width:40%;
+    height: 200px;
+    background: gray;
+    margin-right: 5px;
 }

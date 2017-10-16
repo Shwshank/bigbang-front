@@ -46,4 +46,6 @@ export class VendorDetailsComponent implements OnInit {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+
+
 }

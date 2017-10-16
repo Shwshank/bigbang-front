@@ -17,6 +17,7 @@ export class VendorDetailsGraph1Component implements OnInit {
     est_cost: any;
     act_cost: any;
     labels: any;
+    vendorData: any;
 
     constructor(private ProjectService: ProjectService) {
 
@@ -31,8 +32,14 @@ export class VendorDetailsGraph1Component implements OnInit {
             this.labels = res2;
             // console.log(this.est_cost);
             // console.log(this.act_cost);
-            this.getGraph();
-          })
+
+            this.ProjectService.emitvendor.subscribe((res3)=>{
+              this.vendorData = res3;
+              this.getGraph();
+            })
+
+
+          });
 
         });
 
@@ -53,9 +60,9 @@ export class VendorDetailsGraph1Component implements OnInit {
           data: {
              labels: this.labels,
              datasets: [{
-                 label: "Estimated cost",
-                 backgroundColor:  '#ff6384',
-                 borderColor: '#ff6384',
+                 label: "Actual cost",
+                 backgroundColor:  '#3f51b5',
+                 borderColor: '#3f51b5',
                  data: this.est_cost,
                  fill: false,
                  pointHoverRadius: 8,
@@ -63,9 +70,9 @@ export class VendorDetailsGraph1Component implements OnInit {
                  showLine: false // no line shown
              },
              {
-                 label: "Actual cost",
-                 backgroundColor:  '#3f51b5',
-                 borderColor: '#3f51b5',
+                 label: "Estimated cost",
+                 backgroundColor:  '#ff6384',
+                 borderColor: '#ff6384',
                  data: this.act_cost,
                  fill: false,
                  pointHoverRadius: 8,
@@ -79,7 +86,7 @@ export class VendorDetailsGraph1Component implements OnInit {
                responsive: true,
                title:{
                    display:true,
-                   text:'Point Style: 1'
+                   text: this.vendorData["vendor_name"]
                },
                legend: {
                    display: false
@@ -110,7 +117,7 @@ export class VendorDetailsGraph1Component implements OnInit {
                    display: true,
                    ticks: {
 
-                     //max: this.y_max_va,
+                     min:0,
 
                    }
                    }]

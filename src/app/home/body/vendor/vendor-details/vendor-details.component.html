@@ -7,7 +7,7 @@
   </div>
 
   <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid " style="overflow-x:auto ; width:100%; ">
-    {{vendor_id}}
+    <!-- {{vendor_id}} -->
     <!-- {{tendor.vendor_name}}
     {{tendor.vendor_desc}} -->
 
@@ -21,19 +21,35 @@
             <input type="checkbox" checked>
             <i class="icon-dropdown"></i>
 
-
-            <h2 class="tender">{{tendor.tendor_desc}}</h2>
+            <h2 class="tender">{{tendor.tendor_name}}</h2>
 
              <div class="tab-content ">
 
                 <div class="mdl-color--white mdl-shadow--0dp mdl-cell mdl-cell--12-col mdl-grid  vendor-deatils">
 
+
+
+                      <div>
+                          <span style="color:gray" >Description: </span>{{tendor.tendor_desc}}
+                        <br>
+                        <span style="color:gray" >Created by: </span>{{tendor.assigner}}
+                        <br>
+                        <span style="color:gray" >Project : </span>{{tendor.project}}
+                        <br>
+                         <span style="color:gray" >Actual Cost: </span>{{tendor.tendor_act_cost}}
+                        <br>
+                        <span style="color:gray" >Estimated Cost: </span>{{tendor.tendor_est_cost}}
+                      </div>
+
+                      <div class="graph"></div>
+
                       <div  class="button-right">
-                          <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian">
+
+                          <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian " disabled>
                               <i  class=" material-icons">edit</i>
 
                             </button>
-                            <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian ">
+                            <button  class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored but-accordian " disabled>
                               <i  class=" material-icons">save</i>
 
                             </button>

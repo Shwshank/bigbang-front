@@ -41,7 +41,7 @@ import {
   MdTabsModule,
   MdToolbarModule,
   MdTooltipModule,
-  MatSnackBarModule
+
 
  } from '@angular/material';
 
@@ -205,7 +205,6 @@ import { VendorDoughnutComponent } from './home/body/vendor/vendor-doughnut/vend
     MdTabsModule,
     MdToolbarModule,
     MdTooltipModule,
-    MatSnackBarModule,
     NgPipesModule,
     RouterModule.forRoot(routes)
   ],

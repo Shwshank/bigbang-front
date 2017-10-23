@@ -1,84 +1,85 @@
 <div class="bg"></div>
 <div class="summary">
 
-  <div class="demo-card-wide ">
+<div class="demo-card-wide ">
 
 <figure class="snip1321"><img src="https://geekydementia.files.wordpress.com/2014/11/os_x_lynx-2560x1600.jpg" alt="sq-sample26"/>
 
-    <div class="project-name-display">
-    <h4  class="project-name ">{{pname  | shorten: 50: '...'}}
+<div class="project-name-display">
+<h4 class="project-name ">{{pname | shorten: 50: '...'}}
 
-    </h4>
-    </div>
-
+</h4>
+</div>
 
 </figure>
 
-    <div class="mdl-card__supporting-text">
+<div class="mdl-card__supporting-text">
 
-      <span style="color: #636363; font-size:14px;" class="">  {{pdesc | shorten: 100: '...'}} 
+<span style="color: #636363; font-size:14px;" class=""> {{pdesc | shorten: 100: '...'}} 
 
-      </span>
+</span>
 
-    </div>
+</div>
 
-    <div class="menu_container" >
+<div class="menu_container" >
 
-      <div class="mdl-card__actions mdl-card--border " [ngClass]=" universe ?'active':''" >
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect " (click)="viewUniverse()">
-          Universe
-        </a>
-      </div>
+<div class="mdl-card__actions mdl-card--border " [ngClass]=" universe ?'active':''" >
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect " (click)="viewUniverse()">
+Universe
+</a>
+</div>
 
-      <!-- <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectDetails()">
-          Project Details
-        </a>
-      </div> -->
+<!-- <div class="mdl-card__actions mdl-card--border">
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectDetails()">
+Project Details
+</a>
+</div> -->
 
-      <div class="mdl-card__actions mdl-card--border" [ngClass]=" summary ?'active':''" >
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()">
-          Project Summary
-        </a>
-      </div>
+<div class="mdl-card__actions mdl-card--border" [ngClass]=" summary ?'active':''" >
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()">
+Project Summary
+</a>
+</div>
 
-      <div class="mdl-card__actions mdl-card--border" [ngClass]=" costing ?'active':''" >
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectCosting()" >
-          Costing
-        </a>
-      </div>
+<div class="mdl-card__actions mdl-card--border " [ngClass]=" costing ?'active':''" >
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect sub-menu" (click)="viewProjectCosting()" >
+Costing 
+</a>
+<ul class="sub-menu-items">
+<li >sub menu </li>
+<li>sub menu </li>
+</ul>
+</div>
+<!-- <div class="mdl-card__actions mdl-card--border">
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
+Timeline
+</a>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
+Milestones
+</a>
+</div> -->
 
-      <!-- <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewProjectSummary()" >
-          Timeline
-        </a>
-      </div>
-      <div class="mdl-card__actions mdl-card--border">
-          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
-            Milestones
-          </a>
-        </div> -->
+<div class="mdl-card__actions mdl-card--border" [ngClass]=" vendors ?'active':''" >
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="vendor()" >
+Vendors
+</a>
+</div>
 
+<!-- <div class="mdl-card__actions mdl-card--border" [ngClass]=" file ?'active':''" >
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewFiles()" >
+Files
+</a>
+</div> -->
 
-      <div class="mdl-card__actions mdl-card--border" [ngClass]=" vendors ?'active':''" >
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="vendor()" >
-          Vendors
-        </a>
-      </div>
+<div class="mdl-card__actions mdl-card--border" [ngClass]=" setting ?'active':''" >
+<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
+Project Setting
+</a>
+</div>
 
-      <!-- <div class="mdl-card__actions mdl-card--border" [ngClass]=" file ?'active':''" >
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="viewFiles()" >
-          Files
-        </a>
-      </div> -->
+</div>
 
-      <div class="mdl-card__actions mdl-card--border" [ngClass]=" setting ?'active':''" >
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="projectSetting()" >
-          Project Setting
-        </a>
-      </div>
-
-    </div>
-
-  </div>
+</div>
 </div>

@@ -207,7 +207,7 @@ import { VendorDoughnutComponent } from './home/body/vendor/vendor-doughnut/vend
     MdTooltipModule,
     MatSnackBarModule,
     NgPipesModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, { useHash: true })  // .../#/crisis-center/
   ],
   entryComponents: [
    DialogComponent,

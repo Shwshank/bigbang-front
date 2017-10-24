@@ -20,7 +20,7 @@ import { VendorGraph1Component } from './home/body/vendor/vendor-graph1/vendor-g
 export const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoginComponent },
   { path: 'allprojects', component: AllProjectsComponent },
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard],
+  { path: 'home', component: HomeComponent,
     children: [
   	  {
     		path: '',

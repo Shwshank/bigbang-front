@@ -580,7 +580,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__angular_material__["J" /* MdTooltipModule */],
             __WEBPACK_IMPORTED_MODULE_8__angular_material__["b" /* MatSnackBarModule */],
             __WEBPACK_IMPORTED_MODULE_65_ngx_pipes__["a" /* NgPipesModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_routes__["a" /* routes */])
+            __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_9__app_routes__["a" /* routes */], { useHash: true }) // .../#/crisis-center/
         ],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_17__home_dialog_dialog_component__["a" /* DialogComponent */],
@@ -601,21 +601,19 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return routes; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__service_AuthGuard__ = __webpack_require__("../../../../../src/app/service/AuthGuard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_body_project_view_project_view_component__ = __webpack_require__("../../../../../src/app/home/body/project-view/project-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_body_summary_summary_component__ = __webpack_require__("../../../../../src/app/home/body/summary/summary.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_body_project_costing_project_costing_component__ = __webpack_require__("../../../../../src/app/home/body/project-costing/project-costing.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_body_universe_universe_component__ = __webpack_require__("../../../../../src/app/home/body/universe/universe.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_body_project_setting_project_setting_component__ = __webpack_require__("../../../../../src/app/home/body/project-setting/project-setting.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__home_body_body_component__ = __webpack_require__("../../../../../src/app/home/body/body.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__all_projects_all_projects_component__ = __webpack_require__("../../../../../src/app/all-projects/all-projects.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__home_body_files_files_component__ = __webpack_require__("../../../../../src/app/home/body/files/files.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__home_body_vendor_vendor_component__ = __webpack_require__("../../../../../src/app/home/body/vendor/vendor.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__home_body_vendor_vendor_details_vendor_details_component__ = __webpack_require__("../../../../../src/app/home/body/vendor/vendor-details/vendor-details.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__home_body_vendor_vendor_graph1_vendor_graph1_component__ = __webpack_require__("../../../../../src/app/home/body/vendor/vendor-graph1/vendor-graph1.component.ts");
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__login_login_component__ = __webpack_require__("../../../../../src/app/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_body_project_view_project_view_component__ = __webpack_require__("../../../../../src/app/home/body/project-view/project-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_body_summary_summary_component__ = __webpack_require__("../../../../../src/app/home/body/summary/summary.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_body_project_costing_project_costing_component__ = __webpack_require__("../../../../../src/app/home/body/project-costing/project-costing.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__home_body_universe_universe_component__ = __webpack_require__("../../../../../src/app/home/body/universe/universe.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__home_body_project_setting_project_setting_component__ = __webpack_require__("../../../../../src/app/home/body/project-setting/project-setting.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__home_body_body_component__ = __webpack_require__("../../../../../src/app/home/body/body.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__all_projects_all_projects_component__ = __webpack_require__("../../../../../src/app/all-projects/all-projects.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__home_body_files_files_component__ = __webpack_require__("../../../../../src/app/home/body/files/files.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__home_body_vendor_vendor_component__ = __webpack_require__("../../../../../src/app/home/body/vendor/vendor.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__home_body_vendor_vendor_details_vendor_details_component__ = __webpack_require__("../../../../../src/app/home/body/vendor/vendor-details/vendor-details.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__home_body_vendor_vendor_graph1_vendor_graph1_component__ = __webpack_require__("../../../../../src/app/home/body/vendor/vendor-graph1/vendor-graph1.component.ts");
 
 
 
@@ -630,31 +628,31 @@ AppModule = __decorate([
 
 
 var routes = [
-    { path: '', pathMatch: 'full', component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */] },
-    { path: 'allprojects', component: __WEBPACK_IMPORTED_MODULE_9__all_projects_all_projects_component__["a" /* AllProjectsComponent */] },
-    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_1__home_home_component__["a" /* HomeComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_0__service_AuthGuard__["a" /* AuthGuard */]],
+    { path: '', pathMatch: 'full', component: __WEBPACK_IMPORTED_MODULE_1__login_login_component__["a" /* LoginComponent */] },
+    { path: 'allprojects', component: __WEBPACK_IMPORTED_MODULE_8__all_projects_all_projects_component__["a" /* AllProjectsComponent */] },
+    { path: 'home', component: __WEBPACK_IMPORTED_MODULE_0__home_home_component__["a" /* HomeComponent */],
         children: [
             {
                 path: '',
-                component: __WEBPACK_IMPORTED_MODULE_6__home_body_universe_universe_component__["a" /* UniverseComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_5__home_body_universe_universe_component__["a" /* UniverseComponent */],
             },
             // { path: '', loadChildren: './home/body/universe/universe.module#UniverseModule' },
             {
                 path: 'body',
-                component: __WEBPACK_IMPORTED_MODULE_8__home_body_body_component__["a" /* BodyComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_7__home_body_body_component__["a" /* BodyComponent */],
             },
             {
                 path: 'projectView',
-                component: __WEBPACK_IMPORTED_MODULE_3__home_body_project_view_project_view_component__["a" /* ProjectViewComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_2__home_body_project_view_project_view_component__["a" /* ProjectViewComponent */]
             },
             // { path: 'universeComponent', loadChildren: './home/body/universe/universe.module#UniverseModule' },
             {
                 path: 'universeComponent',
-                component: __WEBPACK_IMPORTED_MODULE_6__home_body_universe_universe_component__["a" /* UniverseComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_5__home_body_universe_universe_component__["a" /* UniverseComponent */]
             },
             {
                 path: 'summaryComponent',
-                component: __WEBPACK_IMPORTED_MODULE_4__home_body_summary_summary_component__["a" /* SummaryComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_3__home_body_summary_summary_component__["a" /* SummaryComponent */]
             },
             { path: 'projectSummary', loadChildren: './home/body/project-summary/summary.module#SummaryModule' },
             // {
@@ -663,36 +661,36 @@ var routes = [
             // },
             {
                 path: 'projectCosting',
-                component: __WEBPACK_IMPORTED_MODULE_5__home_body_project_costing_project_costing_component__["a" /* ProjectCostingComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_4__home_body_project_costing_project_costing_component__["a" /* ProjectCostingComponent */]
             },
             {
                 path: 'projectSetting',
-                component: __WEBPACK_IMPORTED_MODULE_7__home_body_project_setting_project_setting_component__["a" /* ProjectSettingComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_6__home_body_project_setting_project_setting_component__["a" /* ProjectSettingComponent */]
             },
             {
                 path: 'projectFiles',
-                component: __WEBPACK_IMPORTED_MODULE_10__home_body_files_files_component__["a" /* FilesComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_9__home_body_files_files_component__["a" /* FilesComponent */]
             },
             {
                 path: 'vendor',
-                component: __WEBPACK_IMPORTED_MODULE_11__home_body_vendor_vendor_component__["a" /* VendorComponent */],
+                component: __WEBPACK_IMPORTED_MODULE_10__home_body_vendor_vendor_component__["a" /* VendorComponent */],
                 children: [
                     {
                         path: 'allVendorGraph',
-                        component: __WEBPACK_IMPORTED_MODULE_13__home_body_vendor_vendor_graph1_vendor_graph1_component__["a" /* VendorGraph1Component */],
+                        component: __WEBPACK_IMPORTED_MODULE_12__home_body_vendor_vendor_graph1_vendor_graph1_component__["a" /* VendorGraph1Component */],
                     },
                     {
                         path: 'vendorDetails',
-                        component: __WEBPACK_IMPORTED_MODULE_12__home_body_vendor_vendor_details_vendor_details_component__["a" /* VendorDetailsComponent */],
+                        component: __WEBPACK_IMPORTED_MODULE_11__home_body_vendor_vendor_details_vendor_details_component__["a" /* VendorDetailsComponent */],
                     }
                 ]
             },
             {
                 path: '**',
-                component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_1__login_login_component__["a" /* LoginComponent */]
             },
         ] },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__login_login_component__["a" /* LoginComponent */] }
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_1__login_login_component__["a" /* LoginComponent */] }
 ];
 //# sourceMappingURL=app.routes.js.map
 
